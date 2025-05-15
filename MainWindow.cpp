@@ -284,19 +284,21 @@ MainWindow::~MainWindow() {}
 
 void MainWindow::updateSensorData()
 {
-    static SensorData lastValidData = {0}; // Przechowuje ostatnie prawidłowe dane
+    static SensorData lastValidData = {0}; 
 
     if (sensorReader->readData()) {
         SensorData data = sensorReader->getData();
         
-        // Sprawdź czy którykolwiek z parametrów ma wartość -1
-        if (data.co2 == -1 || data.co2_temp == -1 || data.co2_hum == -1 || 
+        // Add CRC check
+        if (!data.crcValid) {
+            qDebug() << "CRC check failed, using last valid data";
+            data = lastValidData;
+        }
+        else if (data.co2 == -1 || data.co2_temp == -1 || data.co2_hum == -1 || 
             data.pm1 == -1 || data.pm25 == -1 || data.pm10 == -1 || 
             data.radiation == -1) {
-            // Użyj poprzednich prawidłowych danych
             data = lastValidData;
         } else {
-            // Zapisz prawidłowe dane jako ostatnie znane
             lastValidData = data;
         }
 

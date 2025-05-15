@@ -95,46 +95,92 @@ SensorData SensorReader::getData() const {
 }
 
 /**
- * @brief Parsuje surowe dane z czujników.
+ * @brief Oblicza wartość CRC dla danych.
+ * @param data Dane wejściowe w formie ciągu znaków.
+ * @return Obliczona wartość CRC.
+ */
+uint16_t SensorReader::calculateCRC(const std::string& data) {
+    uint16_t crc = 0xFFFF;
+    
+    for (size_t i = 0; i < data.length(); i++) {
+        crc ^= (uint8_t)data[i];
+        for (int j = 0; j < 8; j++) {
+            if (crc & 0x0001) {
+                crc = (crc >> 1) ^ 0xA001;
+            } else {
+                crc >>= 1;
+            }
+        }
+    }
+    
+    return crc;
+}
+
+/**
+ * @brief Parsuje surowe dane z czujników i weryfikuje CRC.
  * @param raw Surowe dane w formie ciągu znaków.
  * @return Struktura SensorData zawierająca sparsowane dane.
  */
 SensorData SensorReader::parseSensorData(const std::string& raw) {
-    SensorData data;
-    std::regex co2_re(R"(CO2 Level:\s*(\d+))");
-    std::regex co2_temp_re(R"(Temperature:\s*(\d+))");
-    std::regex co2_hum_re(R"(Humidity:\s*(\d+))");
-    std::regex pm1_re(R"(PM 1\.0 \(ug/m3\):\s*(\d+))");
-    std::regex pm25_re(R"(PM 2\.5 \(ug/m3\):\s*(\d+))");
-    std::regex pm10_re(R"(PM 10\.0 \(ug/m3\):\s*(\d+))");
-    std::regex radiation_re(R"(Radiation:\s*(\d+)\s*CPM)");
-    std::regex radiation_dose_re(R"(Radiation dose per h:\s*([\d.]+)\s*uSv)");
-
-    std::smatch match;
-    if (std::regex_search(raw, match, co2_re)) {
-        data.co2 = std::stoi(match[1]);
+    SensorData result;
+    uint16_t calculatedCRC = 0;  // Start with 0, just like in Arduino
+    
+    std::istringstream iss(raw);
+    std::string line;
+    bool startFound = false;
+    
+    while (std::getline(iss, line)) {
+        if (line == "--[new_line]--") {
+            startFound = true;
+            continue;
+        }
+        if (line == "--[end_line]--") {
+            break;
+        }
+        if (!startFound) continue;
+        
+        size_t pos = line.find(": ");
+        if (pos != std::string::npos) {
+            std::string value = line.substr(pos + 2);
+            
+            try {
+                if (line.find("CRC") != std::string::npos) {
+                    result.crc = std::stoul(value, nullptr, 16);
+                    continue;
+                }
+                
+                // Simple addition of values - exactly like in Arduino
+                if (line.find("PM 1.0") != std::string::npos) {
+                    result.pm1 = std::stoi(value);
+                    calculatedCRC += result.pm1;
+                } else if (line.find("PM 2.5") != std::string::npos) {
+                    result.pm25 = std::stoi(value);
+                    calculatedCRC += result.pm25;
+                } else if (line.find("PM 10.0") != std::string::npos) {
+                    result.pm10 = std::stoi(value);
+                    calculatedCRC += result.pm10;
+                } else if (line.find("CO2 Level") != std::string::npos) {
+                    result.co2 = std::stoi(value);
+                    calculatedCRC += result.co2;
+                } else if (line.find("Temperature") != std::string::npos) {
+                    result.co2_temp = std::stoi(value);
+                    calculatedCRC += result.co2_temp;
+                } else if (line.find("Humidity") != std::string::npos) {
+                    result.co2_hum = std::stoi(value);
+                    calculatedCRC += result.co2_hum;
+                } else if (line.find("Radiation: ") != std::string::npos) {
+                    result.radiation = std::stoi(value);
+                    calculatedCRC += result.radiation;
+                }
+                // Skip radiation dose as it's a float value, just like in Arduino
+            } catch (const std::exception& e) {
+                std::cerr << "Error parsing value: " << e.what() << std::endl;
+            }
+        }
     }
-    if (std::regex_search(raw, match, co2_temp_re)) {
-        data.co2_temp = std::stoi(match[1]);
-    }
-    if (std::regex_search(raw, match, co2_hum_re)) {
-        data.co2_hum = std::stoi(match[1]);
-    }
-    if (std::regex_search(raw, match, pm1_re)) {
-        data.pm1 = std::stoi(match[1]);
-    }
-    if (std::regex_search(raw, match, pm25_re)) {
-        data.pm25 = std::stoi(match[1]);
-    }
-    if (std::regex_search(raw, match, pm10_re)) {
-        data.pm10 = std::stoi(match[1]);
-    }
-    if (std::regex_search(raw, match, radiation_re)) {
-        data.radiation = std::stoi(match[1]);
-    }
-    if (std::regex_search(raw, match, radiation_dose_re)) {
-        data.radiation_dose_per_hour = std::stof(match[1]);
-    }
-
-    return data;
+    
+    result.crcValid = (calculatedCRC == result.crc);
+    std::cout << "Calculated CRC: " << std::hex << calculatedCRC 
+              << " Received CRC: " << std::hex << result.crc << std::endl;
+    return result;
 }

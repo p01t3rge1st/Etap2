@@ -21,12 +21,28 @@ DHT dht22(DHT22_PIN, DHT22);
 bool debugMode;
 int counts;
 
-
 int pm1, pm25, pm100;
 float humidity1, temperature1, humidity2, temperature2;
 int ethanol, hydrogen, eCO2, CO2, TVOC, temperature_co2, humidity_co2;
 
 bool read_success;
+
+uint16_t calculateCRC(const String& data) {
+    uint16_t crc = 0xFFFF;
+    
+    for (size_t i = 0; i < data.length(); i++) {
+        crc ^= (uint8_t)data[i];
+        for (int j = 0; j < 8; j++) {
+            if (crc & 0x0001) {
+                crc = (crc >> 1) ^ 0xA001;
+            } else {
+                crc >>= 1;
+            }
+        }
+    }
+    
+    return crc;
+}
 
 void setup() {
   Serial.begin(9600);
@@ -94,6 +110,16 @@ void readSensors() {
   pmsSerial.end();
   
   if (read_success) {
+    // Prosty CRC - suma wszystkich wartości
+    uint16_t crc = 0;
+    crc += pm1;
+    crc += pm25;
+    crc += pm100;
+    crc += CO2;
+    crc += temperature_co2;
+    crc += humidity_co2;
+    crc += (counts*6);
+
     Serial.println("--[new_line]--");
     Serial.print("PM 1.0 (ug/m3): ");
     Serial.println(pm1);
@@ -110,15 +136,12 @@ void readSensors() {
     Serial.print("Humidity: ");
     Serial.println(humidity_co2);
     Serial.print("Radiation: " );
-    Serial.print(counts*6);
-    Serial.println( " CPM");
+    Serial.println(counts*6);
     Serial.print("Radiation dose per h: " );
-    Serial.print(counts*0.0378);
-    Serial.println( " uSv");
+    Serial.println(counts*0.0378);
+    Serial.print("CRC: ");
+    Serial.println(crc, HEX);
     Serial.println("--[end_line]--");
-
-    tone(11, 1000, 10);  // Indicator for new data
-    
   }
 }
 

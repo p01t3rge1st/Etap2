@@ -17,6 +17,9 @@ struct SensorData {
     int pm10 = -1; ///< Poziom pyłu PM10 w µg/m³.
     int radiation = -1; ///< Liczba zliczeń promieniowania (CPM).
     float radiation_dose_per_hour = -1.0; ///< Dawka promieniowania na godzinę w µSv/h.
+    int tvoc = -1; ///< Poziom TVOC.
+    uint16_t crc = 0; ///< Pole CRC.
+    bool crcValid = false; ///< Status walidacji CRC.
 };
 
 /**
@@ -59,6 +62,13 @@ public:
      * @return Struktura SensorData zawierająca dane z czujników.
      */
     SensorData getData() const;
+
+    /**
+     * @brief Oblicza wartość CRC dla danych.
+     * @param data Dane wejściowe w formie ciągu znaków.
+     * @return Obliczona wartość CRC.
+     */
+    uint16_t calculateCRC(const std::string& data);
 
 private:
     std::string portname; ///< Nazwa portu szeregowego.
