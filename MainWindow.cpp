@@ -138,21 +138,18 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     // Ustaw początkowy zakres osi X
     axisX->setRange(chartStartTime, QDateTime::currentDateTime());
 
-    // --- Time Machine Panel ---
-    QFrame* timeMachineFrame = new QFrame(this);
-    timeMachineFrame->setFrameStyle(QFrame::Box | QFrame::Raised);
-    timeMachineFrame->setLineWidth(2);
+    // --- Panel Analizy Historycznej ---
+    QFrame* historyFrame = new QFrame(this);
+    historyFrame->setFrameStyle(QFrame::Box | QFrame::Raised);
+    historyFrame->setLineWidth(2);
 
-    QVBoxLayout* timeMachineMainLayout = new QVBoxLayout();
-    QHBoxLayout* timeMachineLayout = new QHBoxLayout();
+    QVBoxLayout* historyMainLayout = new QVBoxLayout();
     
-    // Dodaj nagłówek do Time Machine
-    QLabel* timeHeader = new QLabel("Zakres czasu:", this);
-    timeHeader->setAlignment(Qt::AlignCenter);
-    timeMachineMainLayout->addWidget(timeHeader);
-
-    timeMachineGroup = new QButtonGroup(this);
-
+    // Zakres czasu
+    QHBoxLayout* timeRangeLayout = new QHBoxLayout();
+    QLabel* timeRangeLabel = new QLabel("Zakres:", this);
+    timeRangeLayout->addWidget(timeRangeLabel);
+    
     hour1Button = new QRadioButton("1H", this);
     hour2Button = new QRadioButton("2H", this);
     hour4Button = new QRadioButton("4H", this);
@@ -164,6 +161,7 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
 
     hour1Button->setChecked(true);  // Domyślnie 1H
 
+    timeMachineGroup = new QButtonGroup(this);
     timeMachineGroup->addButton(hour1Button, 1);
     timeMachineGroup->addButton(hour2Button, 2);
     timeMachineGroup->addButton(hour4Button, 4);
@@ -173,18 +171,28 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     timeMachineGroup->addButton(hour48Button, 48);
     timeMachineGroup->addButton(hour78Button, 78);
 
-    timeMachineLayout->addWidget(hour1Button);
-    timeMachineLayout->addWidget(hour2Button);
-    timeMachineLayout->addWidget(hour4Button);
-    timeMachineLayout->addWidget(hour8Button);
-    timeMachineLayout->addWidget(hour12Button);
-    timeMachineLayout->addWidget(hour24Button);
-    timeMachineLayout->addWidget(hour48Button);
-    timeMachineLayout->addWidget(hour78Button);
-    timeMachineLayout->addStretch();
+    timeRangeLayout->addWidget(hour1Button);
+    timeRangeLayout->addWidget(hour2Button);
+    timeRangeLayout->addWidget(hour4Button);
+    timeRangeLayout->addWidget(hour8Button);
+    timeRangeLayout->addWidget(hour12Button);
+    timeRangeLayout->addWidget(hour24Button);
+    timeRangeLayout->addWidget(hour48Button);
+    timeRangeLayout->addWidget(hour78Button);
+    timeRangeLayout->addStretch();
 
-    timeMachineMainLayout->addLayout(timeMachineLayout);
-    timeMachineFrame->setLayout(timeMachineMainLayout);
+    // Wybór danych
+    QHBoxLayout* dataSelectionLayout = new QHBoxLayout();
+    QLabel* dataSelectLabel = new QLabel("Dane:", this);
+    dataSelectionLayout->addWidget(dataSelectLabel);
+    dataSelectionLayout->addWidget(chartSelector);
+    dataSelectionLayout->addStretch();
+
+    // Układanie elementów w panelu
+    historyMainLayout->addLayout(timeRangeLayout);
+    historyMainLayout->addLayout(dataSelectionLayout);
+    
+    historyFrame->setLayout(historyMainLayout);
 
     // --- UKŁAD GŁÓWNY ---
     QVBoxLayout* mainLayout = new QVBoxLayout;
@@ -192,8 +200,8 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     mainLayout->addWidget(interpretationFrame);
     mainLayout->addWidget(new QLabel("Dane z czujników:", this));
     mainLayout->addWidget(sensorDataFrame);
-    mainLayout->addWidget(timeMachineFrame);
-    mainLayout->addWidget(chartSelector);
+    mainLayout->addWidget(new QLabel("Analiza historyczna:", this));  // Changed to match style
+    mainLayout->addWidget(historyFrame);
     mainLayout->addWidget(chartView);
 
     QWidget* centralWidget = new QWidget(this);
