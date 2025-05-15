@@ -14,6 +14,8 @@
 #include <regex>
 #include <termios.h>
 #include <QApplication>
+#include <QTranslator>
+#include <QLocale>
 #include "MainWindow.h"
 
 /**
@@ -34,7 +36,6 @@ int main(int argc, char *argv[]) {
 
     const char* portname = "/dev/ttyUSB0";
     SensorReader reader(portname);
-
 
     // Inicjalizacja czujników – czekaj aż CO2 przestanie być -1
     std::cout << "Inicjalizacja czujników... Proszę czekać (ok. 20 sekund)..." << std::endl;
@@ -63,18 +64,19 @@ int main(int argc, char *argv[]) {
     }
     std::cout << "Czujniki zainicjalizowane. Uruchamianie aplikacji..." << std::endl;
 
-    std::cout << "Debug: przed QApplication" << std::endl;
     QApplication app(argc, argv);
 
-    std::cout << "Debug: przed MainWindow" << std::endl;
-    MainWindow mainWindow(&reader);
+    // Dodaj obsługę tłumaczeń
+    QTranslator translator;
+    // Możesz ustawić język ręcznie:
+    // translator.load(":/translations/wds_en.qm");
+    // lub użyć języka systemowego:
+    const QString locale = QLocale::system().name();
+    if (translator.load(":/translations/" + locale))
+        app.installTranslator(&translator);
 
-    std::cout << "Debug: przed show()" << std::endl;
+    MainWindow mainWindow(&reader);
     mainWindow.show();
 
-    std::cout << "Debug: przed app.exec()" << std::endl;
-    int ret = app.exec();
-    std::cout << "Debug: po app.exec()" << std::endl;
-
-    return ret;
+    return app.exec();
 }

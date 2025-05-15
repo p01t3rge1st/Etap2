@@ -11,6 +11,7 @@
 #include <QtCharts/QDateTimeAxis>
 #include <QButtonGroup>
 #include <QRadioButton>
+#include <QTranslator>
 #include "SensorReader.h"
 #include "SensorDataLogger.h"
 
@@ -105,6 +106,13 @@ private:
     int timeMachineHours;  // Zastąp stałą TIME_MACHINE_HOURS zmienną
 
     QDateTime chartStartTime;  // Początek zakresu wykresu
+
+    void updateInterfaceTexts();
+    void updateChartTitles();
+    void changeLanguage(const QString &language);
+
+    QComboBox* languageSelector;
+    QTranslator translator;
 };
 
 #endif

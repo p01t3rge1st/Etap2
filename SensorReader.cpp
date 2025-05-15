@@ -95,35 +95,13 @@ SensorData SensorReader::getData() const {
 }
 
 /**
- * @brief Oblicza wartość CRC dla danych.
- * @param data Dane wejściowe w formie ciągu znaków.
- * @return Obliczona wartość CRC.
- */
-uint16_t SensorReader::calculateCRC(const std::string& data) {
-    uint16_t crc = 0xFFFF;
-    
-    for (size_t i = 0; i < data.length(); i++) {
-        crc ^= (uint8_t)data[i];
-        for (int j = 0; j < 8; j++) {
-            if (crc & 0x0001) {
-                crc = (crc >> 1) ^ 0xA001;
-            } else {
-                crc >>= 1;
-            }
-        }
-    }
-    
-    return crc;
-}
-
-/**
  * @brief Parsuje surowe dane z czujników i weryfikuje CRC.
  * @param raw Surowe dane w formie ciągu znaków.
  * @return Struktura SensorData zawierająca sparsowane dane.
  */
 SensorData SensorReader::parseSensorData(const std::string& raw) {
     SensorData result;
-    uint16_t calculatedCRC = 0;  // Start with 0, just like in Arduino
+    uint16_t calculatedCRC = 0;
     
     std::istringstream iss(raw);
     std::string line;
@@ -149,7 +127,6 @@ SensorData SensorReader::parseSensorData(const std::string& raw) {
                     continue;
                 }
                 
-                // Simple addition of values - exactly like in Arduino
                 if (line.find("PM 1.0") != std::string::npos) {
                     result.pm1 = std::stoi(value);
                     calculatedCRC += result.pm1;
@@ -172,7 +149,6 @@ SensorData SensorReader::parseSensorData(const std::string& raw) {
                     result.radiation = std::stoi(value);
                     calculatedCRC += result.radiation;
                 }
-                // Skip radiation dose as it's a float value, just like in Arduino
             } catch (const std::exception& e) {
                 std::cerr << "Error parsing value: " << e.what() << std::endl;
             }
@@ -180,7 +156,7 @@ SensorData SensorReader::parseSensorData(const std::string& raw) {
     }
     
     result.crcValid = (calculatedCRC == result.crc);
-    std::cout << "Calculated CRC: " << std::hex << calculatedCRC 
-              << " Received CRC: " << std::hex << result.crc << std::endl;
+    // std::cout << "Calculated CRC: " << std::hex << calculatedCRC 
+    //           << " Received CRC: " << std::hex << result.crc << std::endl;
     return result;
 }
