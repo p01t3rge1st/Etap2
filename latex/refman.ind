@@ -1,0 +1,44 @@
+\begin{theindex}
+
+  \item {getData}
+    \subitem {SensorReader}, \hyperpage{12}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{16}
+  \item {main.cpp}, \hyperpage{15}
+    \subitem {main}, \hyperpage{16}
+  \item {MainWindow}, \hyperpage{7}
+    \subitem {MainWindow}, \hyperpage{9}
+
+  \indexspace
+
+  \item {openPort}
+    \subitem {SensorReader}, \hyperpage{12}
+
+  \indexspace
+
+  \item {parseSensorData}
+    \subitem {SensorReader}, \hyperpage{12}
+
+  \indexspace
+
+  \item {qt\_meta\_stringdata\_MainWindow\_t}, \hyperpage{9}
+
+  \indexspace
+
+  \item {readData}
+    \subitem {SensorReader}, \hyperpage{12}
+
+  \indexspace
+
+  \item {SensorData}, \hyperpage{10}
+  \item {SensorReader}, \hyperpage{10}
+    \subitem {getData}, \hyperpage{12}
+    \subitem {openPort}, \hyperpage{12}
+    \subitem {parseSensorData}, \hyperpage{12}
+    \subitem {readData}, \hyperpage{12}
+    \subitem {SensorReader}, \hyperpage{11}
+
+\end{theindex}

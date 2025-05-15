@@ -1,0 +1,48 @@
+\doxysection{Sensor\+Reader.\+h}
+\hypertarget{SensorReader_8h_source}{}\label{SensorReader_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SENSORREADER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SENSORREADER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <termios.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSensorData}{SensorData}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSensorData_aa08cd2414f3df2746db49a08abcd8ca4}{co2}}\ =\ -\/1;\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSensorData_aa86daf30538726c1188bfe8a928107a0}{co2\_temp}}\ =\ -\/1;\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSensorData_a88bd3f71f5a66feb1cff2bcd437471ef}{co2\_hum}}\ =\ -\/1;\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSensorData_a4bbb4abfde06e739b58282164b52854b}{pm1}}\ =\ -\/1;\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSensorData_a1a2ae409164ca2b9e0ae1fc6f2323221}{pm25}}\ =\ -\/1;\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSensorData_aa19ba55b7fbf096d6e0d2d1bebe26a2e}{pm10}}\ =\ -\/1;\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSensorData_aea39d17cc6edacb767c63708e4650cbc}{radiation}}\ =\ -\/1;\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structSensorData_a6b9fb45f05c03bd6c2d5a81b94a09afc}{radiation\_dose\_per\_hour}}\ =\ -\/1.0;\ }
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSensorReader}{SensorReader}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classSensorReader}{SensorReader}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classSensorReader_a202c307c19bb8beb21f703dcf9959641}{portname}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSensorReader_aaebc91f52f1d25176af61212d015b5ff}{baudrate}}\ =\ B9600);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classSensorReader_aaa434a375e5b76572c2a770a9bb47e4f}{\string~SensorReader}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSensorReader_a670969b9b0611931a942cb9fc887b66d}{openPort}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSensorReader_a7f365e79bdc97851dcdbba40f4888335}{closePort}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSensorReader_a28d2ee52ececadca7d2dbdba80ae22e6}{readData}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{structSensorData}{SensorData}}\ \mbox{\hyperlink{classSensorReader_a1d6e6a16ca1726b2b563bd125fe9f15e}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ std::string\ \mbox{\hyperlink{classSensorReader_a202c307c19bb8beb21f703dcf9959641}{portname}};\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSensorReader_aaebc91f52f1d25176af61212d015b5ff}{baudrate}};\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSensorReader_a00637d82d16cfaf25a9e7b7a4cefbff6}{serial\_port}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classSensorReader_a91a682e413b5df61950b591162157518}{buffer}}[256];\ }
+\DoxyCodeLine{00068\ \ \ \ \ std::string\ \mbox{\hyperlink{classSensorReader_aaae035aa78b5295e55aece9cf1a306f8}{serial\_data}};\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{structSensorData}{SensorData}}\ \mbox{\hyperlink{classSensorReader_ac45e464399cee627f8e155d22ffd733d}{data}};\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{structSensorData}{SensorData}}\ \mbox{\hyperlink{classSensorReader_a388472b707a086a7e0055d401c3b3e8b}{parseSensorData}}(\textcolor{keyword}{const}\ std::string\&\ raw);}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

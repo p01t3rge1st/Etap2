@@ -1,0 +1,45 @@
+\doxysection{Main\+Window.\+h}
+\hypertarget{MainWindow_8h_source}{}\label{MainWindow_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}SensorReader.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMainWindow}{MainWindow}}(\mbox{\hyperlink{classSensorReader}{SensorReader}}*\ reader,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a2e5dc7b198af26e0ecd559fb5ca6cc5d}{updateSensorData}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_a2872ab832f0a0a42c034267785e88ce1}{co2Label}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_ab535f743dc716723f614486696d91aa9}{co2TempLabel}};\ }
+\DoxyCodeLine{00041\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_adfb4dea0d006eaded266b2fa51f7b18f}{co2HumLabel}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_a8848f0ba14afb2d64602b17587bf5339}{pm1Label}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_a60a40ee53ed0b522c9655aa5b8dc1acd}{pm25Label}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_a62aa94cabaf25411b6807136750fa96b}{pm10Label}};\ }
+\DoxyCodeLine{00045\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_a977df0f6a88c9660ec3b09bb361585c6}{radiationLabel}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_a0fd737e08197cd6249158723262ca508}{radiationDoseLabel}};\ }
+\DoxyCodeLine{00047\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_aa0d573a8981cf69c771704a600c1d343}{co2StatusLabel}};\ }
+\DoxyCodeLine{00048\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_aba1e70577afe7cc912ede6387722056d}{pmStatusLabel}};\ }
+\DoxyCodeLine{00049\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classMainWindow_a4cd27ff37e219f9728698e056da8afc6}{radiationStatusLabel}};\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ QTimer*\ \mbox{\hyperlink{classMainWindow_a356578805ed1248a7f2807434cb0e5ee}{timer}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classSensorReader}{SensorReader}}*\ \mbox{\hyperlink{classMainWindow_abd962b3c08fd77f6af8840c9fad9380c}{sensorReader}};\ }
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

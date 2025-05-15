@@ -1,0 +1,114 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{classMainWindow}{}\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+Klasa reprezentująca główne okno aplikacji.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Window.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classMainWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classMainWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a87a1f1b12250799459255fda63778052}{Main\+Window}} (\mbox{\hyperlink{classSensorReader}{Sensor\+Reader}} \texorpdfstring{$\ast$}{*}reader, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classMainWindow}{Main\+Window}. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{classMainWindow}{Main\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMainWindow_a2e5dc7b198af26e0ecd559fb5ca6cc5d}\label{classMainWindow_a2e5dc7b198af26e0ecd559fb5ca6cc5d} 
+void {\bfseries update\+Sensor\+Data} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje dane z czujników i wyświetla je w interfejsie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMainWindow_a2872ab832f0a0a42c034267785e88ce1}\label{classMainWindow_a2872ab832f0a0a42c034267785e88ce1} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries co2\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca poziom CO2. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_ab535f743dc716723f614486696d91aa9}\label{classMainWindow_ab535f743dc716723f614486696d91aa9} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries co2\+Temp\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca temperaturę CO2. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_adfb4dea0d006eaded266b2fa51f7b18f}\label{classMainWindow_adfb4dea0d006eaded266b2fa51f7b18f} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries co2\+Hum\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca wilgotność CO2. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_a8848f0ba14afb2d64602b17587bf5339}\label{classMainWindow_a8848f0ba14afb2d64602b17587bf5339} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries pm1\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca poziom PM1.\+0. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_a60a40ee53ed0b522c9655aa5b8dc1acd}\label{classMainWindow_a60a40ee53ed0b522c9655aa5b8dc1acd} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries pm25\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca poziom PM2.\+5. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_a62aa94cabaf25411b6807136750fa96b}\label{classMainWindow_a62aa94cabaf25411b6807136750fa96b} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries pm10\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca poziom PM10. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_a977df0f6a88c9660ec3b09bb361585c6}\label{classMainWindow_a977df0f6a88c9660ec3b09bb361585c6} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries radiation\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca poziom promieniowania. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_a0fd737e08197cd6249158723262ca508}\label{classMainWindow_a0fd737e08197cd6249158723262ca508} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries radiation\+Dose\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca dawkę promieniowania na godzinę. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_aa0d573a8981cf69c771704a600c1d343}\label{classMainWindow_aa0d573a8981cf69c771704a600c1d343} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries co2\+Status\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca status CO2. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_aba1e70577afe7cc912ede6387722056d}\label{classMainWindow_aba1e70577afe7cc912ede6387722056d} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries pm\+Status\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca status PM. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_a4cd27ff37e219f9728698e056da8afc6}\label{classMainWindow_a4cd27ff37e219f9728698e056da8afc6} 
+QLabel \texorpdfstring{$\ast$}{*} {\bfseries radiation\+Status\+Label}
+\begin{DoxyCompactList}\small\item\em Etykieta wyświetlająca status promieniowania. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_a356578805ed1248a7f2807434cb0e5ee}\label{classMainWindow_a356578805ed1248a7f2807434cb0e5ee} 
+QTimer \texorpdfstring{$\ast$}{*} {\bfseries timer}
+\begin{DoxyCompactList}\small\item\em Timer do cyklicznej aktualizacji danych. \end{DoxyCompactList}\item 
+\Hypertarget{classMainWindow_abd962b3c08fd77f6af8840c9fad9380c}\label{classMainWindow_abd962b3c08fd77f6af8840c9fad9380c} 
+\mbox{\hyperlink{classSensorReader}{Sensor\+Reader}} \texorpdfstring{$\ast$}{*} {\bfseries sensor\+Reader}
+\begin{DoxyCompactList}\small\item\em Wskaźnik do obiektu \doxylink{classSensorReader}{Sensor\+Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca główne okno aplikacji. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMainWindow_a87a1f1b12250799459255fda63778052}\label{classMainWindow_a87a1f1b12250799459255fda63778052} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSensorReader}{Sensor\+Reader}} \texorpdfstring{$\ast$}{*}}]{reader,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{classMainWindow}{Main\+Window}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Wskaźnik do obiektu \doxylink{classSensorReader}{Sensor\+Reader}. \\
+\hline
+{\em parent} & Wskaźnik do obiektu nadrzędnego (domyślnie nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Main\+Window.\+h\item 
+Main\+Window.\+cpp\end{DoxyCompactItemize}
