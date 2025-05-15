@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QLabel>
+#include <QLineEdit>
 #include <QTimer>
 #include <QComboBox>
 #include <QtCharts/QChartView>
@@ -15,10 +16,17 @@
 #include "SensorReader.h"
 #include "SensorDataLogger.h"
 
-// Zakresy Y
+/**
+ * @file MainWindow.h
+ * @brief Plik nagłówkowy głównego okna aplikacji monitorującej czujniki.
+ */
+
 /**
  * @class MainWindow
- * @brief Klasa reprezentująca główne okno aplikacji.
+ * @brief Główne okno aplikacji wyświetlające dane z czujników i wykresy.
+ * 
+ * Klasa odpowiada za prezentację danych w czasie rzeczywistym oraz
+ * umożliwia przeglądanie historii pomiarów.
  */
 class MainWindow : public QMainWindow
 {
@@ -26,36 +34,32 @@ class MainWindow : public QMainWindow
 
 public:
     /**
-     * @brief Konstruktor klasy MainWindow.
-     * @param reader Wskaźnik do obiektu SensorReader.
-     * @param parent Wskaźnik do obiektu nadrzędnego (domyślnie nullptr).
+     * @brief Konstruktor głównego okna
+     * @param reader Wskaźnik do czytnika danych z czujników
+     * @param parent Wskaźnik do widgetu nadrzędnego
      */
     explicit MainWindow(SensorReader* reader, QWidget *parent = nullptr);
-
-    /**
-     * @brief Destruktor klasy MainWindow.
-     */
     ~MainWindow();
 
 private slots:
     /**
-     * @brief Aktualizuje dane z czujników i wyświetla je w interfejsie.
+     * @brief Aktualizuje interfejs danymi z czujników
      */
     void updateSensorData();
 
     /**
-     * @brief Ładuje dane historyczne.
+     * @brief Wczytuje i wyświetla dane historyczne
      */
     void loadHistoricalData();
 
     /**
-     * @brief Obsługuje zmianę zakresu Time Machine.
-     * @param id Identyfikator wybranego zakresu.
+     * @brief Obsługuje zmianę zakresu czasu na wykresie
+     * @param id Nowy zakres czasu w godzinach
      */
     void onTimeMachineChanged(int id);
 
 private:
-    // Widgety i logika wykresu
+    /** @brief Komponenty wykresu */
     QComboBox* chartSelector;
     QtCharts::QChart* chart;
     QtCharts::QChartView* chartView;
@@ -69,30 +73,32 @@ private:
     QtCharts::QLineSeries* temperatureSeries;
     QtCharts::QLineSeries* humiditySeries;
     QtCharts::QLineSeries* radiationDoseSeries;
+
+    /** @brief Podstawowe komponenty */
     QTimer* timer;
     SensorReader* sensorReader;
     SensorDataLogger logger;
 
-    // Etykiety do panelu wysepek
-    QLabel* co2Label;
-    QLabel* co2TempLabel;
-    QLabel* co2HumLabel;
-    QLabel* pm1Label;
-    QLabel* pm25Label;
-    QLabel* pm10Label;
-    QLabel* radiationLabel;
-    QLabel* radiationDoseLabel;
+    /** @brief Pola wyświetlające pomiary */
+    QLineEdit* co2Label;
+    QLineEdit* co2TempLabel;
+    QLineEdit* co2HumLabel;
+    QLineEdit* pm1Label;
+    QLineEdit* pm25Label;
+    QLineEdit* pm10Label;
+    QLineEdit* radiationLabel;
+    QLineEdit* radiationDoseLabel;
 
-    // Etykiety do interpretacji
+    /** @brief Etykiety statusu */
     QLabel* co2StatusLabel;
     QLabel* pmStatusLabel;
     QLabel* radiationStatusLabel;
 
-    // Ramki (opcjonalnie, jeśli chcesz mieć do nich dostęp)
+    /** @brief Kontenery interfejsu */
     QFrame* sensorDataFrame;
     QFrame* interpretationFrame;
 
-    // Time Machine controls
+    /** @brief Kontrolki wyboru zakresu czasu */
     QButtonGroup* timeMachineGroup;
     QRadioButton* hour1Button;
     QRadioButton* hour2Button;
@@ -103,16 +109,28 @@ private:
     QRadioButton* hour48Button;
     QRadioButton* hour78Button;
 
-    int timeMachineHours;  // Zastąp stałą TIME_MACHINE_HOURS zmienną
+    int timeMachineHours;      ///< Aktualny zakres czasu w godzinach
+    QDateTime chartStartTime;   ///< Początek zakresu wykresu
 
-    QDateTime chartStartTime;  // Początek zakresu wykresu
-
-    void updateInterfaceTexts();
-    void updateChartTitles();
-    void changeLanguage(const QString &language);
-
+    /** @brief Komponenty obsługi języków */
     QComboBox* languageSelector;
     QTranslator translator;
+
+    /**
+     * @brief Aktualizuje teksty interfejsu po zmianie języka
+     */
+    void updateInterfaceTexts();
+
+    /**
+     * @brief Aktualizuje tytuły wykresów
+     */
+    void updateChartTitles();
+
+    /**
+     * @brief Zmienia język interfejsu
+     * @param language Kod języka ("pl" lub "en")
+     */
+    void changeLanguage(const QString &language);
 };
 
 #endif

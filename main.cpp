@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief Główna funkcja programu.
+ * @brief Program monitorujący dane z czujników środowiskowych.
  */
 
 #include <iostream>
@@ -18,10 +18,27 @@
 #include <QLocale>
 #include "MainWindow.h"
 
+// Definicje kolorów
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define CLEAR   "\033[2J\033[1;1H"
+
 /**
- * @brief Wyświetla pasek ładowania w terminalu.
+ * @brief Wyświetla status inicjalizacji systemu.
  * 
+ * @param portOpen Status portu szeregowego.
+ * @param co2Ready Status czujnika CO2.
+ * @param pmReady Status czujnika pyłu zawieszonego.
+ * @param radReady Status czujnika promieniowania.
  */
+void printInitStatus(bool portOpen, bool co2Ready, bool pmReady, bool radReady) {
+    std::cout << CLEAR;
+    std::cout << "[Port szeregowy]: " << (portOpen ? GREEN "OK" : RED "ERROR") << RESET << std::endl;
+    std::cout << "[SCD30 CO2]: " << (co2Ready ? GREEN "OK" : RED "WAITING") << RESET << std::endl;
+    std::cout << "[PMS7003]: " << (pmReady ? GREEN "OK" : RED "WAITING") << RESET << std::endl;
+    std::cout << "[RAD]: " << (radReady ? GREEN "OK" : RED "WAITING") << RESET << std::endl;
+}
 
 /**
  * @brief Główna funkcja programu.
@@ -33,36 +50,63 @@
  * @return int Kod wyjścia programu.
  */
 int main(int argc, char *argv[]) {
-
     const char* portname = "/dev/ttyUSB0";
     SensorReader reader(portname);
-
-    // Inicjalizacja czujników – czekaj aż CO2 przestanie być -1
-    std::cout << "Inicjalizacja czujników... Proszę czekać (ok. 20 sekund)..." << std::endl;
-    int timeout = 45; // maksymalnie 30 prób (ok. 30 sekund)
-    bool initialized = false;
-    if(reader.openPort() == false) {
-        std::cerr << "Nie można otworzyć portu szeregowego!" << std::endl;
+    
+    std::cout << "Start..." << std::endl;
+    bool portOpen = false;
+    bool co2Ready = false;
+    bool pmReady = false;
+    bool radReady = false;
+    
+    // Pierwszy status - wszystko czerwone
+    printInitStatus(portOpen, co2Ready, pmReady, radReady);
+    
+    // Próba otwarcia portu
+    if(reader.openPort()) {
+        portOpen = true;
+        printInitStatus(portOpen, co2Ready, pmReady, radReady);
+    } else {
+        std::cerr << RED "\nBłąd: Nie można otworzyć portu szeregowego!" RESET << std::endl;
         return 1;
     }
-    else{
-        std::cout << "Port szeregowy otwarty pomyślnie." << std::endl;
-    }
+    
+    // Czekaj na inicjalizację czujników
+    int timeout = 45;
+    bool initialized = false;
+    
     for (int i = 0; i < timeout; ++i) {
         if (reader.readData()) {
             SensorData data = reader.getData();
-            if (data.co2 != -1) {
+            
+            if (data.co2 != -1 && !co2Ready) {
+                co2Ready = true;
+                printInitStatus(portOpen, co2Ready, pmReady, radReady);
+            }
+            if (data.pm1 != -1 && !pmReady) {
+                pmReady = true;
+                printInitStatus(portOpen, co2Ready, pmReady, radReady);
+            }
+            if (data.radiation != -1 && !radReady) {
+                radReady = true;
+                printInitStatus(portOpen, co2Ready, pmReady, radReady);
+            }
+            
+            if (co2Ready && pmReady && radReady) {
                 initialized = true;
                 break;
             }
         }
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
+
     if (!initialized) {
-        std::cout << "Nie udało się zainicjalizować czujników (brak odczytu CO2)!" << std::endl;
+        std::cout << RED "\nBłąd: Nie udało się zainicjalizować wszystkich czujników!" RESET << std::endl;
         return 2;
     }
-    std::cout << "Czujniki zainicjalizowane. Uruchamianie aplikacji..." << std::endl;
+
+    std::cout << GREEN "\nAll ok...Qt start" RESET << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(2));
 
     QApplication app(argc, argv);
 
