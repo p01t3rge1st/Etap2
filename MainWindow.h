@@ -9,6 +9,8 @@
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QValueAxis>
 #include <QtCharts/QDateTimeAxis>
+#include <QButtonGroup>
+#include <QRadioButton>
 #include "SensorReader.h"
 #include "SensorDataLogger.h"
 
@@ -40,6 +42,17 @@ private slots:
      */
     void updateSensorData();
 
+    /**
+     * @brief Ładuje dane historyczne.
+     */
+    void loadHistoricalData();
+
+    /**
+     * @brief Obsługuje zmianę zakresu Time Machine.
+     * @param id Identyfikator wybranego zakresu.
+     */
+    void onTimeMachineChanged(int id);
+
 private:
     // Widgety i logika wykresu
     QComboBox* chartSelector;
@@ -52,6 +65,9 @@ private:
     QtCharts::QLineSeries* pm25Series;
     QtCharts::QLineSeries* pm10Series;
     QtCharts::QLineSeries* radiationSeries;
+    QtCharts::QLineSeries* temperatureSeries;
+    QtCharts::QLineSeries* humiditySeries;
+    QtCharts::QLineSeries* radiationDoseSeries;
     QTimer* timer;
     SensorReader* sensorReader;
     SensorDataLogger logger;
@@ -74,6 +90,21 @@ private:
     // Ramki (opcjonalnie, jeśli chcesz mieć do nich dostęp)
     QFrame* sensorDataFrame;
     QFrame* interpretationFrame;
+
+    // Time Machine controls
+    QButtonGroup* timeMachineGroup;
+    QRadioButton* hour1Button;
+    QRadioButton* hour2Button;
+    QRadioButton* hour4Button;
+    QRadioButton* hour8Button;
+    QRadioButton* hour12Button;
+    QRadioButton* hour24Button;
+    QRadioButton* hour48Button;
+    QRadioButton* hour78Button;
+
+    int timeMachineHours;  // Zastąp stałą TIME_MACHINE_HOURS zmienną
+
+    QDateTime chartStartTime;  // Początek zakresu wykresu
 };
 
 #endif
