@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>System Monitorowania Czujników: Plik źródłowy MainWindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">System Monitorowania Czujników
+   </div>
+   <div id="projectbrief">System monitorowania danych z czujników środowiskowych</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MainWindow.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="MainWindow_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MAINWINDOW_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QComboBox&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QtCharts/QChartView&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtCharts/QLineSeries&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QtCharts/QValueAxis&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QtCharts/QDateTimeAxis&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QButtonGroup&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QRadioButton&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QTranslator&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="SensorReader_8h.html">SensorReader.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="SensorDataLogger_8h.html">SensorDataLogger.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classMainWindow.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="classMainWindow.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_OBJECT</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classMainWindow.html#a87a1f1b12250799459255fda63778052">MainWindow</a>(<a class="code hl_class" href="classSensorReader.html">SensorReader</a>* reader, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classMainWindow.html#a2e5dc7b198af26e0ecd559fb5ca6cc5d">updateSensorData</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classMainWindow.html#aaf30da4e1a1a3b097f20cdfaa532eff4">loadHistoricalData</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classMainWindow.html#a392e2293bb3029e841ef8cc11a16b059">onTimeMachineChanged</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classMainWindow.html#a1f374fc687c402c67330728334069e1b">   63</a></span>    QComboBox* <a class="code hl_variable" href="classMainWindow.html#a1f374fc687c402c67330728334069e1b">chartSelector</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classMainWindow.html#a6743baa254d0125c329c4f2bef3bb866">   64</a></span>    QtCharts::QChart* <a class="code hl_variable" href="classMainWindow.html#a6743baa254d0125c329c4f2bef3bb866">chart</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classMainWindow.html#aa8cf119eb52ae432d2bd2f5b55750de1">   65</a></span>    QtCharts::QChartView* <a class="code hl_variable" href="classMainWindow.html#aa8cf119eb52ae432d2bd2f5b55750de1">chartView</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classMainWindow.html#a39e350c55fc0ec85cff76342161d86be">   66</a></span>    QtCharts::QDateTimeAxis* <a class="code hl_variable" href="classMainWindow.html#a39e350c55fc0ec85cff76342161d86be">axisX</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classMainWindow.html#aa53ae2baadd07e2bbe0cbcfd0cf27dbf">   67</a></span>    QtCharts::QValueAxis* <a class="code hl_variable" href="classMainWindow.html#aa53ae2baadd07e2bbe0cbcfd0cf27dbf">axisY</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classMainWindow.html#a3f441ed01f4b3420cdb556046c3923be">   68</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#a3f441ed01f4b3420cdb556046c3923be">co2Series</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classMainWindow.html#a349c3b57faa5e3111599e20b57203359">   69</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#a349c3b57faa5e3111599e20b57203359">pm1Series</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classMainWindow.html#ac2286fb5d9a0e8e4b1bc23a26dc3bd3f">   70</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#ac2286fb5d9a0e8e4b1bc23a26dc3bd3f">pm25Series</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classMainWindow.html#aec3705d6726026aa720dfd05d414f97a">   71</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#aec3705d6726026aa720dfd05d414f97a">pm10Series</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classMainWindow.html#a4c211e23002dbc4c6a4cf5d40148fd2c">   72</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#a4c211e23002dbc4c6a4cf5d40148fd2c">radiationSeries</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classMainWindow.html#aa03bb901ea7cbd58fb3cbfc6bc11cf55">   73</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#aa03bb901ea7cbd58fb3cbfc6bc11cf55">temperatureSeries</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classMainWindow.html#a723588cef6ebd394a253bb05b2c0087b">   74</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#a723588cef6ebd394a253bb05b2c0087b">humiditySeries</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classMainWindow.html#aaec3095696451b86ee94346f2613f5cc">   75</a></span>    QtCharts::QLineSeries* <a class="code hl_variable" href="classMainWindow.html#aaec3095696451b86ee94346f2613f5cc">radiationDoseSeries</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classMainWindow.html#a356578805ed1248a7f2807434cb0e5ee">   78</a></span>    QTimer* <a class="code hl_variable" href="classMainWindow.html#a356578805ed1248a7f2807434cb0e5ee">timer</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classMainWindow.html#abd962b3c08fd77f6af8840c9fad9380c">   79</a></span>    <a class="code hl_class" href="classSensorReader.html">SensorReader</a>* <a class="code hl_variable" href="classMainWindow.html#abd962b3c08fd77f6af8840c9fad9380c">sensorReader</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classMainWindow.html#a153dde7daa20117fae0014b0f320b0b1">   80</a></span>    <a class="code hl_class" href="classSensorDataLogger.html">SensorDataLogger</a> <a class="code hl_variable" href="classMainWindow.html#a153dde7daa20117fae0014b0f320b0b1">logger</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classMainWindow.html#a43e1877abcc5674c6abeaa06f51f0e9b">   83</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#a43e1877abcc5674c6abeaa06f51f0e9b">co2Label</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classMainWindow.html#a1381d00c3189554fc80656f5a22c82f2">   84</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#a1381d00c3189554fc80656f5a22c82f2">co2TempLabel</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classMainWindow.html#a721d5be1566c8200ece55112bb3b597d">   85</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#a721d5be1566c8200ece55112bb3b597d">co2HumLabel</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classMainWindow.html#adef797293372990958193ee7899ac93f">   86</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#adef797293372990958193ee7899ac93f">pm1Label</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classMainWindow.html#a1ab2d3578fe1cb1a975f1e5a8ec415a0">   87</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#a1ab2d3578fe1cb1a975f1e5a8ec415a0">pm25Label</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classMainWindow.html#ab30f8af70bc84a4e56fe1dc450f4dd2b">   88</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#ab30f8af70bc84a4e56fe1dc450f4dd2b">pm10Label</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classMainWindow.html#ab8ca484526c571403d029aeaa75e6427">   89</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#ab8ca484526c571403d029aeaa75e6427">radiationLabel</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classMainWindow.html#a686e05093351bd0c45fa60cda8070b13">   90</a></span>    QLineEdit* <a class="code hl_variable" href="classMainWindow.html#a686e05093351bd0c45fa60cda8070b13">radiationDoseLabel</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classMainWindow.html#aa0d573a8981cf69c771704a600c1d343">   93</a></span>    QLabel* <a class="code hl_variable" href="classMainWindow.html#aa0d573a8981cf69c771704a600c1d343">co2StatusLabel</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classMainWindow.html#aba1e70577afe7cc912ede6387722056d">   94</a></span>    QLabel* <a class="code hl_variable" href="classMainWindow.html#aba1e70577afe7cc912ede6387722056d">pmStatusLabel</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classMainWindow.html#a4cd27ff37e219f9728698e056da8afc6">   95</a></span>    QLabel* <a class="code hl_variable" href="classMainWindow.html#a4cd27ff37e219f9728698e056da8afc6">radiationStatusLabel</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classMainWindow.html#a1f192e91c85da80a77d8d0d5f8c41802">   98</a></span>    QFrame* <a class="code hl_variable" href="classMainWindow.html#a1f192e91c85da80a77d8d0d5f8c41802">sensorDataFrame</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classMainWindow.html#a2bd04a297fbb80636c9b3d6755768c77">   99</a></span>    QFrame* <a class="code hl_variable" href="classMainWindow.html#a2bd04a297fbb80636c9b3d6755768c77">interpretationFrame</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classMainWindow.html#ae2d3f55c0d919823be32d5b5a1279304">  102</a></span>    QButtonGroup* <a class="code hl_variable" href="classMainWindow.html#ae2d3f55c0d919823be32d5b5a1279304">timeMachineGroup</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classMainWindow.html#a363f285fcb8edec45045d3d5db2b70fc">  103</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#a363f285fcb8edec45045d3d5db2b70fc">hour1Button</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classMainWindow.html#a5cb65a3ca4cc579fac51a5aeca519ea3">  104</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#a5cb65a3ca4cc579fac51a5aeca519ea3">hour2Button</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classMainWindow.html#ae8df70663932062796d898c505363b6e">  105</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#ae8df70663932062796d898c505363b6e">hour4Button</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classMainWindow.html#ac97197f1799225348fa932db904c9444">  106</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#ac97197f1799225348fa932db904c9444">hour8Button</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classMainWindow.html#ad44060ffcf94bf06215b3b9011b16072">  107</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#ad44060ffcf94bf06215b3b9011b16072">hour12Button</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classMainWindow.html#aad7e108c26dde97af0bd7e1407f713bb">  108</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#aad7e108c26dde97af0bd7e1407f713bb">hour24Button</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classMainWindow.html#a7e6dc054ea78fbf4cef69db5e7d77b55">  109</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#a7e6dc054ea78fbf4cef69db5e7d77b55">hour48Button</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classMainWindow.html#a7b0194d3c364ba33815ebc31dd563bd6">  110</a></span>    QRadioButton* <a class="code hl_variable" href="classMainWindow.html#a7b0194d3c364ba33815ebc31dd563bd6">hour78Button</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classMainWindow.html#a916799760788361dfc8c072b1b551bea">  112</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classMainWindow.html#a916799760788361dfc8c072b1b551bea">timeMachineHours</a>;      </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classMainWindow.html#af5c0498df5769d4ec484223f437b5dad">  113</a></span>    QDateTime <a class="code hl_variable" href="classMainWindow.html#af5c0498df5769d4ec484223f437b5dad">chartStartTime</a>;   </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classMainWindow.html#aa9a1674cdd8f52bb30b208f4cbf3f2df">  116</a></span>    QComboBox* <a class="code hl_variable" href="classMainWindow.html#aa9a1674cdd8f52bb30b208f4cbf3f2df">languageSelector</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classMainWindow.html#a8e829b3590ccdeeada42625415afc6f3">  117</a></span>    QTranslator <a class="code hl_variable" href="classMainWindow.html#a8e829b3590ccdeeada42625415afc6f3">translator</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMainWindow.html#a6c022bdf4b08d56f3ba53484c0a4cbb2">updateInterfaceTexts</a>();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMainWindow.html#accc74af8b6dbd54ee872a789986ba72f">updateChartTitles</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMainWindow.html#a9e0dd54aecbe2e3af6306c3a005d43d2">changeLanguage</a>(<span class="keyword">const</span> QString &amp;language);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>};</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aSensorDataLogger_8h_html"><div class="ttname"><a href="SensorDataLogger_8h.html">SensorDataLogger.h</a></div><div class="ttdoc">Deklaracja klasy SensorDataLogger do zapisu danych z czujników do pliku CSV.</div></div>
+<div class="ttc" id="aSensorReader_8h_html"><div class="ttname"><a href="SensorReader_8h.html">SensorReader.h</a></div></div>
+<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdoc">Główne okno aplikacji wyświetlające dane z czujników i wykresy.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:32</div></div>
+<div class="ttc" id="aclassMainWindow_html_a1381d00c3189554fc80656f5a22c82f2"><div class="ttname"><a href="classMainWindow.html#a1381d00c3189554fc80656f5a22c82f2">MainWindow::co2TempLabel</a></div><div class="ttdeci">QLineEdit * co2TempLabel</div><div class="ttdef"><b>Definition:</b> MainWindow.h:84</div></div>
+<div class="ttc" id="aclassMainWindow_html_a153dde7daa20117fae0014b0f320b0b1"><div class="ttname"><a href="classMainWindow.html#a153dde7daa20117fae0014b0f320b0b1">MainWindow::logger</a></div><div class="ttdeci">SensorDataLogger logger</div><div class="ttdef"><b>Definition:</b> MainWindow.h:80</div></div>
+<div class="ttc" id="aclassMainWindow_html_a1ab2d3578fe1cb1a975f1e5a8ec415a0"><div class="ttname"><a href="classMainWindow.html#a1ab2d3578fe1cb1a975f1e5a8ec415a0">MainWindow::pm25Label</a></div><div class="ttdeci">QLineEdit * pm25Label</div><div class="ttdef"><b>Definition:</b> MainWindow.h:87</div></div>
+<div class="ttc" id="aclassMainWindow_html_a1f192e91c85da80a77d8d0d5f8c41802"><div class="ttname"><a href="classMainWindow.html#a1f192e91c85da80a77d8d0d5f8c41802">MainWindow::sensorDataFrame</a></div><div class="ttdeci">QFrame * sensorDataFrame</div><div class="ttdoc">Kontenery interfejsu.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:98</div></div>
+<div class="ttc" id="aclassMainWindow_html_a1f374fc687c402c67330728334069e1b"><div class="ttname"><a href="classMainWindow.html#a1f374fc687c402c67330728334069e1b">MainWindow::chartSelector</a></div><div class="ttdeci">QComboBox * chartSelector</div><div class="ttdoc">Komponenty wykresu.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:63</div></div>
+<div class="ttc" id="aclassMainWindow_html_a2bd04a297fbb80636c9b3d6755768c77"><div class="ttname"><a href="classMainWindow.html#a2bd04a297fbb80636c9b3d6755768c77">MainWindow::interpretationFrame</a></div><div class="ttdeci">QFrame * interpretationFrame</div><div class="ttdef"><b>Definition:</b> MainWindow.h:99</div></div>
+<div class="ttc" id="aclassMainWindow_html_a2e5dc7b198af26e0ecd559fb5ca6cc5d"><div class="ttname"><a href="classMainWindow.html#a2e5dc7b198af26e0ecd559fb5ca6cc5d">MainWindow::updateSensorData</a></div><div class="ttdeci">void updateSensorData()</div><div class="ttdoc">Aktualizuje interfejs danymi z czujników.</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:356</div></div>
+<div class="ttc" id="aclassMainWindow_html_a349c3b57faa5e3111599e20b57203359"><div class="ttname"><a href="classMainWindow.html#a349c3b57faa5e3111599e20b57203359">MainWindow::pm1Series</a></div><div class="ttdeci">QtCharts::QLineSeries * pm1Series</div><div class="ttdef"><b>Definition:</b> MainWindow.h:69</div></div>
+<div class="ttc" id="aclassMainWindow_html_a356578805ed1248a7f2807434cb0e5ee"><div class="ttname"><a href="classMainWindow.html#a356578805ed1248a7f2807434cb0e5ee">MainWindow::timer</a></div><div class="ttdeci">QTimer * timer</div><div class="ttdoc">Podstawowe komponenty.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:78</div></div>
+<div class="ttc" id="aclassMainWindow_html_a363f285fcb8edec45045d3d5db2b70fc"><div class="ttname"><a href="classMainWindow.html#a363f285fcb8edec45045d3d5db2b70fc">MainWindow::hour1Button</a></div><div class="ttdeci">QRadioButton * hour1Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:103</div></div>
+<div class="ttc" id="aclassMainWindow_html_a392e2293bb3029e841ef8cc11a16b059"><div class="ttname"><a href="classMainWindow.html#a392e2293bb3029e841ef8cc11a16b059">MainWindow::onTimeMachineChanged</a></div><div class="ttdeci">void onTimeMachineChanged(int id)</div><div class="ttdoc">Obsługuje zmianę zakresu czasu na wykresie.</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:512</div></div>
+<div class="ttc" id="aclassMainWindow_html_a39e350c55fc0ec85cff76342161d86be"><div class="ttname"><a href="classMainWindow.html#a39e350c55fc0ec85cff76342161d86be">MainWindow::axisX</a></div><div class="ttdeci">QtCharts::QDateTimeAxis * axisX</div><div class="ttdef"><b>Definition:</b> MainWindow.h:66</div></div>
+<div class="ttc" id="aclassMainWindow_html_a3f441ed01f4b3420cdb556046c3923be"><div class="ttname"><a href="classMainWindow.html#a3f441ed01f4b3420cdb556046c3923be">MainWindow::co2Series</a></div><div class="ttdeci">QtCharts::QLineSeries * co2Series</div><div class="ttdef"><b>Definition:</b> MainWindow.h:68</div></div>
+<div class="ttc" id="aclassMainWindow_html_a43e1877abcc5674c6abeaa06f51f0e9b"><div class="ttname"><a href="classMainWindow.html#a43e1877abcc5674c6abeaa06f51f0e9b">MainWindow::co2Label</a></div><div class="ttdeci">QLineEdit * co2Label</div><div class="ttdoc">Pola wyświetlające pomiary.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:83</div></div>
+<div class="ttc" id="aclassMainWindow_html_a4c211e23002dbc4c6a4cf5d40148fd2c"><div class="ttname"><a href="classMainWindow.html#a4c211e23002dbc4c6a4cf5d40148fd2c">MainWindow::radiationSeries</a></div><div class="ttdeci">QtCharts::QLineSeries * radiationSeries</div><div class="ttdef"><b>Definition:</b> MainWindow.h:72</div></div>
+<div class="ttc" id="aclassMainWindow_html_a4cd27ff37e219f9728698e056da8afc6"><div class="ttname"><a href="classMainWindow.html#a4cd27ff37e219f9728698e056da8afc6">MainWindow::radiationStatusLabel</a></div><div class="ttdeci">QLabel * radiationStatusLabel</div><div class="ttdef"><b>Definition:</b> MainWindow.h:95</div></div>
+<div class="ttc" id="aclassMainWindow_html_a5cb65a3ca4cc579fac51a5aeca519ea3"><div class="ttname"><a href="classMainWindow.html#a5cb65a3ca4cc579fac51a5aeca519ea3">MainWindow::hour2Button</a></div><div class="ttdeci">QRadioButton * hour2Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:104</div></div>
+<div class="ttc" id="aclassMainWindow_html_a6743baa254d0125c329c4f2bef3bb866"><div class="ttname"><a href="classMainWindow.html#a6743baa254d0125c329c4f2bef3bb866">MainWindow::chart</a></div><div class="ttdeci">QtCharts::QChart * chart</div><div class="ttdef"><b>Definition:</b> MainWindow.h:64</div></div>
+<div class="ttc" id="aclassMainWindow_html_a686e05093351bd0c45fa60cda8070b13"><div class="ttname"><a href="classMainWindow.html#a686e05093351bd0c45fa60cda8070b13">MainWindow::radiationDoseLabel</a></div><div class="ttdeci">QLineEdit * radiationDoseLabel</div><div class="ttdef"><b>Definition:</b> MainWindow.h:90</div></div>
+<div class="ttc" id="aclassMainWindow_html_a6c022bdf4b08d56f3ba53484c0a4cbb2"><div class="ttname"><a href="classMainWindow.html#a6c022bdf4b08d56f3ba53484c0a4cbb2">MainWindow::updateInterfaceTexts</a></div><div class="ttdeci">void updateInterfaceTexts()</div><div class="ttdoc">Aktualizuje teksty interfejsu po zmianie języka.</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:541</div></div>
+<div class="ttc" id="aclassMainWindow_html_a721d5be1566c8200ece55112bb3b597d"><div class="ttname"><a href="classMainWindow.html#a721d5be1566c8200ece55112bb3b597d">MainWindow::co2HumLabel</a></div><div class="ttdeci">QLineEdit * co2HumLabel</div><div class="ttdef"><b>Definition:</b> MainWindow.h:85</div></div>
+<div class="ttc" id="aclassMainWindow_html_a723588cef6ebd394a253bb05b2c0087b"><div class="ttname"><a href="classMainWindow.html#a723588cef6ebd394a253bb05b2c0087b">MainWindow::humiditySeries</a></div><div class="ttdeci">QtCharts::QLineSeries * humiditySeries</div><div class="ttdef"><b>Definition:</b> MainWindow.h:74</div></div>
+<div class="ttc" id="aclassMainWindow_html_a7b0194d3c364ba33815ebc31dd563bd6"><div class="ttname"><a href="classMainWindow.html#a7b0194d3c364ba33815ebc31dd563bd6">MainWindow::hour78Button</a></div><div class="ttdeci">QRadioButton * hour78Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:110</div></div>
+<div class="ttc" id="aclassMainWindow_html_a7e6dc054ea78fbf4cef69db5e7d77b55"><div class="ttname"><a href="classMainWindow.html#a7e6dc054ea78fbf4cef69db5e7d77b55">MainWindow::hour48Button</a></div><div class="ttdeci">QRadioButton * hour48Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:109</div></div>
+<div class="ttc" id="aclassMainWindow_html_a87a1f1b12250799459255fda63778052"><div class="ttname"><a href="classMainWindow.html#a87a1f1b12250799459255fda63778052">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(SensorReader *reader, QWidget *parent=nullptr)</div><div class="ttdoc">Konstruktor głównego okna.</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:52</div></div>
+<div class="ttc" id="aclassMainWindow_html_a8e829b3590ccdeeada42625415afc6f3"><div class="ttname"><a href="classMainWindow.html#a8e829b3590ccdeeada42625415afc6f3">MainWindow::translator</a></div><div class="ttdeci">QTranslator translator</div><div class="ttdef"><b>Definition:</b> MainWindow.h:117</div></div>
+<div class="ttc" id="aclassMainWindow_html_a916799760788361dfc8c072b1b551bea"><div class="ttname"><a href="classMainWindow.html#a916799760788361dfc8c072b1b551bea">MainWindow::timeMachineHours</a></div><div class="ttdeci">int timeMachineHours</div><div class="ttdoc">Aktualny zakres czasu w godzinach.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:112</div></div>
+<div class="ttc" id="aclassMainWindow_html_a9e0dd54aecbe2e3af6306c3a005d43d2"><div class="ttname"><a href="classMainWindow.html#a9e0dd54aecbe2e3af6306c3a005d43d2">MainWindow::changeLanguage</a></div><div class="ttdeci">void changeLanguage(const QString &amp;language)</div><div class="ttdoc">Zmienia język interfejsu.</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:524</div></div>
+<div class="ttc" id="aclassMainWindow_html_aa03bb901ea7cbd58fb3cbfc6bc11cf55"><div class="ttname"><a href="classMainWindow.html#aa03bb901ea7cbd58fb3cbfc6bc11cf55">MainWindow::temperatureSeries</a></div><div class="ttdeci">QtCharts::QLineSeries * temperatureSeries</div><div class="ttdef"><b>Definition:</b> MainWindow.h:73</div></div>
+<div class="ttc" id="aclassMainWindow_html_aa0d573a8981cf69c771704a600c1d343"><div class="ttname"><a href="classMainWindow.html#aa0d573a8981cf69c771704a600c1d343">MainWindow::co2StatusLabel</a></div><div class="ttdeci">QLabel * co2StatusLabel</div><div class="ttdoc">Etykiety statusu.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:93</div></div>
+<div class="ttc" id="aclassMainWindow_html_aa53ae2baadd07e2bbe0cbcfd0cf27dbf"><div class="ttname"><a href="classMainWindow.html#aa53ae2baadd07e2bbe0cbcfd0cf27dbf">MainWindow::axisY</a></div><div class="ttdeci">QtCharts::QValueAxis * axisY</div><div class="ttdef"><b>Definition:</b> MainWindow.h:67</div></div>
+<div class="ttc" id="aclassMainWindow_html_aa8cf119eb52ae432d2bd2f5b55750de1"><div class="ttname"><a href="classMainWindow.html#aa8cf119eb52ae432d2bd2f5b55750de1">MainWindow::chartView</a></div><div class="ttdeci">QtCharts::QChartView * chartView</div><div class="ttdef"><b>Definition:</b> MainWindow.h:65</div></div>
+<div class="ttc" id="aclassMainWindow_html_aa9a1674cdd8f52bb30b208f4cbf3f2df"><div class="ttname"><a href="classMainWindow.html#aa9a1674cdd8f52bb30b208f4cbf3f2df">MainWindow::languageSelector</a></div><div class="ttdeci">QComboBox * languageSelector</div><div class="ttdoc">Komponenty obsługi języków.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:116</div></div>
+<div class="ttc" id="aclassMainWindow_html_aad7e108c26dde97af0bd7e1407f713bb"><div class="ttname"><a href="classMainWindow.html#aad7e108c26dde97af0bd7e1407f713bb">MainWindow::hour24Button</a></div><div class="ttdeci">QRadioButton * hour24Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:108</div></div>
+<div class="ttc" id="aclassMainWindow_html_aaec3095696451b86ee94346f2613f5cc"><div class="ttname"><a href="classMainWindow.html#aaec3095696451b86ee94346f2613f5cc">MainWindow::radiationDoseSeries</a></div><div class="ttdeci">QtCharts::QLineSeries * radiationDoseSeries</div><div class="ttdef"><b>Definition:</b> MainWindow.h:75</div></div>
+<div class="ttc" id="aclassMainWindow_html_aaf30da4e1a1a3b097f20cdfaa532eff4"><div class="ttname"><a href="classMainWindow.html#aaf30da4e1a1a3b097f20cdfaa532eff4">MainWindow::loadHistoricalData</a></div><div class="ttdeci">void loadHistoricalData()</div><div class="ttdoc">Wczytuje i wyświetla dane historyczne.</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:418</div></div>
+<div class="ttc" id="aclassMainWindow_html_ab30f8af70bc84a4e56fe1dc450f4dd2b"><div class="ttname"><a href="classMainWindow.html#ab30f8af70bc84a4e56fe1dc450f4dd2b">MainWindow::pm10Label</a></div><div class="ttdeci">QLineEdit * pm10Label</div><div class="ttdef"><b>Definition:</b> MainWindow.h:88</div></div>
+<div class="ttc" id="aclassMainWindow_html_ab8ca484526c571403d029aeaa75e6427"><div class="ttname"><a href="classMainWindow.html#ab8ca484526c571403d029aeaa75e6427">MainWindow::radiationLabel</a></div><div class="ttdeci">QLineEdit * radiationLabel</div><div class="ttdef"><b>Definition:</b> MainWindow.h:89</div></div>
+<div class="ttc" id="aclassMainWindow_html_aba1e70577afe7cc912ede6387722056d"><div class="ttname"><a href="classMainWindow.html#aba1e70577afe7cc912ede6387722056d">MainWindow::pmStatusLabel</a></div><div class="ttdeci">QLabel * pmStatusLabel</div><div class="ttdef"><b>Definition:</b> MainWindow.h:94</div></div>
+<div class="ttc" id="aclassMainWindow_html_abd962b3c08fd77f6af8840c9fad9380c"><div class="ttname"><a href="classMainWindow.html#abd962b3c08fd77f6af8840c9fad9380c">MainWindow::sensorReader</a></div><div class="ttdeci">SensorReader * sensorReader</div><div class="ttdef"><b>Definition:</b> MainWindow.h:79</div></div>
+<div class="ttc" id="aclassMainWindow_html_ac2286fb5d9a0e8e4b1bc23a26dc3bd3f"><div class="ttname"><a href="classMainWindow.html#ac2286fb5d9a0e8e4b1bc23a26dc3bd3f">MainWindow::pm25Series</a></div><div class="ttdeci">QtCharts::QLineSeries * pm25Series</div><div class="ttdef"><b>Definition:</b> MainWindow.h:70</div></div>
+<div class="ttc" id="aclassMainWindow_html_ac97197f1799225348fa932db904c9444"><div class="ttname"><a href="classMainWindow.html#ac97197f1799225348fa932db904c9444">MainWindow::hour8Button</a></div><div class="ttdeci">QRadioButton * hour8Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:106</div></div>
+<div class="ttc" id="aclassMainWindow_html_accc74af8b6dbd54ee872a789986ba72f"><div class="ttname"><a href="classMainWindow.html#accc74af8b6dbd54ee872a789986ba72f">MainWindow::updateChartTitles</a></div><div class="ttdeci">void updateChartTitles()</div><div class="ttdoc">Aktualizuje tytuły wykresów.</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:604</div></div>
+<div class="ttc" id="aclassMainWindow_html_ad44060ffcf94bf06215b3b9011b16072"><div class="ttname"><a href="classMainWindow.html#ad44060ffcf94bf06215b3b9011b16072">MainWindow::hour12Button</a></div><div class="ttdeci">QRadioButton * hour12Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:107</div></div>
+<div class="ttc" id="aclassMainWindow_html_adef797293372990958193ee7899ac93f"><div class="ttname"><a href="classMainWindow.html#adef797293372990958193ee7899ac93f">MainWindow::pm1Label</a></div><div class="ttdeci">QLineEdit * pm1Label</div><div class="ttdef"><b>Definition:</b> MainWindow.h:86</div></div>
+<div class="ttc" id="aclassMainWindow_html_ae2d3f55c0d919823be32d5b5a1279304"><div class="ttname"><a href="classMainWindow.html#ae2d3f55c0d919823be32d5b5a1279304">MainWindow::timeMachineGroup</a></div><div class="ttdeci">QButtonGroup * timeMachineGroup</div><div class="ttdoc">Kontrolki wyboru zakresu czasu.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:102</div></div>
+<div class="ttc" id="aclassMainWindow_html_ae8df70663932062796d898c505363b6e"><div class="ttname"><a href="classMainWindow.html#ae8df70663932062796d898c505363b6e">MainWindow::hour4Button</a></div><div class="ttdeci">QRadioButton * hour4Button</div><div class="ttdef"><b>Definition:</b> MainWindow.h:105</div></div>
+<div class="ttc" id="aclassMainWindow_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:349</div></div>
+<div class="ttc" id="aclassMainWindow_html_aec3705d6726026aa720dfd05d414f97a"><div class="ttname"><a href="classMainWindow.html#aec3705d6726026aa720dfd05d414f97a">MainWindow::pm10Series</a></div><div class="ttdeci">QtCharts::QLineSeries * pm10Series</div><div class="ttdef"><b>Definition:</b> MainWindow.h:71</div></div>
+<div class="ttc" id="aclassMainWindow_html_af5c0498df5769d4ec484223f437b5dad"><div class="ttname"><a href="classMainWindow.html#af5c0498df5769d4ec484223f437b5dad">MainWindow::chartStartTime</a></div><div class="ttdeci">QDateTime chartStartTime</div><div class="ttdoc">Początek zakresu wykresu.</div><div class="ttdef"><b>Definition:</b> MainWindow.h:113</div></div>
+<div class="ttc" id="aclassSensorDataLogger_html"><div class="ttname"><a href="classSensorDataLogger.html">SensorDataLogger</a></div><div class="ttdoc">Klasa umożliwiająca logowanie danych z czujników do pliku CSV.</div><div class="ttdef"><b>Definition:</b> SensorDataLogger.h:20</div></div>
+<div class="ttc" id="aclassSensorReader_html"><div class="ttname"><a href="classSensorReader.html">SensorReader</a></div><div class="ttdoc">Klasa do obsługi czujników przez port szeregowy.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:29</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

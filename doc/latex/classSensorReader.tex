@@ -1,0 +1,249 @@
+\hypertarget{classSensorReader}{}\doxysection{Dokumentacja klasy Sensor\+Reader}
+\label{classSensorReader}\index{SensorReader@{SensorReader}}
+
+
+Klasa do obsługi czujników przez port szeregowy.  
+
+
+
+
+{\ttfamily \#include $<$Sensor\+Reader.\+h$>$}
+
+
+
+Diagram współpracy dla Sensor\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSensorReader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSensorReader_a6bfc52943447a48a7eab3a791bdb3b0f}{Sensor\+Reader}} (const std\+::string \&\mbox{\hyperlink{classSensorReader_a202c307c19bb8beb21f703dcf9959641}{portname}}, int \mbox{\hyperlink{classSensorReader_aaebc91f52f1d25176af61212d015b5ff}{baudrate}}=B9600)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{classSensorReader}{Sensor\+Reader}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSensorReader_aaa434a375e5b76572c2a770a9bb47e4f}{$\sim$\+Sensor\+Reader}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \mbox{\hyperlink{classSensorReader}{Sensor\+Reader}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSensorReader_a670969b9b0611931a942cb9fc887b66d}{open\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Otwiera port szeregowy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSensorReader_a7f365e79bdc97851dcdbba40f4888335}{close\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Zamyka port szeregowy. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSensorReader_a28d2ee52ececadca7d2dbdba80ae22e6}{read\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Odczytuje dane z portu szeregowego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSensorData}{Sensor\+Data}} \mbox{\hyperlink{classSensorReader_a1d6e6a16ca1726b2b563bd125fe9f15e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca ostatnio odczytane dane z czujników. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classSensorReader_a0a0ddf7eae30439740b91f9a6fc45f5d}{calculate\+CRC}} (const std\+::string \&\mbox{\hyperlink{classSensorReader_ac45e464399cee627f8e155d22ffd733d}{data}})
+\begin{DoxyCompactList}\small\item\em Oblicza wartość CRC dla danych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSensorData}{Sensor\+Data}} \mbox{\hyperlink{classSensorReader_a388472b707a086a7e0055d401c3b3e8b}{parse\+Sensor\+Data}} (const std\+::string \&raw)
+\begin{DoxyCompactList}\small\item\em Parsuje surowe dane z czujników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classSensorReader_a202c307c19bb8beb21f703dcf9959641}{portname}}
+\begin{DoxyCompactList}\small\item\em Nazwa portu szeregowego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSensorReader_aaebc91f52f1d25176af61212d015b5ff}{baudrate}}
+\begin{DoxyCompactList}\small\item\em Prędkość transmisji. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSensorReader_a00637d82d16cfaf25a9e7b7a4cefbff6}{serial\+\_\+port}}
+\begin{DoxyCompactList}\small\item\em Uchwyt do portu szeregowego. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classSensorReader_a91a682e413b5df61950b591162157518}{buffer}} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Bufor do przechowywania danych z portu szeregowego. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSensorReader_aaae035aa78b5295e55aece9cf1a306f8}{serial\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Dane odczytane z portu szeregowego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSensorData}{Sensor\+Data}} \mbox{\hyperlink{classSensorReader_ac45e464399cee627f8e155d22ffd733d}{data}}
+\begin{DoxyCompactList}\small\item\em Struktura przechowująca dane z czujników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa do obsługi czujników przez port szeregowy. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classSensorReader_a6bfc52943447a48a7eab3a791bdb3b0f}\label{classSensorReader_a6bfc52943447a48a7eab3a791bdb3b0f}} 
+\index{SensorReader@{SensorReader}!SensorReader@{SensorReader}}
+\index{SensorReader@{SensorReader}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{SensorReader()}{SensorReader()}}
+{\footnotesize\ttfamily Sensor\+Reader\+::\+Sensor\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{portname,  }\item[{int}]{baudrate = {\ttfamily B9600} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \mbox{\hyperlink{classSensorReader}{Sensor\+Reader}}. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em portname} & Nazwa portu szeregowego. \\
+\hline
+{\em baudrate} & Prędkość transmisji (domyślnie B9600). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSensorReader_aaa434a375e5b76572c2a770a9bb47e4f}\label{classSensorReader_aaa434a375e5b76572c2a770a9bb47e4f}} 
+\index{SensorReader@{SensorReader}!````~SensorReader@{$\sim$SensorReader}}
+\index{````~SensorReader@{$\sim$SensorReader}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{$\sim$SensorReader()}{~SensorReader()}}
+{\footnotesize\ttfamily Sensor\+Reader\+::$\sim$\+Sensor\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \mbox{\hyperlink{classSensorReader}{Sensor\+Reader}}. 
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classSensorReader_a0a0ddf7eae30439740b91f9a6fc45f5d}\label{classSensorReader_a0a0ddf7eae30439740b91f9a6fc45f5d}} 
+\index{SensorReader@{SensorReader}!calculateCRC@{calculateCRC}}
+\index{calculateCRC@{calculateCRC}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{calculateCRC()}{calculateCRC()}}
+{\footnotesize\ttfamily uint16\+\_\+t Sensor\+Reader\+::calculate\+CRC (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Oblicza wartość CRC dla danych. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em data} & Dane wejściowe w formie ciągu znaków. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Obliczona wartość CRC. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSensorReader_a7f365e79bdc97851dcdbba40f4888335}\label{classSensorReader_a7f365e79bdc97851dcdbba40f4888335}} 
+\index{SensorReader@{SensorReader}!closePort@{closePort}}
+\index{closePort@{closePort}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{closePort()}{closePort()}}
+{\footnotesize\ttfamily void Sensor\+Reader\+::close\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zamyka port szeregowy. 
+
+\mbox{\Hypertarget{classSensorReader_a1d6e6a16ca1726b2b563bd125fe9f15e}\label{classSensorReader_a1d6e6a16ca1726b2b563bd125fe9f15e}} 
+\index{SensorReader@{SensorReader}!getData@{getData}}
+\index{getData@{getData}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSensorData}{Sensor\+Data}} Sensor\+Reader\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Zwraca ostatnio odczytane dane z czujników. 
+
+\begin{DoxyReturn}{Zwraca}
+Struktura \mbox{\hyperlink{structSensorData}{Sensor\+Data}} zawierająca dane z czujników. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSensorReader_a670969b9b0611931a942cb9fc887b66d}\label{classSensorReader_a670969b9b0611931a942cb9fc887b66d}} 
+\index{SensorReader@{SensorReader}!openPort@{openPort}}
+\index{openPort@{openPort}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{openPort()}{openPort()}}
+{\footnotesize\ttfamily bool Sensor\+Reader\+::open\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Otwiera port szeregowy. 
+
+\begin{DoxyReturn}{Zwraca}
+true, jeśli port został otwarty pomyślnie, false w przeciwnym razie. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSensorReader_a388472b707a086a7e0055d401c3b3e8b}\label{classSensorReader_a388472b707a086a7e0055d401c3b3e8b}} 
+\index{SensorReader@{SensorReader}!parseSensorData@{parseSensorData}}
+\index{parseSensorData@{parseSensorData}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{parseSensorData()}{parseSensorData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSensorData}{Sensor\+Data}} Sensor\+Reader\+::parse\+Sensor\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parsuje surowe dane z czujników. 
+
+Parsuje surowe dane z czujników i weryfikuje CRC.
+
+
+\begin{DoxyParams}{Parametry}
+{\em raw} & Surowe dane w formie ciągu znaków. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Struktura \mbox{\hyperlink{structSensorData}{Sensor\+Data}} zawierająca sparsowane dane. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSensorReader_a28d2ee52ececadca7d2dbdba80ae22e6}\label{classSensorReader_a28d2ee52ececadca7d2dbdba80ae22e6}} 
+\index{SensorReader@{SensorReader}!readData@{readData}}
+\index{readData@{readData}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{readData()}{readData()}}
+{\footnotesize\ttfamily bool Sensor\+Reader\+::read\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Odczytuje dane z portu szeregowego. 
+
+\begin{DoxyReturn}{Zwraca}
+true, jeśli dane zostały odczytane pomyślnie, false w przeciwnym razie. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Dokumentacja pól}
+\mbox{\Hypertarget{classSensorReader_aaebc91f52f1d25176af61212d015b5ff}\label{classSensorReader_aaebc91f52f1d25176af61212d015b5ff}} 
+\index{SensorReader@{SensorReader}!baudrate@{baudrate}}
+\index{baudrate@{baudrate}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{baudrate}{baudrate}}
+{\footnotesize\ttfamily int Sensor\+Reader\+::baudrate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prędkość transmisji. 
+
+\mbox{\Hypertarget{classSensorReader_a91a682e413b5df61950b591162157518}\label{classSensorReader_a91a682e413b5df61950b591162157518}} 
+\index{SensorReader@{SensorReader}!buffer@{buffer}}
+\index{buffer@{buffer}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char Sensor\+Reader\+::buffer\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bufor do przechowywania danych z portu szeregowego. 
+
+\mbox{\Hypertarget{classSensorReader_ac45e464399cee627f8e155d22ffd733d}\label{classSensorReader_ac45e464399cee627f8e155d22ffd733d}} 
+\index{SensorReader@{SensorReader}!data@{data}}
+\index{data@{data}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSensorData}{Sensor\+Data}} Sensor\+Reader\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Struktura przechowująca dane z czujników. 
+
+\mbox{\Hypertarget{classSensorReader_a202c307c19bb8beb21f703dcf9959641}\label{classSensorReader_a202c307c19bb8beb21f703dcf9959641}} 
+\index{SensorReader@{SensorReader}!portname@{portname}}
+\index{portname@{portname}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{portname}{portname}}
+{\footnotesize\ttfamily std\+::string Sensor\+Reader\+::portname\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Nazwa portu szeregowego. 
+
+\mbox{\Hypertarget{classSensorReader_aaae035aa78b5295e55aece9cf1a306f8}\label{classSensorReader_aaae035aa78b5295e55aece9cf1a306f8}} 
+\index{SensorReader@{SensorReader}!serial\_data@{serial\_data}}
+\index{serial\_data@{serial\_data}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{serial\_data}{serial\_data}}
+{\footnotesize\ttfamily std\+::string Sensor\+Reader\+::serial\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dane odczytane z portu szeregowego. 
+
+\mbox{\Hypertarget{classSensorReader_a00637d82d16cfaf25a9e7b7a4cefbff6}\label{classSensorReader_a00637d82d16cfaf25a9e7b7a4cefbff6}} 
+\index{SensorReader@{SensorReader}!serial\_port@{serial\_port}}
+\index{serial\_port@{serial\_port}!SensorReader@{SensorReader}}
+\doxysubsubsection{\texorpdfstring{serial\_port}{serial\_port}}
+{\footnotesize\ttfamily int Sensor\+Reader\+::serial\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Uchwyt do portu szeregowego. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SensorReader_8h}{Sensor\+Reader.\+h}}\item 
+\mbox{\hyperlink{SensorReader_8cpp}{Sensor\+Reader.\+cpp}}\end{DoxyCompactItemize}

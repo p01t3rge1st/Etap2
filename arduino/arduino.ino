@@ -75,7 +75,7 @@ void loop() {
     handleSerialCommand();
   }
   
-  delay(5000);  // Delay before next cycle
+  delay(1000);  // Delay before next cycle
   readSCD30SensorData();
   readSensors();
 }

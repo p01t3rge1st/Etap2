@@ -1,0 +1,124 @@
+\hypertarget{main_8cpp}{}\doxysection{Dokumentacja pliku main.\+cpp}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Program monitorujący dane z czujników środowiskowych.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}Sensor\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$QApplication$>$}\newline
+{\ttfamily \#include $<$QTranslator$>$}\newline
+{\ttfamily \#include $<$QLocale$>$}\newline
+{\ttfamily \#include \char`\"{}Main\+Window.\+h\char`\"{}}\newline
+Wykres zależności załączania dla main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ab702106cf3b3e96750b6845ded4e0299}{RESET}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}{RED}}~\char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~\char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a611cc9b5f655508482f3d7a9751c182a}{CLEAR}}~\char`\"{}\textbackslash{}033\mbox{[}2J\textbackslash{}033\mbox{[}1;1H\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_abe51fe930b9b9821ce75e6810f2877b3}{print\+Init\+Status}} (bool port\+Open, bool co2\+Ready, bool pm\+Ready, bool rad\+Ready)
+\begin{DoxyCompactList}\small\item\em Wyświetla status inicjalizacji systemu. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Główna funkcja programu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Program monitorujący dane z czujników środowiskowych. 
+
+
+
+\doxysubsection{Dokumentacja definicji}
+\mbox{\Hypertarget{main_8cpp_a611cc9b5f655508482f3d7a9751c182a}\label{main_8cpp_a611cc9b5f655508482f3d7a9751c182a}} 
+\index{main.cpp@{main.cpp}!CLEAR@{CLEAR}}
+\index{CLEAR@{CLEAR}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CLEAR}{CLEAR}}
+{\footnotesize\ttfamily \#define CLEAR~\char`\"{}\textbackslash{}033\mbox{[}2J\textbackslash{}033\mbox{[}1;1H\char`\"{}}
+
+\mbox{\Hypertarget{main_8cpp_acfbc006ea433ad708fdee3e82996e721}\label{main_8cpp_acfbc006ea433ad708fdee3e82996e721}} 
+\index{main.cpp@{main.cpp}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily \#define GREEN~\char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}}
+
+\mbox{\Hypertarget{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}\label{main_8cpp_a8d23feea868a983c8c2b661e1e16972f}} 
+\index{main.cpp@{main.cpp}!RED@{RED}}
+\index{RED@{RED}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \#define RED~\char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}}
+
+\mbox{\Hypertarget{main_8cpp_ab702106cf3b3e96750b6845ded4e0299}\label{main_8cpp_ab702106cf3b3e96750b6845ded4e0299}} 
+\index{main.cpp@{main.cpp}!RESET@{RESET}}
+\index{RESET@{RESET}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define RESET~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Główna funkcja programu. 
+
+Inicjalizuje obiekt \mbox{\hyperlink{classSensorReader}{Sensor\+Reader}}, otwiera port szeregowy i uruchamia aplikację Qt.
+
+
+\begin{DoxyParams}{Parametry}
+{\em argc} & Liczba argumentów wiersza poleceń. \\
+\hline
+{\em argv} & Tablica argumentów wiersza poleceń. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+int Kod wyjścia programu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_abe51fe930b9b9821ce75e6810f2877b3}\label{main_8cpp_abe51fe930b9b9821ce75e6810f2877b3}} 
+\index{main.cpp@{main.cpp}!printInitStatus@{printInitStatus}}
+\index{printInitStatus@{printInitStatus}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{printInitStatus()}{printInitStatus()}}
+{\footnotesize\ttfamily void print\+Init\+Status (\begin{DoxyParamCaption}\item[{bool}]{port\+Open,  }\item[{bool}]{co2\+Ready,  }\item[{bool}]{pm\+Ready,  }\item[{bool}]{rad\+Ready }\end{DoxyParamCaption})}
+
+
+
+Wyświetla status inicjalizacji systemu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em port\+Open} & Status portu szeregowego. \\
+\hline
+{\em co2\+Ready} & Status czujnika CO2. \\
+\hline
+{\em pm\+Ready} & Status czujnika pyłu zawieszonego. \\
+\hline
+{\em rad\+Ready} & Status czujnika promieniowania. \\
+\hline
+\end{DoxyParams}

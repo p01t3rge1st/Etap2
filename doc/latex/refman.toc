@@ -1,0 +1,150 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {nil}{}\relax 
+\contentsline {chapter}{\numberline {1}System Monitorowania Czujników}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Główne funkcje}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Indeks hierarchiczny}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Hierarchia klas}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Indeks struktur danych}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Struktury danych}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Indeks plików}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Lista plików}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Dokumentacja struktur danych}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Dokumentacja klasy Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Opis szczegółowy}{13}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Dokumentacja konstruktora i destruktora}{13}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}MainWindow()}{13}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}$\sim $MainWindow()}{14}{subsubsection.5.1.2.2}%
+\contentsline {subsection}{\numberline {5.1.3}Dokumentacja funkcji składowych}{14}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}changeLanguage()}{14}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}loadHistoricalData}{14}{subsubsection.5.1.3.2}%
+\contentsline {subsubsection}{\numberline {5.1.3.3}onTimeMachineChanged}{14}{subsubsection.5.1.3.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.4}updateChartTitles()}{15}{subsubsection.5.1.3.4}%
+\contentsline {subsubsection}{\numberline {5.1.3.5}updateInterfaceTexts()}{15}{subsubsection.5.1.3.5}%
+\contentsline {subsubsection}{\numberline {5.1.3.6}updateSensorData}{15}{subsubsection.5.1.3.6}%
+\contentsline {subsection}{\numberline {5.1.4}Dokumentacja pól}{15}{subsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.1}axisX}{15}{subsubsection.5.1.4.1}%
+\contentsline {subsubsection}{\numberline {5.1.4.2}axisY}{15}{subsubsection.5.1.4.2}%
+\contentsline {subsubsection}{\numberline {5.1.4.3}chart}{15}{subsubsection.5.1.4.3}%
+\contentsline {subsubsection}{\numberline {5.1.4.4}chartSelector}{16}{subsubsection.5.1.4.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.5}chartStartTime}{16}{subsubsection.5.1.4.5}%
+\contentsline {subsubsection}{\numberline {5.1.4.6}chartView}{16}{subsubsection.5.1.4.6}%
+\contentsline {subsubsection}{\numberline {5.1.4.7}co2HumLabel}{16}{subsubsection.5.1.4.7}%
+\contentsline {subsubsection}{\numberline {5.1.4.8}co2Label}{16}{subsubsection.5.1.4.8}%
+\contentsline {subsubsection}{\numberline {5.1.4.9}co2Series}{16}{subsubsection.5.1.4.9}%
+\contentsline {subsubsection}{\numberline {5.1.4.10}co2StatusLabel}{16}{subsubsection.5.1.4.10}%
+\contentsline {subsubsection}{\numberline {5.1.4.11}co2TempLabel}{17}{subsubsection.5.1.4.11}%
+\contentsline {subsubsection}{\numberline {5.1.4.12}hour12Button}{17}{subsubsection.5.1.4.12}%
+\contentsline {subsubsection}{\numberline {5.1.4.13}hour1Button}{17}{subsubsection.5.1.4.13}%
+\contentsline {subsubsection}{\numberline {5.1.4.14}hour24Button}{17}{subsubsection.5.1.4.14}%
+\contentsline {subsubsection}{\numberline {5.1.4.15}hour2Button}{17}{subsubsection.5.1.4.15}%
+\contentsline {subsubsection}{\numberline {5.1.4.16}hour48Button}{17}{subsubsection.5.1.4.16}%
+\contentsline {subsubsection}{\numberline {5.1.4.17}hour4Button}{17}{subsubsection.5.1.4.17}%
+\contentsline {subsubsection}{\numberline {5.1.4.18}hour78Button}{17}{subsubsection.5.1.4.18}%
+\contentsline {subsubsection}{\numberline {5.1.4.19}hour8Button}{18}{subsubsection.5.1.4.19}%
+\contentsline {subsubsection}{\numberline {5.1.4.20}humiditySeries}{18}{subsubsection.5.1.4.20}%
+\contentsline {subsubsection}{\numberline {5.1.4.21}interpretationFrame}{18}{subsubsection.5.1.4.21}%
+\contentsline {subsubsection}{\numberline {5.1.4.22}languageSelector}{18}{subsubsection.5.1.4.22}%
+\contentsline {subsubsection}{\numberline {5.1.4.23}logger}{18}{subsubsection.5.1.4.23}%
+\contentsline {subsubsection}{\numberline {5.1.4.24}pm10Label}{18}{subsubsection.5.1.4.24}%
+\contentsline {subsubsection}{\numberline {5.1.4.25}pm10Series}{18}{subsubsection.5.1.4.25}%
+\contentsline {subsubsection}{\numberline {5.1.4.26}pm1Label}{19}{subsubsection.5.1.4.26}%
+\contentsline {subsubsection}{\numberline {5.1.4.27}pm1Series}{19}{subsubsection.5.1.4.27}%
+\contentsline {subsubsection}{\numberline {5.1.4.28}pm25Label}{19}{subsubsection.5.1.4.28}%
+\contentsline {subsubsection}{\numberline {5.1.4.29}pm25Series}{19}{subsubsection.5.1.4.29}%
+\contentsline {subsubsection}{\numberline {5.1.4.30}pmStatusLabel}{19}{subsubsection.5.1.4.30}%
+\contentsline {subsubsection}{\numberline {5.1.4.31}radiationDoseLabel}{19}{subsubsection.5.1.4.31}%
+\contentsline {subsubsection}{\numberline {5.1.4.32}radiationDoseSeries}{19}{subsubsection.5.1.4.32}%
+\contentsline {subsubsection}{\numberline {5.1.4.33}radiationLabel}{19}{subsubsection.5.1.4.33}%
+\contentsline {subsubsection}{\numberline {5.1.4.34}radiationSeries}{20}{subsubsection.5.1.4.34}%
+\contentsline {subsubsection}{\numberline {5.1.4.35}radiationStatusLabel}{20}{subsubsection.5.1.4.35}%
+\contentsline {subsubsection}{\numberline {5.1.4.36}sensorDataFrame}{20}{subsubsection.5.1.4.36}%
+\contentsline {subsubsection}{\numberline {5.1.4.37}sensorReader}{20}{subsubsection.5.1.4.37}%
+\contentsline {subsubsection}{\numberline {5.1.4.38}temperatureSeries}{20}{subsubsection.5.1.4.38}%
+\contentsline {subsubsection}{\numberline {5.1.4.39}timeMachineGroup}{20}{subsubsection.5.1.4.39}%
+\contentsline {subsubsection}{\numberline {5.1.4.40}timeMachineHours}{20}{subsubsection.5.1.4.40}%
+\contentsline {subsubsection}{\numberline {5.1.4.41}timer}{21}{subsubsection.5.1.4.41}%
+\contentsline {subsubsection}{\numberline {5.1.4.42}translator}{21}{subsubsection.5.1.4.42}%
+\contentsline {section}{\numberline {5.2}Dokumentacja struktury Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data}{21}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Opis szczegółowy}{22}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Dokumentacja pól}{22}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}co2}{22}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}co2\_hum}{22}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}co2\_temp}{23}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}crc}{23}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.2.5}crcValid}{23}{subsubsection.5.2.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.2.6}pm1}{23}{subsubsection.5.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.2.2.7}pm10}{23}{subsubsection.5.2.2.7}%
+\contentsline {subsubsection}{\numberline {5.2.2.8}pm25}{23}{subsubsection.5.2.2.8}%
+\contentsline {subsubsection}{\numberline {5.2.2.9}radiation}{24}{subsubsection.5.2.2.9}%
+\contentsline {subsubsection}{\numberline {5.2.2.10}radiation\_dose\_per\_hour}{24}{subsubsection.5.2.2.10}%
+\contentsline {subsubsection}{\numberline {5.2.2.11}tvoc}{24}{subsubsection.5.2.2.11}%
+\contentsline {section}{\numberline {5.3}Dokumentacja klasy Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger}{24}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Opis szczegółowy}{25}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Dokumentacja konstruktora i destruktora}{25}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}SensorDataLogger()}{25}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}$\sim $SensorDataLogger()}{26}{subsubsection.5.3.2.2}%
+\contentsline {subsection}{\numberline {5.3.3}Dokumentacja funkcji składowych}{26}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}log()}{26}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}writeHeaderIfNeeded()}{26}{subsubsection.5.3.3.2}%
+\contentsline {subsection}{\numberline {5.3.4}Dokumentacja pól}{26}{subsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.1}file}{26}{subsubsection.5.3.4.1}%
+\contentsline {subsubsection}{\numberline {5.3.4.2}headerWritten}{27}{subsubsection.5.3.4.2}%
+\contentsline {subsubsection}{\numberline {5.3.4.3}stream}{27}{subsubsection.5.3.4.3}%
+\contentsline {section}{\numberline {5.4}Dokumentacja klasy Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reader}{27}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Opis szczegółowy}{29}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Dokumentacja konstruktora i destruktora}{29}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}SensorReader()}{29}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}$\sim $SensorReader()}{30}{subsubsection.5.4.2.2}%
+\contentsline {subsection}{\numberline {5.4.3}Dokumentacja funkcji składowych}{30}{subsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.1}calculateCRC()}{30}{subsubsection.5.4.3.1}%
+\contentsline {subsubsection}{\numberline {5.4.3.2}closePort()}{30}{subsubsection.5.4.3.2}%
+\contentsline {subsubsection}{\numberline {5.4.3.3}getData()}{31}{subsubsection.5.4.3.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.4}openPort()}{31}{subsubsection.5.4.3.4}%
+\contentsline {subsubsection}{\numberline {5.4.3.5}parseSensorData()}{31}{subsubsection.5.4.3.5}%
+\contentsline {subsubsection}{\numberline {5.4.3.6}readData()}{31}{subsubsection.5.4.3.6}%
+\contentsline {subsection}{\numberline {5.4.4}Dokumentacja pól}{32}{subsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.4.1}baudrate}{32}{subsubsection.5.4.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.4.2}buffer}{32}{subsubsection.5.4.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.4.3}data}{32}{subsubsection.5.4.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4.4}portname}{32}{subsubsection.5.4.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.4.5}serial\_data}{32}{subsubsection.5.4.4.5}%
+\contentsline {subsubsection}{\numberline {5.4.4.6}serial\_port}{32}{subsubsection.5.4.4.6}%
+\contentsline {chapter}{\numberline {6}Dokumentacja plików}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Dokumentacja pliku main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{33}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Opis szczegółowy}{34}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Dokumentacja definicji}{34}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}CLEAR}{34}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}GREEN}{34}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}RED}{34}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}RESET}{34}{subsubsection.6.1.2.4}%
+\contentsline {subsection}{\numberline {6.1.3}Dokumentacja funkcji}{34}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}main()}{34}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}printInitStatus()}{35}{subsubsection.6.1.3.2}%
+\contentsline {section}{\numberline {6.2}Dokumentacja pliku Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{35}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Opis szczegółowy}{36}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Dokumentacja zmiennych}{36}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}CPS\_PER\_USV}{37}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}HIGH\_CO2}{37}{subsubsection.6.2.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.3}HIGH\_PM1}{37}{subsubsection.6.2.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.2.4}HIGH\_PM10}{37}{subsubsection.6.2.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.2.5}HIGH\_PM25}{37}{subsubsection.6.2.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.2.6}HIGH\_RADIATION}{37}{subsubsection.6.2.2.6}%
+\contentsline {subsubsection}{\numberline {6.2.2.7}MAX\_CO2}{38}{subsubsection.6.2.2.7}%
+\contentsline {subsubsection}{\numberline {6.2.2.8}MAX\_PM1}{38}{subsubsection.6.2.2.8}%
+\contentsline {subsubsection}{\numberline {6.2.2.9}MAX\_PM10}{38}{subsubsection.6.2.2.9}%
+\contentsline {subsubsection}{\numberline {6.2.2.10}MAX\_PM25}{38}{subsubsection.6.2.2.10}%
+\contentsline {subsubsection}{\numberline {6.2.2.11}MAX\_RADIATION}{38}{subsubsection.6.2.2.11}%
+\contentsline {section}{\numberline {6.3}Dokumentacja pliku Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{39}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Opis szczegółowy}{39}{subsection.6.3.1}%
+\contentsline {section}{\numberline {6.4}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{40}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Dokumentacja pliku README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md}{41}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Dokumentacja pliku Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{41}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Opis szczegółowy}{41}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Dokumentacja zmiennych}{41}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}CPS\_PER\_USV}{42}{subsubsection.6.6.2.1}%
+\contentsline {section}{\numberline {6.7}Dokumentacja pliku Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{42}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Opis szczegółowy}{43}{subsection.6.7.1}%
+\contentsline {section}{\numberline {6.8}Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{43}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Dokumentacja pliku Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{43}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Dokumentacja pliku Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{44}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{44}{section.6.11}%

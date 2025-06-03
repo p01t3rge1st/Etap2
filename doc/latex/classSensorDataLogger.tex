@@ -1,0 +1,149 @@
+\hypertarget{classSensorDataLogger}{}\doxysection{Dokumentacja klasy Sensor\+Data\+Logger}
+\label{classSensorDataLogger}\index{SensorDataLogger@{SensorDataLogger}}
+
+
+Klasa umożliwiająca logowanie danych z czujników do pliku CSV.  
+
+
+
+
+{\ttfamily \#include $<$Sensor\+Data\+Logger.\+h$>$}
+
+
+
+Diagram współpracy dla Sensor\+Data\+Logger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classSensorDataLogger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSensorDataLogger_aac2b933522c481e3a3679688b61d54b8}{Sensor\+Data\+Logger}} (const QString \&filename)
+\begin{DoxyCompactList}\small\item\em Konstruktor otwierający plik do zapisu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSensorDataLogger_a61b56262969451aee9bb8d26245274f8}{$\sim$\+Sensor\+Data\+Logger}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor zamykający plik. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSensorDataLogger_a22ec6b9a47578f9be3b2771d3fa269c1}{log}} (const \mbox{\hyperlink{structSensorData}{Sensor\+Data}} \&data)
+\begin{DoxyCompactList}\small\item\em Zapisuje pojedynczy rekord danych z czujników do pliku CSV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSensorDataLogger_a244d85c217254d90b2842111e790430c}{write\+Header\+If\+Needed}} ()
+\begin{DoxyCompactList}\small\item\em Zapisuje nagłówek, jeśli plik jest pusty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+QFile \mbox{\hyperlink{classSensorDataLogger_ac5c443a08178e42b720875037b02747c}{file}}
+\begin{DoxyCompactList}\small\item\em Obsługa pliku CSV. \end{DoxyCompactList}\item 
+QText\+Stream \mbox{\hyperlink{classSensorDataLogger_a7c270a31078cf7de8e4850ebbb0859b5}{stream}}
+\begin{DoxyCompactList}\small\item\em Strumień do zapisu tekstu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSensorDataLogger_af3d52ccd12a7fec8870577ec5e4201df}{header\+Written}} = false
+\begin{DoxyCompactList}\small\item\em Flaga informująca o zapisaniu nagłówka. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa umożliwiająca logowanie danych z czujników do pliku CSV. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classSensorDataLogger_aac2b933522c481e3a3679688b61d54b8}\label{classSensorDataLogger_aac2b933522c481e3a3679688b61d54b8}} 
+\index{SensorDataLogger@{SensorDataLogger}!SensorDataLogger@{SensorDataLogger}}
+\index{SensorDataLogger@{SensorDataLogger}!SensorDataLogger@{SensorDataLogger}}
+\doxysubsubsection{\texorpdfstring{SensorDataLogger()}{SensorDataLogger()}}
+{\footnotesize\ttfamily Sensor\+Data\+Logger\+::\+Sensor\+Data\+Logger (\begin{DoxyParamCaption}\item[{const QString \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor otwierający plik do zapisu. 
+
+Konstruktor klasy logger\textquotesingle{}a.
+
+
+\begin{DoxyParams}{Parametry}
+{\em filename} & Nazwa pliku CSV.\\
+\hline
+{\em filename} & Nazwa pliku CSV do zapisu danych \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSensorDataLogger_a61b56262969451aee9bb8d26245274f8}\label{classSensorDataLogger_a61b56262969451aee9bb8d26245274f8}} 
+\index{SensorDataLogger@{SensorDataLogger}!````~SensorDataLogger@{$\sim$SensorDataLogger}}
+\index{````~SensorDataLogger@{$\sim$SensorDataLogger}!SensorDataLogger@{SensorDataLogger}}
+\doxysubsubsection{\texorpdfstring{$\sim$SensorDataLogger()}{~SensorDataLogger()}}
+{\footnotesize\ttfamily Sensor\+Data\+Logger\+::$\sim$\+Sensor\+Data\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor zamykający plik. 
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classSensorDataLogger_a22ec6b9a47578f9be3b2771d3fa269c1}\label{classSensorDataLogger_a22ec6b9a47578f9be3b2771d3fa269c1}} 
+\index{SensorDataLogger@{SensorDataLogger}!log@{log}}
+\index{log@{log}!SensorDataLogger@{SensorDataLogger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Sensor\+Data\+Logger\+::log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSensorData}{Sensor\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Zapisuje pojedynczy rekord danych z czujników do pliku CSV. 
+
+Zapisuje jeden rekord pomiarowy do pliku CSV.
+
+
+\begin{DoxyParams}{Parametry}
+{\em data} & Struktura \mbox{\hyperlink{structSensorData}{Sensor\+Data}} z danymi do zapisania.\\
+\hline
+{\em data} & Struktura zawierająca dane z czujników \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSensorDataLogger_a244d85c217254d90b2842111e790430c}\label{classSensorDataLogger_a244d85c217254d90b2842111e790430c}} 
+\index{SensorDataLogger@{SensorDataLogger}!writeHeaderIfNeeded@{writeHeaderIfNeeded}}
+\index{writeHeaderIfNeeded@{writeHeaderIfNeeded}!SensorDataLogger@{SensorDataLogger}}
+\doxysubsubsection{\texorpdfstring{writeHeaderIfNeeded()}{writeHeaderIfNeeded()}}
+{\footnotesize\ttfamily void Sensor\+Data\+Logger\+::write\+Header\+If\+Needed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zapisuje nagłówek, jeśli plik jest pusty. 
+
+Zapisuje nagłówek CSV jeśli plik jest pusty. 
+
+\doxysubsection{Dokumentacja pól}
+\mbox{\Hypertarget{classSensorDataLogger_ac5c443a08178e42b720875037b02747c}\label{classSensorDataLogger_ac5c443a08178e42b720875037b02747c}} 
+\index{SensorDataLogger@{SensorDataLogger}!file@{file}}
+\index{file@{file}!SensorDataLogger@{SensorDataLogger}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily QFile Sensor\+Data\+Logger\+::file\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obsługa pliku CSV. 
+
+\mbox{\Hypertarget{classSensorDataLogger_af3d52ccd12a7fec8870577ec5e4201df}\label{classSensorDataLogger_af3d52ccd12a7fec8870577ec5e4201df}} 
+\index{SensorDataLogger@{SensorDataLogger}!headerWritten@{headerWritten}}
+\index{headerWritten@{headerWritten}!SensorDataLogger@{SensorDataLogger}}
+\doxysubsubsection{\texorpdfstring{headerWritten}{headerWritten}}
+{\footnotesize\ttfamily bool Sensor\+Data\+Logger\+::header\+Written = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flaga informująca o zapisaniu nagłówka. 
+
+\mbox{\Hypertarget{classSensorDataLogger_a7c270a31078cf7de8e4850ebbb0859b5}\label{classSensorDataLogger_a7c270a31078cf7de8e4850ebbb0859b5}} 
+\index{SensorDataLogger@{SensorDataLogger}!stream@{stream}}
+\index{stream@{stream}!SensorDataLogger@{SensorDataLogger}}
+\doxysubsubsection{\texorpdfstring{stream}{stream}}
+{\footnotesize\ttfamily QText\+Stream Sensor\+Data\+Logger\+::stream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Strumień do zapisu tekstu. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SensorDataLogger_8h}{Sensor\+Data\+Logger.\+h}}\item 
+\mbox{\hyperlink{SensorDataLogger_8cpp}{Sensor\+Data\+Logger.\+cpp}}\end{DoxyCompactItemize}

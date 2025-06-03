@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>System Monitorowania Czujników: Plik źródłowy SensorReader.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">System Monitorowania Czujników
+   </div>
+   <div id="projectbrief">System monitorowania danych z czujników środowiskowych</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">SensorReader.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="SensorReader_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SENSORREADER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SENSORREADER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;termios.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structSensorData.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structSensorData.html">SensorData</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structSensorData.html#aa08cd2414f3df2746db49a08abcd8ca4">   12</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#aa08cd2414f3df2746db49a08abcd8ca4">co2</a> = -1; </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structSensorData.html#aa86daf30538726c1188bfe8a928107a0">   13</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#aa86daf30538726c1188bfe8a928107a0">co2_temp</a> = -1; </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structSensorData.html#a88bd3f71f5a66feb1cff2bcd437471ef">   14</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#a88bd3f71f5a66feb1cff2bcd437471ef">co2_hum</a> = -1; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structSensorData.html#a4bbb4abfde06e739b58282164b52854b">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#a4bbb4abfde06e739b58282164b52854b">pm1</a> = -1; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structSensorData.html#a1a2ae409164ca2b9e0ae1fc6f2323221">   16</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#a1a2ae409164ca2b9e0ae1fc6f2323221">pm25</a> = -1; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structSensorData.html#aa19ba55b7fbf096d6e0d2d1bebe26a2e">   17</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#aa19ba55b7fbf096d6e0d2d1bebe26a2e">pm10</a> = -1; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structSensorData.html#aea39d17cc6edacb767c63708e4650cbc">   18</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#aea39d17cc6edacb767c63708e4650cbc">radiation</a> = -1; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structSensorData.html#a6b9fb45f05c03bd6c2d5a81b94a09afc">   19</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structSensorData.html#a6b9fb45f05c03bd6c2d5a81b94a09afc">radiation_dose_per_hour</a> = -1.0; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structSensorData.html#a7085f9e57a09ef9d21d186f63d81a28a">   20</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structSensorData.html#a7085f9e57a09ef9d21d186f63d81a28a">tvoc</a> = -1; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structSensorData.html#a5500b2c6f1b625887e5e3413dbf8913b">   21</a></span>    uint16_t <a class="code hl_variable" href="structSensorData.html#a5500b2c6f1b625887e5e3413dbf8913b">crc</a> = 0; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structSensorData.html#a935003bce70efb3b24a11506b0b4d649">   22</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structSensorData.html#a935003bce70efb3b24a11506b0b4d649">crcValid</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classSensorReader.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="classSensorReader.html">SensorReader</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="classSensorReader.html#a6bfc52943447a48a7eab3a791bdb3b0f">SensorReader</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="classSensorReader.html#a202c307c19bb8beb21f703dcf9959641">portname</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="classSensorReader.html#aaebc91f52f1d25176af61212d015b5ff">baudrate</a> = B9600);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classSensorReader.html#aaa434a375e5b76572c2a770a9bb47e4f">~SensorReader</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSensorReader.html#a670969b9b0611931a942cb9fc887b66d">openPort</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSensorReader.html#a7f365e79bdc97851dcdbba40f4888335">closePort</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSensorReader.html#a28d2ee52ececadca7d2dbdba80ae22e6">readData</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_struct" href="structSensorData.html">SensorData</a> <a class="code hl_function" href="classSensorReader.html#a1d6e6a16ca1726b2b563bd125fe9f15e">getData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classSensorReader.html#a0a0ddf7eae30439740b91f9a6fc45f5d">   71</a></span>    uint16_t <a class="code hl_function" href="classSensorReader.html#a0a0ddf7eae30439740b91f9a6fc45f5d">calculateCRC</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="classSensorReader.html#ac45e464399cee627f8e155d22ffd733d">data</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classSensorReader.html#a202c307c19bb8beb21f703dcf9959641">   74</a></span>    std::string <a class="code hl_variable" href="classSensorReader.html#a202c307c19bb8beb21f703dcf9959641">portname</a>; </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classSensorReader.html#aaebc91f52f1d25176af61212d015b5ff">   75</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classSensorReader.html#aaebc91f52f1d25176af61212d015b5ff">baudrate</a>; </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classSensorReader.html#a00637d82d16cfaf25a9e7b7a4cefbff6">   76</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classSensorReader.html#a00637d82d16cfaf25a9e7b7a4cefbff6">serial_port</a>; </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classSensorReader.html#a91a682e413b5df61950b591162157518">   77</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="classSensorReader.html#a91a682e413b5df61950b591162157518">buffer</a>[256]; </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classSensorReader.html#aaae035aa78b5295e55aece9cf1a306f8">   78</a></span>    std::string <a class="code hl_variable" href="classSensorReader.html#aaae035aa78b5295e55aece9cf1a306f8">serial_data</a>; </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classSensorReader.html#ac45e464399cee627f8e155d22ffd733d">   79</a></span>    <a class="code hl_struct" href="structSensorData.html">SensorData</a> <a class="code hl_variable" href="classSensorReader.html#ac45e464399cee627f8e155d22ffd733d">data</a>; </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_struct" href="structSensorData.html">SensorData</a> <a class="code hl_function" href="classSensorReader.html#a388472b707a086a7e0055d401c3b3e8b">parseSensorData</a>(<span class="keyword">const</span> std::string&amp; raw);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassSensorReader_html"><div class="ttname"><a href="classSensorReader.html">SensorReader</a></div><div class="ttdoc">Klasa do obsługi czujników przez port szeregowy.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:29</div></div>
+<div class="ttc" id="aclassSensorReader_html_a00637d82d16cfaf25a9e7b7a4cefbff6"><div class="ttname"><a href="classSensorReader.html#a00637d82d16cfaf25a9e7b7a4cefbff6">SensorReader::serial_port</a></div><div class="ttdeci">int serial_port</div><div class="ttdoc">Uchwyt do portu szeregowego.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:76</div></div>
+<div class="ttc" id="aclassSensorReader_html_a0a0ddf7eae30439740b91f9a6fc45f5d"><div class="ttname"><a href="classSensorReader.html#a0a0ddf7eae30439740b91f9a6fc45f5d">SensorReader::calculateCRC</a></div><div class="ttdeci">uint16_t calculateCRC(const std::string &amp;data)</div><div class="ttdoc">Oblicza wartość CRC dla danych.</div></div>
+<div class="ttc" id="aclassSensorReader_html_a1d6e6a16ca1726b2b563bd125fe9f15e"><div class="ttname"><a href="classSensorReader.html#a1d6e6a16ca1726b2b563bd125fe9f15e">SensorReader::getData</a></div><div class="ttdeci">SensorData getData() const</div><div class="ttdoc">Zwraca ostatnio odczytane dane z czujników.</div><div class="ttdef"><b>Definition:</b> SensorReader.cpp:93</div></div>
+<div class="ttc" id="aclassSensorReader_html_a202c307c19bb8beb21f703dcf9959641"><div class="ttname"><a href="classSensorReader.html#a202c307c19bb8beb21f703dcf9959641">SensorReader::portname</a></div><div class="ttdeci">std::string portname</div><div class="ttdoc">Nazwa portu szeregowego.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:74</div></div>
+<div class="ttc" id="aclassSensorReader_html_a28d2ee52ececadca7d2dbdba80ae22e6"><div class="ttname"><a href="classSensorReader.html#a28d2ee52ececadca7d2dbdba80ae22e6">SensorReader::readData</a></div><div class="ttdeci">bool readData()</div><div class="ttdoc">Odczytuje dane z portu szeregowego.</div><div class="ttdef"><b>Definition:</b> SensorReader.cpp:70</div></div>
+<div class="ttc" id="aclassSensorReader_html_a388472b707a086a7e0055d401c3b3e8b"><div class="ttname"><a href="classSensorReader.html#a388472b707a086a7e0055d401c3b3e8b">SensorReader::parseSensorData</a></div><div class="ttdeci">SensorData parseSensorData(const std::string &amp;raw)</div><div class="ttdoc">Parsuje surowe dane z czujników.</div><div class="ttdef"><b>Definition:</b> SensorReader.cpp:102</div></div>
+<div class="ttc" id="aclassSensorReader_html_a670969b9b0611931a942cb9fc887b66d"><div class="ttname"><a href="classSensorReader.html#a670969b9b0611931a942cb9fc887b66d">SensorReader::openPort</a></div><div class="ttdeci">bool openPort()</div><div class="ttdoc">Otwiera port szeregowy.</div><div class="ttdef"><b>Definition:</b> SensorReader.cpp:31</div></div>
+<div class="ttc" id="aclassSensorReader_html_a6bfc52943447a48a7eab3a791bdb3b0f"><div class="ttname"><a href="classSensorReader.html#a6bfc52943447a48a7eab3a791bdb3b0f">SensorReader::SensorReader</a></div><div class="ttdeci">SensorReader(const std::string &amp;portname, int baudrate=B9600)</div><div class="ttdoc">Konstruktor klasy SensorReader.</div><div class="ttdef"><b>Definition:</b> SensorReader.cpp:15</div></div>
+<div class="ttc" id="aclassSensorReader_html_a7f365e79bdc97851dcdbba40f4888335"><div class="ttname"><a href="classSensorReader.html#a7f365e79bdc97851dcdbba40f4888335">SensorReader::closePort</a></div><div class="ttdeci">void closePort()</div><div class="ttdoc">Zamyka port szeregowy.</div><div class="ttdef"><b>Definition:</b> SensorReader.cpp:61</div></div>
+<div class="ttc" id="aclassSensorReader_html_a91a682e413b5df61950b591162157518"><div class="ttname"><a href="classSensorReader.html#a91a682e413b5df61950b591162157518">SensorReader::buffer</a></div><div class="ttdeci">char buffer[256]</div><div class="ttdoc">Bufor do przechowywania danych z portu szeregowego.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:77</div></div>
+<div class="ttc" id="aclassSensorReader_html_aaa434a375e5b76572c2a770a9bb47e4f"><div class="ttname"><a href="classSensorReader.html#aaa434a375e5b76572c2a770a9bb47e4f">SensorReader::~SensorReader</a></div><div class="ttdeci">~SensorReader()</div><div class="ttdoc">Destruktor klasy SensorReader.</div><div class="ttdef"><b>Definition:</b> SensorReader.cpp:21</div></div>
+<div class="ttc" id="aclassSensorReader_html_aaae035aa78b5295e55aece9cf1a306f8"><div class="ttname"><a href="classSensorReader.html#aaae035aa78b5295e55aece9cf1a306f8">SensorReader::serial_data</a></div><div class="ttdeci">std::string serial_data</div><div class="ttdoc">Dane odczytane z portu szeregowego.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:78</div></div>
+<div class="ttc" id="aclassSensorReader_html_aaebc91f52f1d25176af61212d015b5ff"><div class="ttname"><a href="classSensorReader.html#aaebc91f52f1d25176af61212d015b5ff">SensorReader::baudrate</a></div><div class="ttdeci">int baudrate</div><div class="ttdoc">Prędkość transmisji.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:75</div></div>
+<div class="ttc" id="aclassSensorReader_html_ac45e464399cee627f8e155d22ffd733d"><div class="ttname"><a href="classSensorReader.html#ac45e464399cee627f8e155d22ffd733d">SensorReader::data</a></div><div class="ttdeci">SensorData data</div><div class="ttdoc">Struktura przechowująca dane z czujników.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:79</div></div>
+<div class="ttc" id="astructSensorData_html"><div class="ttname"><a href="structSensorData.html">SensorData</a></div><div class="ttdoc">Struktura przechowująca dane odczytane z czujników.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:11</div></div>
+<div class="ttc" id="astructSensorData_html_a1a2ae409164ca2b9e0ae1fc6f2323221"><div class="ttname"><a href="structSensorData.html#a1a2ae409164ca2b9e0ae1fc6f2323221">SensorData::pm25</a></div><div class="ttdeci">int pm25</div><div class="ttdoc">Poziom pyłu PM2.5 w µg/m³.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:16</div></div>
+<div class="ttc" id="astructSensorData_html_a4bbb4abfde06e739b58282164b52854b"><div class="ttname"><a href="structSensorData.html#a4bbb4abfde06e739b58282164b52854b">SensorData::pm1</a></div><div class="ttdeci">int pm1</div><div class="ttdoc">Poziom pyłu PM1.0 w µg/m³.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:15</div></div>
+<div class="ttc" id="astructSensorData_html_a5500b2c6f1b625887e5e3413dbf8913b"><div class="ttname"><a href="structSensorData.html#a5500b2c6f1b625887e5e3413dbf8913b">SensorData::crc</a></div><div class="ttdeci">uint16_t crc</div><div class="ttdoc">Pole CRC.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:21</div></div>
+<div class="ttc" id="astructSensorData_html_a6b9fb45f05c03bd6c2d5a81b94a09afc"><div class="ttname"><a href="structSensorData.html#a6b9fb45f05c03bd6c2d5a81b94a09afc">SensorData::radiation_dose_per_hour</a></div><div class="ttdeci">float radiation_dose_per_hour</div><div class="ttdoc">Dawka promieniowania na godzinę w µSv/h.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:19</div></div>
+<div class="ttc" id="astructSensorData_html_a7085f9e57a09ef9d21d186f63d81a28a"><div class="ttname"><a href="structSensorData.html#a7085f9e57a09ef9d21d186f63d81a28a">SensorData::tvoc</a></div><div class="ttdeci">int tvoc</div><div class="ttdoc">Poziom TVOC.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:20</div></div>
+<div class="ttc" id="astructSensorData_html_a88bd3f71f5a66feb1cff2bcd437471ef"><div class="ttname"><a href="structSensorData.html#a88bd3f71f5a66feb1cff2bcd437471ef">SensorData::co2_hum</a></div><div class="ttdeci">int co2_hum</div><div class="ttdoc">Wilgotność CO2 w procentach.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:14</div></div>
+<div class="ttc" id="astructSensorData_html_a935003bce70efb3b24a11506b0b4d649"><div class="ttname"><a href="structSensorData.html#a935003bce70efb3b24a11506b0b4d649">SensorData::crcValid</a></div><div class="ttdeci">bool crcValid</div><div class="ttdoc">Status walidacji CRC.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:22</div></div>
+<div class="ttc" id="astructSensorData_html_aa08cd2414f3df2746db49a08abcd8ca4"><div class="ttname"><a href="structSensorData.html#aa08cd2414f3df2746db49a08abcd8ca4">SensorData::co2</a></div><div class="ttdeci">int co2</div><div class="ttdoc">Poziom CO2 w ppm.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:12</div></div>
+<div class="ttc" id="astructSensorData_html_aa19ba55b7fbf096d6e0d2d1bebe26a2e"><div class="ttname"><a href="structSensorData.html#aa19ba55b7fbf096d6e0d2d1bebe26a2e">SensorData::pm10</a></div><div class="ttdeci">int pm10</div><div class="ttdoc">Poziom pyłu PM10 w µg/m³.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:17</div></div>
+<div class="ttc" id="astructSensorData_html_aa86daf30538726c1188bfe8a928107a0"><div class="ttname"><a href="structSensorData.html#aa86daf30538726c1188bfe8a928107a0">SensorData::co2_temp</a></div><div class="ttdeci">int co2_temp</div><div class="ttdoc">Temperatura CO2 w stopniach Celsjusza.</div><div class="ttdef"><b>Definition:</b> SensorReader.h:13</div></div>
+<div class="ttc" id="astructSensorData_html_aea39d17cc6edacb767c63708e4650cbc"><div class="ttname"><a href="structSensorData.html#aea39d17cc6edacb767c63708e4650cbc">SensorData::radiation</a></div><div class="ttdeci">int radiation</div><div class="ttdoc">Liczba zliczeń promieniowania (CPM).</div><div class="ttdef"><b>Definition:</b> SensorReader.h:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

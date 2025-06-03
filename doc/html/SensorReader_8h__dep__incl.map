@@ -1,0 +1,9 @@
+<map id="SensorReader.h" name="SensorReader.h">
+<area shape="rect" id="node1" title=" " alt="" coords="298,5,421,32"/>
+<area shape="rect" id="node2" href="$MainWindow_8cpp.html" title="Implementacja głównego okna aplikacji monitorującej czujniki środowiskowe." alt="" coords="5,229,137,256"/>
+<area shape="rect" id="node3" href="$MainWindow_8h.html" title="Plik nagłówkowy głównego okna aplikacji monitorującej czujniki." alt="" coords="301,155,418,181"/>
+<area shape="rect" id="node4" href="$SensorReader_8cpp.html" title=" " alt="" coords="293,229,431,256"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Program monitorujący dane z czujników środowiskowych." alt="" coords="461,229,543,256"/>
+<area shape="rect" id="node6" href="$SensorDataLogger_8h.html" title="Deklaracja klasy SensorDataLogger do zapisu danych z czujników do pliku CSV." alt="" coords="143,80,295,107"/>
+<area shape="rect" id="node7" href="$SensorDataLogger_8cpp.html" title="Implementacja klasy zapisującej dane z czujników do pliku CSV." alt="" coords="109,155,276,181"/>
+</map>

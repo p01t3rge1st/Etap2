@@ -1,0 +1,6 @@
+<map id="MainWindow.h" name="MainWindow.h">
+<area shape="rect" id="node1" title="Plik nagłówkowy głównego okna aplikacji monitorującej czujniki." alt="" coords="173,5,290,32"/>
+<area shape="rect" id="node2" href="$MainWindow_8cpp.html" title="Implementacja głównego okna aplikacji monitorującej czujniki środowiskowe." alt="" coords="5,80,137,107"/>
+<area shape="rect" id="node3" href="$SensorReader_8cpp.html" title=" " alt="" coords="162,80,301,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Program monitorujący dane z czujników środowiskowych." alt="" coords="325,80,407,107"/>
+</map>

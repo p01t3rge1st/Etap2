@@ -1,0 +1,166 @@
+\hypertarget{structSensorData}{}\doxysection{Dokumentacja struktury Sensor\+Data}
+\label{structSensorData}\index{SensorData@{SensorData}}
+
+
+Struktura przechowująca dane odczytane z czujników.  
+
+
+
+
+{\ttfamily \#include $<$Sensor\+Reader.\+h$>$}
+
+
+
+Diagram współpracy dla Sensor\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{structSensorData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Pola danych}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structSensorData_aa08cd2414f3df2746db49a08abcd8ca4}{co2}} = -\/1
+\begin{DoxyCompactList}\small\item\em Poziom CO2 w ppm. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structSensorData_aa86daf30538726c1188bfe8a928107a0}{co2\+\_\+temp}} = -\/1
+\begin{DoxyCompactList}\small\item\em Temperatura CO2 w stopniach Celsjusza. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structSensorData_a88bd3f71f5a66feb1cff2bcd437471ef}{co2\+\_\+hum}} = -\/1
+\begin{DoxyCompactList}\small\item\em Wilgotność CO2 w procentach. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structSensorData_a4bbb4abfde06e739b58282164b52854b}{pm1}} = -\/1
+\begin{DoxyCompactList}\small\item\em Poziom pyłu PM1.\+0 w µg/m³. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structSensorData_a1a2ae409164ca2b9e0ae1fc6f2323221}{pm25}} = -\/1
+\begin{DoxyCompactList}\small\item\em Poziom pyłu PM2.\+5 w µg/m³. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structSensorData_aa19ba55b7fbf096d6e0d2d1bebe26a2e}{pm10}} = -\/1
+\begin{DoxyCompactList}\small\item\em Poziom pyłu PM10 w µg/m³. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structSensorData_aea39d17cc6edacb767c63708e4650cbc}{radiation}} = -\/1
+\begin{DoxyCompactList}\small\item\em Liczba zliczeń promieniowania (CPM). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structSensorData_a6b9fb45f05c03bd6c2d5a81b94a09afc}{radiation\+\_\+dose\+\_\+per\+\_\+hour}} = -\/1.\+0
+\begin{DoxyCompactList}\small\item\em Dawka promieniowania na godzinę w µ\+Sv/h. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structSensorData_a7085f9e57a09ef9d21d186f63d81a28a}{tvoc}} = -\/1
+\begin{DoxyCompactList}\small\item\em Poziom TVOC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structSensorData_a5500b2c6f1b625887e5e3413dbf8913b}{crc}} = 0
+\begin{DoxyCompactList}\small\item\em Pole CRC. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structSensorData_a935003bce70efb3b24a11506b0b4d649}{crc\+Valid}} = false
+\begin{DoxyCompactList}\small\item\em Status walidacji CRC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Struktura przechowująca dane odczytane z czujników. 
+
+\doxysubsection{Dokumentacja pól}
+\mbox{\Hypertarget{structSensorData_aa08cd2414f3df2746db49a08abcd8ca4}\label{structSensorData_aa08cd2414f3df2746db49a08abcd8ca4}} 
+\index{SensorData@{SensorData}!co2@{co2}}
+\index{co2@{co2}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{co2}{co2}}
+{\footnotesize\ttfamily int Sensor\+Data\+::co2 = -\/1}
+
+
+
+Poziom CO2 w ppm. 
+
+\mbox{\Hypertarget{structSensorData_a88bd3f71f5a66feb1cff2bcd437471ef}\label{structSensorData_a88bd3f71f5a66feb1cff2bcd437471ef}} 
+\index{SensorData@{SensorData}!co2\_hum@{co2\_hum}}
+\index{co2\_hum@{co2\_hum}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{co2\_hum}{co2\_hum}}
+{\footnotesize\ttfamily int Sensor\+Data\+::co2\+\_\+hum = -\/1}
+
+
+
+Wilgotność CO2 w procentach. 
+
+\mbox{\Hypertarget{structSensorData_aa86daf30538726c1188bfe8a928107a0}\label{structSensorData_aa86daf30538726c1188bfe8a928107a0}} 
+\index{SensorData@{SensorData}!co2\_temp@{co2\_temp}}
+\index{co2\_temp@{co2\_temp}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{co2\_temp}{co2\_temp}}
+{\footnotesize\ttfamily int Sensor\+Data\+::co2\+\_\+temp = -\/1}
+
+
+
+Temperatura CO2 w stopniach Celsjusza. 
+
+\mbox{\Hypertarget{structSensorData_a5500b2c6f1b625887e5e3413dbf8913b}\label{structSensorData_a5500b2c6f1b625887e5e3413dbf8913b}} 
+\index{SensorData@{SensorData}!crc@{crc}}
+\index{crc@{crc}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{crc}{crc}}
+{\footnotesize\ttfamily uint16\+\_\+t Sensor\+Data\+::crc = 0}
+
+
+
+Pole CRC. 
+
+\mbox{\Hypertarget{structSensorData_a935003bce70efb3b24a11506b0b4d649}\label{structSensorData_a935003bce70efb3b24a11506b0b4d649}} 
+\index{SensorData@{SensorData}!crcValid@{crcValid}}
+\index{crcValid@{crcValid}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{crcValid}{crcValid}}
+{\footnotesize\ttfamily bool Sensor\+Data\+::crc\+Valid = false}
+
+
+
+Status walidacji CRC. 
+
+\mbox{\Hypertarget{structSensorData_a4bbb4abfde06e739b58282164b52854b}\label{structSensorData_a4bbb4abfde06e739b58282164b52854b}} 
+\index{SensorData@{SensorData}!pm1@{pm1}}
+\index{pm1@{pm1}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{pm1}{pm1}}
+{\footnotesize\ttfamily int Sensor\+Data\+::pm1 = -\/1}
+
+
+
+Poziom pyłu PM1.\+0 w µg/m³. 
+
+\mbox{\Hypertarget{structSensorData_aa19ba55b7fbf096d6e0d2d1bebe26a2e}\label{structSensorData_aa19ba55b7fbf096d6e0d2d1bebe26a2e}} 
+\index{SensorData@{SensorData}!pm10@{pm10}}
+\index{pm10@{pm10}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{pm10}{pm10}}
+{\footnotesize\ttfamily int Sensor\+Data\+::pm10 = -\/1}
+
+
+
+Poziom pyłu PM10 w µg/m³. 
+
+\mbox{\Hypertarget{structSensorData_a1a2ae409164ca2b9e0ae1fc6f2323221}\label{structSensorData_a1a2ae409164ca2b9e0ae1fc6f2323221}} 
+\index{SensorData@{SensorData}!pm25@{pm25}}
+\index{pm25@{pm25}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{pm25}{pm25}}
+{\footnotesize\ttfamily int Sensor\+Data\+::pm25 = -\/1}
+
+
+
+Poziom pyłu PM2.\+5 w µg/m³. 
+
+\mbox{\Hypertarget{structSensorData_aea39d17cc6edacb767c63708e4650cbc}\label{structSensorData_aea39d17cc6edacb767c63708e4650cbc}} 
+\index{SensorData@{SensorData}!radiation@{radiation}}
+\index{radiation@{radiation}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{radiation}{radiation}}
+{\footnotesize\ttfamily int Sensor\+Data\+::radiation = -\/1}
+
+
+
+Liczba zliczeń promieniowania (CPM). 
+
+\mbox{\Hypertarget{structSensorData_a6b9fb45f05c03bd6c2d5a81b94a09afc}\label{structSensorData_a6b9fb45f05c03bd6c2d5a81b94a09afc}} 
+\index{SensorData@{SensorData}!radiation\_dose\_per\_hour@{radiation\_dose\_per\_hour}}
+\index{radiation\_dose\_per\_hour@{radiation\_dose\_per\_hour}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{radiation\_dose\_per\_hour}{radiation\_dose\_per\_hour}}
+{\footnotesize\ttfamily float Sensor\+Data\+::radiation\+\_\+dose\+\_\+per\+\_\+hour = -\/1.\+0}
+
+
+
+Dawka promieniowania na godzinę w µ\+Sv/h. 
+
+\mbox{\Hypertarget{structSensorData_a7085f9e57a09ef9d21d186f63d81a28a}\label{structSensorData_a7085f9e57a09ef9d21d186f63d81a28a}} 
+\index{SensorData@{SensorData}!tvoc@{tvoc}}
+\index{tvoc@{tvoc}!SensorData@{SensorData}}
+\doxysubsubsection{\texorpdfstring{tvoc}{tvoc}}
+{\footnotesize\ttfamily int Sensor\+Data\+::tvoc = -\/1}
+
+
+
+Poziom TVOC. 
+
+
+
+Dokumentacja dla tej struktury została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SensorReader_8h}{Sensor\+Reader.\+h}}\end{DoxyCompactItemize}

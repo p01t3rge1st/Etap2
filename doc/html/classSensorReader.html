@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>System Monitorowania Czujników: Dokumentacja klasy SensorReader</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">System Monitorowania Czujników
+   </div>
+   <div id="projectbrief">System monitorowania danych z czujników środowiskowych</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy SensorReader</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa do obsługi czujników przez port szeregowy.  
+ <a href="classSensorReader.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SensorReader_8h_source.html">SensorReader.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla SensorReader:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSensorReader__coll__graph.png" border="0" usemap="#aSensorReader_coll__map" alt="Collaboration graph"/></div>
+<map name="aSensorReader_coll__map" id="aSensorReader_coll__map">
+<area shape="rect" title="Klasa do obsługi czujników przez port szeregowy." alt="" coords="81,448,233,657"/>
+<area shape="rect" title=" " alt="" coords="31,220,118,297"/>
+<area shape="rect" title=" " alt="" coords="5,5,144,97"/>
+<area shape="rect" href="structSensorData.html" title="Struktura przechowująca dane odczytane z czujników." alt="" coords="143,147,340,371"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a6bfc52943447a48a7eab3a791bdb3b0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a6bfc52943447a48a7eab3a791bdb3b0f">SensorReader</a> (const std::string &amp;<a class="el" href="classSensorReader.html#a202c307c19bb8beb21f703dcf9959641">portname</a>, int <a class="el" href="classSensorReader.html#aaebc91f52f1d25176af61212d015b5ff">baudrate</a>=B9600)</td></tr>
+<tr class="memdesc:a6bfc52943447a48a7eab3a791bdb3b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy <a class="el" href="classSensorReader.html" title="Klasa do obsługi czujników przez port szeregowy.">SensorReader</a>.  <a href="classSensorReader.html#a6bfc52943447a48a7eab3a791bdb3b0f">Więcej...</a><br /></td></tr>
+<tr class="separator:a6bfc52943447a48a7eab3a791bdb3b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa434a375e5b76572c2a770a9bb47e4f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#aaa434a375e5b76572c2a770a9bb47e4f">~SensorReader</a> ()</td></tr>
+<tr class="memdesc:aaa434a375e5b76572c2a770a9bb47e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor klasy <a class="el" href="classSensorReader.html" title="Klasa do obsługi czujników przez port szeregowy.">SensorReader</a>.  <a href="classSensorReader.html#aaa434a375e5b76572c2a770a9bb47e4f">Więcej...</a><br /></td></tr>
+<tr class="separator:aaa434a375e5b76572c2a770a9bb47e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670969b9b0611931a942cb9fc887b66d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a670969b9b0611931a942cb9fc887b66d">openPort</a> ()</td></tr>
+<tr class="memdesc:a670969b9b0611931a942cb9fc887b66d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Otwiera port szeregowy.  <a href="classSensorReader.html#a670969b9b0611931a942cb9fc887b66d">Więcej...</a><br /></td></tr>
+<tr class="separator:a670969b9b0611931a942cb9fc887b66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f365e79bdc97851dcdbba40f4888335"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a7f365e79bdc97851dcdbba40f4888335">closePort</a> ()</td></tr>
+<tr class="memdesc:a7f365e79bdc97851dcdbba40f4888335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zamyka port szeregowy.  <a href="classSensorReader.html#a7f365e79bdc97851dcdbba40f4888335">Więcej...</a><br /></td></tr>
+<tr class="separator:a7f365e79bdc97851dcdbba40f4888335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d2ee52ececadca7d2dbdba80ae22e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a28d2ee52ececadca7d2dbdba80ae22e6">readData</a> ()</td></tr>
+<tr class="memdesc:a28d2ee52ececadca7d2dbdba80ae22e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odczytuje dane z portu szeregowego.  <a href="classSensorReader.html#a28d2ee52ececadca7d2dbdba80ae22e6">Więcej...</a><br /></td></tr>
+<tr class="separator:a28d2ee52ececadca7d2dbdba80ae22e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6e6a16ca1726b2b563bd125fe9f15e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSensorData.html">SensorData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a1d6e6a16ca1726b2b563bd125fe9f15e">getData</a> () const</td></tr>
+<tr class="memdesc:a1d6e6a16ca1726b2b563bd125fe9f15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca ostatnio odczytane dane z czujników.  <a href="classSensorReader.html#a1d6e6a16ca1726b2b563bd125fe9f15e">Więcej...</a><br /></td></tr>
+<tr class="separator:a1d6e6a16ca1726b2b563bd125fe9f15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a0ddf7eae30439740b91f9a6fc45f5d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a0a0ddf7eae30439740b91f9a6fc45f5d">calculateCRC</a> (const std::string &amp;<a class="el" href="classSensorReader.html#ac45e464399cee627f8e155d22ffd733d">data</a>)</td></tr>
+<tr class="memdesc:a0a0ddf7eae30439740b91f9a6fc45f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicza wartość CRC dla danych.  <a href="classSensorReader.html#a0a0ddf7eae30439740b91f9a6fc45f5d">Więcej...</a><br /></td></tr>
+<tr class="separator:a0a0ddf7eae30439740b91f9a6fc45f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:a388472b707a086a7e0055d401c3b3e8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSensorData.html">SensorData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a388472b707a086a7e0055d401c3b3e8b">parseSensorData</a> (const std::string &amp;raw)</td></tr>
+<tr class="memdesc:a388472b707a086a7e0055d401c3b3e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parsuje surowe dane z czujników.  <a href="classSensorReader.html#a388472b707a086a7e0055d401c3b3e8b">Więcej...</a><br /></td></tr>
+<tr class="separator:a388472b707a086a7e0055d401c3b3e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a202c307c19bb8beb21f703dcf9959641"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a202c307c19bb8beb21f703dcf9959641">portname</a></td></tr>
+<tr class="memdesc:a202c307c19bb8beb21f703dcf9959641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nazwa portu szeregowego.  <a href="classSensorReader.html#a202c307c19bb8beb21f703dcf9959641">Więcej...</a><br /></td></tr>
+<tr class="separator:a202c307c19bb8beb21f703dcf9959641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaebc91f52f1d25176af61212d015b5ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#aaebc91f52f1d25176af61212d015b5ff">baudrate</a></td></tr>
+<tr class="memdesc:aaebc91f52f1d25176af61212d015b5ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość transmisji.  <a href="classSensorReader.html#aaebc91f52f1d25176af61212d015b5ff">Więcej...</a><br /></td></tr>
+<tr class="separator:aaebc91f52f1d25176af61212d015b5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00637d82d16cfaf25a9e7b7a4cefbff6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a00637d82d16cfaf25a9e7b7a4cefbff6">serial_port</a></td></tr>
+<tr class="memdesc:a00637d82d16cfaf25a9e7b7a4cefbff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uchwyt do portu szeregowego.  <a href="classSensorReader.html#a00637d82d16cfaf25a9e7b7a4cefbff6">Więcej...</a><br /></td></tr>
+<tr class="separator:a00637d82d16cfaf25a9e7b7a4cefbff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a682e413b5df61950b591162157518"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#a91a682e413b5df61950b591162157518">buffer</a> [256]</td></tr>
+<tr class="memdesc:a91a682e413b5df61950b591162157518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bufor do przechowywania danych z portu szeregowego.  <a href="classSensorReader.html#a91a682e413b5df61950b591162157518">Więcej...</a><br /></td></tr>
+<tr class="separator:a91a682e413b5df61950b591162157518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae035aa78b5295e55aece9cf1a306f8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#aaae035aa78b5295e55aece9cf1a306f8">serial_data</a></td></tr>
+<tr class="memdesc:aaae035aa78b5295e55aece9cf1a306f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dane odczytane z portu szeregowego.  <a href="classSensorReader.html#aaae035aa78b5295e55aece9cf1a306f8">Więcej...</a><br /></td></tr>
+<tr class="separator:aaae035aa78b5295e55aece9cf1a306f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45e464399cee627f8e155d22ffd733d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSensorData.html">SensorData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensorReader.html#ac45e464399cee627f8e155d22ffd733d">data</a></td></tr>
+<tr class="memdesc:ac45e464399cee627f8e155d22ffd733d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struktura przechowująca dane z czujników.  <a href="classSensorReader.html#ac45e464399cee627f8e155d22ffd733d">Więcej...</a><br /></td></tr>
+<tr class="separator:ac45e464399cee627f8e155d22ffd733d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Klasa do obsługi czujników przez port szeregowy. </p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a6bfc52943447a48a7eab3a791bdb3b0f" name="a6bfc52943447a48a7eab3a791bdb3b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bfc52943447a48a7eab3a791bdb3b0f">&#9670;&nbsp;</a></span>SensorReader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SensorReader::SensorReader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>portname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>baudrate</em> = <code>B9600</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor klasy <a class="el" href="classSensorReader.html" title="Klasa do obsługi czujników przez port szeregowy.">SensorReader</a>. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">portname</td><td>Nazwa portu szeregowego. </td></tr>
+    <tr><td class="paramname">baudrate</td><td>Prędkość transmisji (domyślnie B9600). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaa434a375e5b76572c2a770a9bb47e4f" name="aaa434a375e5b76572c2a770a9bb47e4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa434a375e5b76572c2a770a9bb47e4f">&#9670;&nbsp;</a></span>~SensorReader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SensorReader::~SensorReader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruktor klasy <a class="el" href="classSensorReader.html" title="Klasa do obsługi czujników przez port szeregowy.">SensorReader</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a0a0ddf7eae30439740b91f9a6fc45f5d" name="a0a0ddf7eae30439740b91f9a6fc45f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a0ddf7eae30439740b91f9a6fc45f5d">&#9670;&nbsp;</a></span>calculateCRC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t SensorReader::calculateCRC </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Oblicza wartość CRC dla danych. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dane wejściowe w formie ciągu znaków. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Obliczona wartość CRC. </dd></dl>
+
+</div>
+</div>
+<a id="a7f365e79bdc97851dcdbba40f4888335" name="a7f365e79bdc97851dcdbba40f4888335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f365e79bdc97851dcdbba40f4888335">&#9670;&nbsp;</a></span>closePort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SensorReader::closePort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zamyka port szeregowy. </p>
+
+</div>
+</div>
+<a id="a1d6e6a16ca1726b2b563bd125fe9f15e" name="a1d6e6a16ca1726b2b563bd125fe9f15e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6e6a16ca1726b2b563bd125fe9f15e">&#9670;&nbsp;</a></span>getData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSensorData.html">SensorData</a> SensorReader::getData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca ostatnio odczytane dane z czujników. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Struktura <a class="el" href="structSensorData.html" title="Struktura przechowująca dane odczytane z czujników.">SensorData</a> zawierająca dane z czujników. </dd></dl>
+
+</div>
+</div>
+<a id="a670969b9b0611931a942cb9fc887b66d" name="a670969b9b0611931a942cb9fc887b66d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670969b9b0611931a942cb9fc887b66d">&#9670;&nbsp;</a></span>openPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SensorReader::openPort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Otwiera port szeregowy. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true, jeśli port został otwarty pomyślnie, false w przeciwnym razie. </dd></dl>
+
+</div>
+</div>
+<a id="a388472b707a086a7e0055d401c3b3e8b" name="a388472b707a086a7e0055d401c3b3e8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a388472b707a086a7e0055d401c3b3e8b">&#9670;&nbsp;</a></span>parseSensorData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSensorData.html">SensorData</a> SensorReader::parseSensorData </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>raw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parsuje surowe dane z czujników. </p>
+<p >Parsuje surowe dane z czujników i weryfikuje CRC.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">raw</td><td>Surowe dane w formie ciągu znaków. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Struktura <a class="el" href="structSensorData.html" title="Struktura przechowująca dane odczytane z czujników.">SensorData</a> zawierająca sparsowane dane. </dd></dl>
+
+</div>
+</div>
+<a id="a28d2ee52ececadca7d2dbdba80ae22e6" name="a28d2ee52ececadca7d2dbdba80ae22e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d2ee52ececadca7d2dbdba80ae22e6">&#9670;&nbsp;</a></span>readData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SensorReader::readData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Odczytuje dane z portu szeregowego. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true, jeśli dane zostały odczytane pomyślnie, false w przeciwnym razie. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja pól</h2>
+<a id="aaebc91f52f1d25176af61212d015b5ff" name="aaebc91f52f1d25176af61212d015b5ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaebc91f52f1d25176af61212d015b5ff">&#9670;&nbsp;</a></span>baudrate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SensorReader::baudrate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prędkość transmisji. </p>
+
+</div>
+</div>
+<a id="a91a682e413b5df61950b591162157518" name="a91a682e413b5df61950b591162157518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a682e413b5df61950b591162157518">&#9670;&nbsp;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char SensorReader::buffer[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bufor do przechowywania danych z portu szeregowego. </p>
+
+</div>
+</div>
+<a id="ac45e464399cee627f8e155d22ffd733d" name="ac45e464399cee627f8e155d22ffd733d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45e464399cee627f8e155d22ffd733d">&#9670;&nbsp;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSensorData.html">SensorData</a> SensorReader::data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Struktura przechowująca dane z czujników. </p>
+
+</div>
+</div>
+<a id="a202c307c19bb8beb21f703dcf9959641" name="a202c307c19bb8beb21f703dcf9959641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202c307c19bb8beb21f703dcf9959641">&#9670;&nbsp;</a></span>portname</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SensorReader::portname</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Nazwa portu szeregowego. </p>
+
+</div>
+</div>
+<a id="aaae035aa78b5295e55aece9cf1a306f8" name="aaae035aa78b5295e55aece9cf1a306f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae035aa78b5295e55aece9cf1a306f8">&#9670;&nbsp;</a></span>serial_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SensorReader::serial_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dane odczytane z portu szeregowego. </p>
+
+</div>
+</div>
+<a id="a00637d82d16cfaf25a9e7b7a4cefbff6" name="a00637d82d16cfaf25a9e7b7a4cefbff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00637d82d16cfaf25a9e7b7a4cefbff6">&#9670;&nbsp;</a></span>serial_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SensorReader::serial_port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uchwyt do portu szeregowego. </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="SensorReader_8h_source.html">SensorReader.h</a></li>
+<li><a class="el" href="SensorReader_8cpp.html">SensorReader.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

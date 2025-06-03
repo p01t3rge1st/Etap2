@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>System Monitorowania Czujników: Dokumentacja pliku SensorDataLogger.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">System Monitorowania Czujników
+   </div>
+   <div id="projectbrief">System monitorowania danych z czujników środowiskowych</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja pliku SensorDataLogger.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementacja klasy zapisującej dane z czujników do pliku CSV.  
+<a href="#details">Więcej...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="SensorDataLogger_8h_source.html">SensorDataLogger.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Wykres zależności załączania dla SensorDataLogger.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="SensorDataLogger_8cpp__incl.png" border="0" usemap="#aSensorDataLogger_8cpp" alt=""/></div>
+<map name="aSensorDataLogger_8cpp" id="aSensorDataLogger_8cpp">
+<area shape="rect" title="Implementacja klasy zapisującej dane z czujników do pliku CSV." alt="" coords="149,5,316,32"/>
+<area shape="rect" href="SensorDataLogger_8h.html" title="Deklaracja klasy SensorDataLogger do zapisu danych z czujników do pliku CSV." alt="" coords="157,80,309,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,76,181"/>
+<area shape="rect" title=" " alt="" coords="100,155,155,181"/>
+<area shape="rect" title=" " alt="" coords="179,155,286,181"/>
+<area shape="rect" title=" " alt="" coords="310,155,406,181"/>
+<area shape="rect" href="SensorReader_8h.html" title=" " alt="" coords="430,155,553,181"/>
+<area shape="rect" title=" " alt="" coords="414,229,473,256"/>
+<area shape="rect" title=" " alt="" coords="497,229,581,256"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:a5bcc10879d1449723fc4dc5ca1643b01"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SensorDataLogger_8cpp.html#a5bcc10879d1449723fc4dc5ca1643b01">CPS_PER_USV</a> = 0.0037f</td></tr>
+<tr class="memdesc:a5bcc10879d1449723fc4dc5ca1643b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Współczynnik konwersji CPS na µSv/h.  <a href="SensorDataLogger_8cpp.html#a5bcc10879d1449723fc4dc5ca1643b01">Więcej...</a><br /></td></tr>
+<tr class="separator:a5bcc10879d1449723fc4dc5ca1643b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Implementacja klasy zapisującej dane z czujników do pliku CSV. </p>
+</div><h2 class="groupheader">Dokumentacja zmiennych</h2>
+<a id="a5bcc10879d1449723fc4dc5ca1643b01" name="a5bcc10879d1449723fc4dc5ca1643b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bcc10879d1449723fc4dc5ca1643b01">&#9670;&nbsp;</a></span>CPS_PER_USV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float CPS_PER_USV = 0.0037f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Współczynnik konwersji CPS na µSv/h. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

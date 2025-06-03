@@ -1,0 +1,182 @@
+\hypertarget{MainWindow_8cpp}{}\doxysection{Dokumentacja pliku Main\+Window.\+cpp}
+\label{MainWindow_8cpp}\index{MainWindow.cpp@{MainWindow.cpp}}
+
+
+Implementacja głównego okna aplikacji monitorującej czujniki środowiskowe.  
+
+
+{\ttfamily \#include \char`\"{}Main\+Window.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sensor\+Data\+Logger.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QVBox\+Layout$>$}\newline
+{\ttfamily \#include $<$QGrid\+Layout$>$}\newline
+{\ttfamily \#include $<$QMain\+Window$>$}\newline
+{\ttfamily \#include $<$QPush\+Button$>$}\newline
+{\ttfamily \#include $<$QLabel$>$}\newline
+{\ttfamily \#include \char`\"{}Sensor\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QApplication$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include $<$QFrame$>$}\newline
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include $<$QText\+Stream$>$}\newline
+{\ttfamily \#include $<$QDate\+Time$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$Qt\+Charts/\+QChart$>$}\newline
+{\ttfamily \#include $<$Qt\+Charts/\+QChart\+View$>$}\newline
+{\ttfamily \#include $<$Qt\+Charts/\+QLine\+Series$>$}\newline
+{\ttfamily \#include $<$Qt\+Charts/\+QDate\+Time\+Axis$>$}\newline
+{\ttfamily \#include $<$Qt\+Charts/\+QValue\+Axis$>$}\newline
+{\ttfamily \#include $<$QCombo\+Box$>$}\newline
+{\ttfamily \#include $<$QButton\+Group$>$}\newline
+{\ttfamily \#include $<$QRadio\+Button$>$}\newline
+{\ttfamily \#include $<$QHBox\+Layout$>$}\newline
+{\ttfamily \#include $<$QLine\+Edit$>$}\newline
+Wykres zależności załączania dla Main\+Window.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MainWindow_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a8f92db3157f89a8855fde79f2e827930}{HIGH\+\_\+\+CO2}} = 1200
+\begin{DoxyCompactList}\small\item\em Próg alarmowy CO2 (ppm) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a745f34c106bd76603b945003b119a3b2}{HIGH\+\_\+\+PM1}} = 25
+\begin{DoxyCompactList}\small\item\em Próg alarmowy PM1.\+0 (µg/m³) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a0ebc6ae3448f5147983b1918f8ec1db3}{HIGH\+\_\+\+PM25}} = 25
+\begin{DoxyCompactList}\small\item\em Próg alarmowy PM2.\+5 (µg/m³) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_ada8c9009c4d9db74d7826c7bffca92fe}{HIGH\+\_\+\+PM10}} = 50
+\begin{DoxyCompactList}\small\item\em Próg alarmowy PM10 (µg/m³) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a86416f8adf88d916eee09a2ece2c2f8c}{HIGH\+\_\+\+RADIATION}} = 30
+\begin{DoxyCompactList}\small\item\em Próg alarmowy promieniowania (imp/min) \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{MainWindow_8cpp_a5bcc10879d1449723fc4dc5ca1643b01}{CPS\+\_\+\+PER\+\_\+\+USV}} = 0.\+0037
+\begin{DoxyCompactList}\small\item\em Współczynnik konwersji CPS na µ\+Sv/h. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_ad6bf891f67bc7a84a260bc6f3d9771c1}{MAX\+\_\+\+CO2}} = 2000
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość CO2 na wykresie. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a3b75635c7c1c7e9ae1f0a0c2abbcc307}{MAX\+\_\+\+PM1}} = 50
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość PM1.\+0 na wykresie. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a38ab099a01e4b3aa8863feedc74c54d1}{MAX\+\_\+\+PM25}} = 50
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość PM2.\+5 na wykresie. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a75fff52d8e7e31a914a573a803e00c8d}{MAX\+\_\+\+PM10}} = 100
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość PM10 na wykresie. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{MainWindow_8cpp_a47e4224bac12dee553602b8677045598}{MAX\+\_\+\+RADIATION}} = 100
+\begin{DoxyCompactList}\small\item\em Maksymalna wartość promieniowania na wykresie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Implementacja głównego okna aplikacji monitorującej czujniki środowiskowe. 
+
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\mbox{\Hypertarget{MainWindow_8cpp_a5bcc10879d1449723fc4dc5ca1643b01}\label{MainWindow_8cpp_a5bcc10879d1449723fc4dc5ca1643b01}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!CPS\_PER\_USV@{CPS\_PER\_USV}}
+\index{CPS\_PER\_USV@{CPS\_PER\_USV}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{CPS\_PER\_USV}{CPS\_PER\_USV}}
+{\footnotesize\ttfamily const float CPS\+\_\+\+PER\+\_\+\+USV = 0.\+0037}
+
+
+
+Współczynnik konwersji CPS na µ\+Sv/h. 
+
+\mbox{\Hypertarget{MainWindow_8cpp_a8f92db3157f89a8855fde79f2e827930}\label{MainWindow_8cpp_a8f92db3157f89a8855fde79f2e827930}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!HIGH\_CO2@{HIGH\_CO2}}
+\index{HIGH\_CO2@{HIGH\_CO2}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{HIGH\_CO2}{HIGH\_CO2}}
+{\footnotesize\ttfamily const int HIGH\+\_\+\+CO2 = 1200}
+
+
+
+Próg alarmowy CO2 (ppm) 
+
+Stałe wartości progowe dla pomiarów \mbox{\Hypertarget{MainWindow_8cpp_a745f34c106bd76603b945003b119a3b2}\label{MainWindow_8cpp_a745f34c106bd76603b945003b119a3b2}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!HIGH\_PM1@{HIGH\_PM1}}
+\index{HIGH\_PM1@{HIGH\_PM1}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{HIGH\_PM1}{HIGH\_PM1}}
+{\footnotesize\ttfamily const int HIGH\+\_\+\+PM1 = 25}
+
+
+
+Próg alarmowy PM1.\+0 (µg/m³) 
+
+\mbox{\Hypertarget{MainWindow_8cpp_ada8c9009c4d9db74d7826c7bffca92fe}\label{MainWindow_8cpp_ada8c9009c4d9db74d7826c7bffca92fe}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!HIGH\_PM10@{HIGH\_PM10}}
+\index{HIGH\_PM10@{HIGH\_PM10}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{HIGH\_PM10}{HIGH\_PM10}}
+{\footnotesize\ttfamily const int HIGH\+\_\+\+PM10 = 50}
+
+
+
+Próg alarmowy PM10 (µg/m³) 
+
+\mbox{\Hypertarget{MainWindow_8cpp_a0ebc6ae3448f5147983b1918f8ec1db3}\label{MainWindow_8cpp_a0ebc6ae3448f5147983b1918f8ec1db3}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!HIGH\_PM25@{HIGH\_PM25}}
+\index{HIGH\_PM25@{HIGH\_PM25}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{HIGH\_PM25}{HIGH\_PM25}}
+{\footnotesize\ttfamily const int HIGH\+\_\+\+PM25 = 25}
+
+
+
+Próg alarmowy PM2.\+5 (µg/m³) 
+
+\mbox{\Hypertarget{MainWindow_8cpp_a86416f8adf88d916eee09a2ece2c2f8c}\label{MainWindow_8cpp_a86416f8adf88d916eee09a2ece2c2f8c}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!HIGH\_RADIATION@{HIGH\_RADIATION}}
+\index{HIGH\_RADIATION@{HIGH\_RADIATION}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{HIGH\_RADIATION}{HIGH\_RADIATION}}
+{\footnotesize\ttfamily const int HIGH\+\_\+\+RADIATION = 30}
+
+
+
+Próg alarmowy promieniowania (imp/min) 
+
+\mbox{\Hypertarget{MainWindow_8cpp_ad6bf891f67bc7a84a260bc6f3d9771c1}\label{MainWindow_8cpp_ad6bf891f67bc7a84a260bc6f3d9771c1}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!MAX\_CO2@{MAX\_CO2}}
+\index{MAX\_CO2@{MAX\_CO2}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_CO2}{MAX\_CO2}}
+{\footnotesize\ttfamily const int MAX\+\_\+\+CO2 = 2000}
+
+
+
+Maksymalna wartość CO2 na wykresie. 
+
+Zakresy wykresów \mbox{\Hypertarget{MainWindow_8cpp_a3b75635c7c1c7e9ae1f0a0c2abbcc307}\label{MainWindow_8cpp_a3b75635c7c1c7e9ae1f0a0c2abbcc307}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!MAX\_PM1@{MAX\_PM1}}
+\index{MAX\_PM1@{MAX\_PM1}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_PM1}{MAX\_PM1}}
+{\footnotesize\ttfamily const int MAX\+\_\+\+PM1 = 50}
+
+
+
+Maksymalna wartość PM1.\+0 na wykresie. 
+
+\mbox{\Hypertarget{MainWindow_8cpp_a75fff52d8e7e31a914a573a803e00c8d}\label{MainWindow_8cpp_a75fff52d8e7e31a914a573a803e00c8d}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!MAX\_PM10@{MAX\_PM10}}
+\index{MAX\_PM10@{MAX\_PM10}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_PM10}{MAX\_PM10}}
+{\footnotesize\ttfamily const int MAX\+\_\+\+PM10 = 100}
+
+
+
+Maksymalna wartość PM10 na wykresie. 
+
+\mbox{\Hypertarget{MainWindow_8cpp_a38ab099a01e4b3aa8863feedc74c54d1}\label{MainWindow_8cpp_a38ab099a01e4b3aa8863feedc74c54d1}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!MAX\_PM25@{MAX\_PM25}}
+\index{MAX\_PM25@{MAX\_PM25}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_PM25}{MAX\_PM25}}
+{\footnotesize\ttfamily const int MAX\+\_\+\+PM25 = 50}
+
+
+
+Maksymalna wartość PM2.\+5 na wykresie. 
+
+\mbox{\Hypertarget{MainWindow_8cpp_a47e4224bac12dee553602b8677045598}\label{MainWindow_8cpp_a47e4224bac12dee553602b8677045598}} 
+\index{MainWindow.cpp@{MainWindow.cpp}!MAX\_RADIATION@{MAX\_RADIATION}}
+\index{MAX\_RADIATION@{MAX\_RADIATION}!MainWindow.cpp@{MainWindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_RADIATION}{MAX\_RADIATION}}
+{\footnotesize\ttfamily const int MAX\+\_\+\+RADIATION = 100}
+
+
+
+Maksymalna wartość promieniowania na wykresie. 
+

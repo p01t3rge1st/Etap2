@@ -1,0 +1,554 @@
+\hypertarget{classMainWindow}{}\doxysection{Dokumentacja klasy Main\+Window}
+\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+Główne okno aplikacji wyświetlające dane z czujników i wykresy.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Window.\+h$>$}
+
+
+
+Diagram dziedziczenia dla Main\+Window\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classMainWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classMainWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a87a1f1b12250799459255fda63778052}{Main\+Window}} (\mbox{\hyperlink{classSensorReader}{Sensor\+Reader}} $\ast$reader, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor głównego okna. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Sloty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a2e5dc7b198af26e0ecd559fb5ca6cc5d}{update\+Sensor\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje interfejs danymi z czujników. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_aaf30da4e1a1a3b097f20cdfaa532eff4}{load\+Historical\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Wczytuje i wyświetla dane historyczne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a392e2293bb3029e841ef8cc11a16b059}{on\+Time\+Machine\+Changed}} (int id)
+\begin{DoxyCompactList}\small\item\em Obsługuje zmianę zakresu czasu na wykresie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a6c022bdf4b08d56f3ba53484c0a4cbb2}{update\+Interface\+Texts}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje teksty interfejsu po zmianie języka. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_accc74af8b6dbd54ee872a789986ba72f}{update\+Chart\+Titles}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje tytuły wykresów. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a9e0dd54aecbe2e3af6306c3a005d43d2}{change\+Language}} (const QString \&language)
+\begin{DoxyCompactList}\small\item\em Zmienia język interfejsu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+QCombo\+Box $\ast$ \mbox{\hyperlink{classMainWindow_a1f374fc687c402c67330728334069e1b}{chart\+Selector}}
+\begin{DoxyCompactList}\small\item\em Komponenty wykresu. \end{DoxyCompactList}\item 
+Qt\+Charts\+::\+QChart $\ast$ \mbox{\hyperlink{classMainWindow_a6743baa254d0125c329c4f2bef3bb866}{chart}}
+\item 
+Qt\+Charts\+::\+QChart\+View $\ast$ \mbox{\hyperlink{classMainWindow_aa8cf119eb52ae432d2bd2f5b55750de1}{chart\+View}}
+\item 
+Qt\+Charts\+::\+QDate\+Time\+Axis $\ast$ \mbox{\hyperlink{classMainWindow_a39e350c55fc0ec85cff76342161d86be}{axisX}}
+\item 
+Qt\+Charts\+::\+QValue\+Axis $\ast$ \mbox{\hyperlink{classMainWindow_aa53ae2baadd07e2bbe0cbcfd0cf27dbf}{axisY}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_a3f441ed01f4b3420cdb556046c3923be}{co2\+Series}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_a349c3b57faa5e3111599e20b57203359}{pm1\+Series}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_ac2286fb5d9a0e8e4b1bc23a26dc3bd3f}{pm25\+Series}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_aec3705d6726026aa720dfd05d414f97a}{pm10\+Series}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_a4c211e23002dbc4c6a4cf5d40148fd2c}{radiation\+Series}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_aa03bb901ea7cbd58fb3cbfc6bc11cf55}{temperature\+Series}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_a723588cef6ebd394a253bb05b2c0087b}{humidity\+Series}}
+\item 
+Qt\+Charts\+::\+QLine\+Series $\ast$ \mbox{\hyperlink{classMainWindow_aaec3095696451b86ee94346f2613f5cc}{radiation\+Dose\+Series}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classMainWindow_a356578805ed1248a7f2807434cb0e5ee}{timer}}
+\begin{DoxyCompactList}\small\item\em Podstawowe komponenty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSensorReader}{Sensor\+Reader}} $\ast$ \mbox{\hyperlink{classMainWindow_abd962b3c08fd77f6af8840c9fad9380c}{sensor\+Reader}}
+\item 
+\mbox{\hyperlink{classSensorDataLogger}{Sensor\+Data\+Logger}} \mbox{\hyperlink{classMainWindow_a153dde7daa20117fae0014b0f320b0b1}{logger}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_a43e1877abcc5674c6abeaa06f51f0e9b}{co2\+Label}}
+\begin{DoxyCompactList}\small\item\em Pola wyświetlające pomiary. \end{DoxyCompactList}\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_a1381d00c3189554fc80656f5a22c82f2}{co2\+Temp\+Label}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_a721d5be1566c8200ece55112bb3b597d}{co2\+Hum\+Label}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_adef797293372990958193ee7899ac93f}{pm1\+Label}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_a1ab2d3578fe1cb1a975f1e5a8ec415a0}{pm25\+Label}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_ab30f8af70bc84a4e56fe1dc450f4dd2b}{pm10\+Label}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_ab8ca484526c571403d029aeaa75e6427}{radiation\+Label}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classMainWindow_a686e05093351bd0c45fa60cda8070b13}{radiation\+Dose\+Label}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classMainWindow_aa0d573a8981cf69c771704a600c1d343}{co2\+Status\+Label}}
+\begin{DoxyCompactList}\small\item\em Etykiety statusu. \end{DoxyCompactList}\item 
+QLabel $\ast$ \mbox{\hyperlink{classMainWindow_aba1e70577afe7cc912ede6387722056d}{pm\+Status\+Label}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classMainWindow_a4cd27ff37e219f9728698e056da8afc6}{radiation\+Status\+Label}}
+\item 
+QFrame $\ast$ \mbox{\hyperlink{classMainWindow_a1f192e91c85da80a77d8d0d5f8c41802}{sensor\+Data\+Frame}}
+\begin{DoxyCompactList}\small\item\em Kontenery interfejsu. \end{DoxyCompactList}\item 
+QFrame $\ast$ \mbox{\hyperlink{classMainWindow_a2bd04a297fbb80636c9b3d6755768c77}{interpretation\+Frame}}
+\item 
+QButton\+Group $\ast$ \mbox{\hyperlink{classMainWindow_ae2d3f55c0d919823be32d5b5a1279304}{time\+Machine\+Group}}
+\begin{DoxyCompactList}\small\item\em Kontrolki wyboru zakresu czasu. \end{DoxyCompactList}\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_a363f285fcb8edec45045d3d5db2b70fc}{hour1\+Button}}
+\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_a5cb65a3ca4cc579fac51a5aeca519ea3}{hour2\+Button}}
+\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_ae8df70663932062796d898c505363b6e}{hour4\+Button}}
+\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_ac97197f1799225348fa932db904c9444}{hour8\+Button}}
+\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_ad44060ffcf94bf06215b3b9011b16072}{hour12\+Button}}
+\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_aad7e108c26dde97af0bd7e1407f713bb}{hour24\+Button}}
+\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_a7e6dc054ea78fbf4cef69db5e7d77b55}{hour48\+Button}}
+\item 
+QRadio\+Button $\ast$ \mbox{\hyperlink{classMainWindow_a7b0194d3c364ba33815ebc31dd563bd6}{hour78\+Button}}
+\item 
+int \mbox{\hyperlink{classMainWindow_a916799760788361dfc8c072b1b551bea}{time\+Machine\+Hours}}
+\begin{DoxyCompactList}\small\item\em Aktualny zakres czasu w godzinach. \end{DoxyCompactList}\item 
+QDate\+Time \mbox{\hyperlink{classMainWindow_af5c0498df5769d4ec484223f437b5dad}{chart\+Start\+Time}}
+\begin{DoxyCompactList}\small\item\em Początek zakresu wykresu. \end{DoxyCompactList}\item 
+QCombo\+Box $\ast$ \mbox{\hyperlink{classMainWindow_aa9a1674cdd8f52bb30b208f4cbf3f2df}{language\+Selector}}
+\begin{DoxyCompactList}\small\item\em Komponenty obsługi języków. \end{DoxyCompactList}\item 
+QTranslator \mbox{\hyperlink{classMainWindow_a8e829b3590ccdeeada42625415afc6f3}{translator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Główne okno aplikacji wyświetlające dane z czujników i wykresy. 
+
+Klasa odpowiada za prezentację danych w czasie rzeczywistym oraz umożliwia przeglądanie historii pomiarów. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classMainWindow_a87a1f1b12250799459255fda63778052}\label{classMainWindow_a87a1f1b12250799459255fda63778052}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSensorReader}{Sensor\+Reader}} $\ast$}]{reader,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor głównego okna. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em reader} & Wskaźnik do czytnika danych z czujników \\
+\hline
+{\em parent} & Wskaźnik do widgetu nadrzędnego\\
+\hline
+{\em reader} & Wskaźnik do obiektu czytającego dane z czujników \\
+\hline
+{\em parent} & Wskaźnik do widgetu nadrzędnego \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classMainWindow_a9e0dd54aecbe2e3af6306c3a005d43d2}\label{classMainWindow_a9e0dd54aecbe2e3af6306c3a005d43d2}} 
+\index{MainWindow@{MainWindow}!changeLanguage@{changeLanguage}}
+\index{changeLanguage@{changeLanguage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{changeLanguage()}{changeLanguage()}}
+{\footnotesize\ttfamily void Main\+Window\+::change\+Language (\begin{DoxyParamCaption}\item[{const QString \&}]{language }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zmienia język interfejsu. 
+
+Zmienia język interfejsu aplikacji.
+
+
+\begin{DoxyParams}{Parametry}
+{\em language} & Kod języka (\char`\"{}pl\char`\"{} lub \char`\"{}en\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainWindow_aaf30da4e1a1a3b097f20cdfaa532eff4}\label{classMainWindow_aaf30da4e1a1a3b097f20cdfaa532eff4}} 
+\index{MainWindow@{MainWindow}!loadHistoricalData@{loadHistoricalData}}
+\index{loadHistoricalData@{loadHistoricalData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loadHistoricalData}{loadHistoricalData}}
+{\footnotesize\ttfamily void Main\+Window\+::load\+Historical\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Wczytuje i wyświetla dane historyczne. 
+
+Wczytuje dane historyczne z pliku CSV.
+
+Odczytuje zapisane dane z czujników i aktualizuje serie danych na wykresach \mbox{\Hypertarget{classMainWindow_a392e2293bb3029e841ef8cc11a16b059}\label{classMainWindow_a392e2293bb3029e841ef8cc11a16b059}} 
+\index{MainWindow@{MainWindow}!onTimeMachineChanged@{onTimeMachineChanged}}
+\index{onTimeMachineChanged@{onTimeMachineChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onTimeMachineChanged}{onTimeMachineChanged}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Time\+Machine\+Changed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Obsługuje zmianę zakresu czasu na wykresie. 
+
+Obsługuje zmianę zakresu czasu w widoku historycznym.
+
+
+\begin{DoxyParams}{Parametry}
+{\em id} & Nowy zakres czasu w godzinach \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainWindow_accc74af8b6dbd54ee872a789986ba72f}\label{classMainWindow_accc74af8b6dbd54ee872a789986ba72f}} 
+\index{MainWindow@{MainWindow}!updateChartTitles@{updateChartTitles}}
+\index{updateChartTitles@{updateChartTitles}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateChartTitles()}{updateChartTitles()}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+Chart\+Titles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Aktualizuje tytuły wykresów. 
+
+Aktualizuje tytuły wykresów na podstawie wybranej serii danych. \mbox{\Hypertarget{classMainWindow_a6c022bdf4b08d56f3ba53484c0a4cbb2}\label{classMainWindow_a6c022bdf4b08d56f3ba53484c0a4cbb2}} 
+\index{MainWindow@{MainWindow}!updateInterfaceTexts@{updateInterfaceTexts}}
+\index{updateInterfaceTexts@{updateInterfaceTexts}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateInterfaceTexts()}{updateInterfaceTexts()}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+Interface\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Aktualizuje teksty interfejsu po zmianie języka. 
+
+Aktualizuje wszystkie teksty w interfejsie po zmianie języka. \mbox{\Hypertarget{classMainWindow_a2e5dc7b198af26e0ecd559fb5ca6cc5d}\label{classMainWindow_a2e5dc7b198af26e0ecd559fb5ca6cc5d}} 
+\index{MainWindow@{MainWindow}!updateSensorData@{updateSensorData}}
+\index{updateSensorData@{updateSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateSensorData}{updateSensorData}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+Sensor\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Aktualizuje interfejs danymi z czujników. 
+
+Aktualizuje wyświetlane dane z czujników.
+
+Odczytuje nowe dane, waliduje je i aktualizuje interfejs użytkownika 
+
+\doxysubsection{Dokumentacja pól}
+\mbox{\Hypertarget{classMainWindow_a39e350c55fc0ec85cff76342161d86be}\label{classMainWindow_a39e350c55fc0ec85cff76342161d86be}} 
+\index{MainWindow@{MainWindow}!axisX@{axisX}}
+\index{axisX@{axisX}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{axisX}{axisX}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QDate\+Time\+Axis$\ast$ Main\+Window\+::axisX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aa53ae2baadd07e2bbe0cbcfd0cf27dbf}\label{classMainWindow_aa53ae2baadd07e2bbe0cbcfd0cf27dbf}} 
+\index{MainWindow@{MainWindow}!axisY@{axisY}}
+\index{axisY@{axisY}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{axisY}{axisY}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QValue\+Axis$\ast$ Main\+Window\+::axisY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a6743baa254d0125c329c4f2bef3bb866}\label{classMainWindow_a6743baa254d0125c329c4f2bef3bb866}} 
+\index{MainWindow@{MainWindow}!chart@{chart}}
+\index{chart@{chart}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{chart}{chart}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QChart$\ast$ Main\+Window\+::chart\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a1f374fc687c402c67330728334069e1b}\label{classMainWindow_a1f374fc687c402c67330728334069e1b}} 
+\index{MainWindow@{MainWindow}!chartSelector@{chartSelector}}
+\index{chartSelector@{chartSelector}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{chartSelector}{chartSelector}}
+{\footnotesize\ttfamily QCombo\+Box$\ast$ Main\+Window\+::chart\+Selector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Komponenty wykresu. 
+
+\mbox{\Hypertarget{classMainWindow_af5c0498df5769d4ec484223f437b5dad}\label{classMainWindow_af5c0498df5769d4ec484223f437b5dad}} 
+\index{MainWindow@{MainWindow}!chartStartTime@{chartStartTime}}
+\index{chartStartTime@{chartStartTime}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{chartStartTime}{chartStartTime}}
+{\footnotesize\ttfamily QDate\+Time Main\+Window\+::chart\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Początek zakresu wykresu. 
+
+\mbox{\Hypertarget{classMainWindow_aa8cf119eb52ae432d2bd2f5b55750de1}\label{classMainWindow_aa8cf119eb52ae432d2bd2f5b55750de1}} 
+\index{MainWindow@{MainWindow}!chartView@{chartView}}
+\index{chartView@{chartView}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{chartView}{chartView}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QChart\+View$\ast$ Main\+Window\+::chart\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a721d5be1566c8200ece55112bb3b597d}\label{classMainWindow_a721d5be1566c8200ece55112bb3b597d}} 
+\index{MainWindow@{MainWindow}!co2HumLabel@{co2HumLabel}}
+\index{co2HumLabel@{co2HumLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{co2HumLabel}{co2HumLabel}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::co2\+Hum\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a43e1877abcc5674c6abeaa06f51f0e9b}\label{classMainWindow_a43e1877abcc5674c6abeaa06f51f0e9b}} 
+\index{MainWindow@{MainWindow}!co2Label@{co2Label}}
+\index{co2Label@{co2Label}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{co2Label}{co2Label}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::co2\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pola wyświetlające pomiary. 
+
+\mbox{\Hypertarget{classMainWindow_a3f441ed01f4b3420cdb556046c3923be}\label{classMainWindow_a3f441ed01f4b3420cdb556046c3923be}} 
+\index{MainWindow@{MainWindow}!co2Series@{co2Series}}
+\index{co2Series@{co2Series}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{co2Series}{co2Series}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::co2\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aa0d573a8981cf69c771704a600c1d343}\label{classMainWindow_aa0d573a8981cf69c771704a600c1d343}} 
+\index{MainWindow@{MainWindow}!co2StatusLabel@{co2StatusLabel}}
+\index{co2StatusLabel@{co2StatusLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{co2StatusLabel}{co2StatusLabel}}
+{\footnotesize\ttfamily QLabel$\ast$ Main\+Window\+::co2\+Status\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Etykiety statusu. 
+
+\mbox{\Hypertarget{classMainWindow_a1381d00c3189554fc80656f5a22c82f2}\label{classMainWindow_a1381d00c3189554fc80656f5a22c82f2}} 
+\index{MainWindow@{MainWindow}!co2TempLabel@{co2TempLabel}}
+\index{co2TempLabel@{co2TempLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{co2TempLabel}{co2TempLabel}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::co2\+Temp\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_ad44060ffcf94bf06215b3b9011b16072}\label{classMainWindow_ad44060ffcf94bf06215b3b9011b16072}} 
+\index{MainWindow@{MainWindow}!hour12Button@{hour12Button}}
+\index{hour12Button@{hour12Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour12Button}{hour12Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour12\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a363f285fcb8edec45045d3d5db2b70fc}\label{classMainWindow_a363f285fcb8edec45045d3d5db2b70fc}} 
+\index{MainWindow@{MainWindow}!hour1Button@{hour1Button}}
+\index{hour1Button@{hour1Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour1Button}{hour1Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour1\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aad7e108c26dde97af0bd7e1407f713bb}\label{classMainWindow_aad7e108c26dde97af0bd7e1407f713bb}} 
+\index{MainWindow@{MainWindow}!hour24Button@{hour24Button}}
+\index{hour24Button@{hour24Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour24Button}{hour24Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour24\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a5cb65a3ca4cc579fac51a5aeca519ea3}\label{classMainWindow_a5cb65a3ca4cc579fac51a5aeca519ea3}} 
+\index{MainWindow@{MainWindow}!hour2Button@{hour2Button}}
+\index{hour2Button@{hour2Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour2Button}{hour2Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour2\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a7e6dc054ea78fbf4cef69db5e7d77b55}\label{classMainWindow_a7e6dc054ea78fbf4cef69db5e7d77b55}} 
+\index{MainWindow@{MainWindow}!hour48Button@{hour48Button}}
+\index{hour48Button@{hour48Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour48Button}{hour48Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour48\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_ae8df70663932062796d898c505363b6e}\label{classMainWindow_ae8df70663932062796d898c505363b6e}} 
+\index{MainWindow@{MainWindow}!hour4Button@{hour4Button}}
+\index{hour4Button@{hour4Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour4Button}{hour4Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour4\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a7b0194d3c364ba33815ebc31dd563bd6}\label{classMainWindow_a7b0194d3c364ba33815ebc31dd563bd6}} 
+\index{MainWindow@{MainWindow}!hour78Button@{hour78Button}}
+\index{hour78Button@{hour78Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour78Button}{hour78Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour78\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_ac97197f1799225348fa932db904c9444}\label{classMainWindow_ac97197f1799225348fa932db904c9444}} 
+\index{MainWindow@{MainWindow}!hour8Button@{hour8Button}}
+\index{hour8Button@{hour8Button}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{hour8Button}{hour8Button}}
+{\footnotesize\ttfamily QRadio\+Button$\ast$ Main\+Window\+::hour8\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a723588cef6ebd394a253bb05b2c0087b}\label{classMainWindow_a723588cef6ebd394a253bb05b2c0087b}} 
+\index{MainWindow@{MainWindow}!humiditySeries@{humiditySeries}}
+\index{humiditySeries@{humiditySeries}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{humiditySeries}{humiditySeries}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::humidity\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a2bd04a297fbb80636c9b3d6755768c77}\label{classMainWindow_a2bd04a297fbb80636c9b3d6755768c77}} 
+\index{MainWindow@{MainWindow}!interpretationFrame@{interpretationFrame}}
+\index{interpretationFrame@{interpretationFrame}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{interpretationFrame}{interpretationFrame}}
+{\footnotesize\ttfamily QFrame$\ast$ Main\+Window\+::interpretation\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aa9a1674cdd8f52bb30b208f4cbf3f2df}\label{classMainWindow_aa9a1674cdd8f52bb30b208f4cbf3f2df}} 
+\index{MainWindow@{MainWindow}!languageSelector@{languageSelector}}
+\index{languageSelector@{languageSelector}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{languageSelector}{languageSelector}}
+{\footnotesize\ttfamily QCombo\+Box$\ast$ Main\+Window\+::language\+Selector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Komponenty obsługi języków. 
+
+\mbox{\Hypertarget{classMainWindow_a153dde7daa20117fae0014b0f320b0b1}\label{classMainWindow_a153dde7daa20117fae0014b0f320b0b1}} 
+\index{MainWindow@{MainWindow}!logger@{logger}}
+\index{logger@{logger}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSensorDataLogger}{Sensor\+Data\+Logger}} Main\+Window\+::logger\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_ab30f8af70bc84a4e56fe1dc450f4dd2b}\label{classMainWindow_ab30f8af70bc84a4e56fe1dc450f4dd2b}} 
+\index{MainWindow@{MainWindow}!pm10Label@{pm10Label}}
+\index{pm10Label@{pm10Label}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pm10Label}{pm10Label}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::pm10\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aec3705d6726026aa720dfd05d414f97a}\label{classMainWindow_aec3705d6726026aa720dfd05d414f97a}} 
+\index{MainWindow@{MainWindow}!pm10Series@{pm10Series}}
+\index{pm10Series@{pm10Series}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pm10Series}{pm10Series}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::pm10\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_adef797293372990958193ee7899ac93f}\label{classMainWindow_adef797293372990958193ee7899ac93f}} 
+\index{MainWindow@{MainWindow}!pm1Label@{pm1Label}}
+\index{pm1Label@{pm1Label}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pm1Label}{pm1Label}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::pm1\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a349c3b57faa5e3111599e20b57203359}\label{classMainWindow_a349c3b57faa5e3111599e20b57203359}} 
+\index{MainWindow@{MainWindow}!pm1Series@{pm1Series}}
+\index{pm1Series@{pm1Series}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pm1Series}{pm1Series}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::pm1\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a1ab2d3578fe1cb1a975f1e5a8ec415a0}\label{classMainWindow_a1ab2d3578fe1cb1a975f1e5a8ec415a0}} 
+\index{MainWindow@{MainWindow}!pm25Label@{pm25Label}}
+\index{pm25Label@{pm25Label}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pm25Label}{pm25Label}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::pm25\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_ac2286fb5d9a0e8e4b1bc23a26dc3bd3f}\label{classMainWindow_ac2286fb5d9a0e8e4b1bc23a26dc3bd3f}} 
+\index{MainWindow@{MainWindow}!pm25Series@{pm25Series}}
+\index{pm25Series@{pm25Series}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pm25Series}{pm25Series}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::pm25\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aba1e70577afe7cc912ede6387722056d}\label{classMainWindow_aba1e70577afe7cc912ede6387722056d}} 
+\index{MainWindow@{MainWindow}!pmStatusLabel@{pmStatusLabel}}
+\index{pmStatusLabel@{pmStatusLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pmStatusLabel}{pmStatusLabel}}
+{\footnotesize\ttfamily QLabel$\ast$ Main\+Window\+::pm\+Status\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a686e05093351bd0c45fa60cda8070b13}\label{classMainWindow_a686e05093351bd0c45fa60cda8070b13}} 
+\index{MainWindow@{MainWindow}!radiationDoseLabel@{radiationDoseLabel}}
+\index{radiationDoseLabel@{radiationDoseLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{radiationDoseLabel}{radiationDoseLabel}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::radiation\+Dose\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aaec3095696451b86ee94346f2613f5cc}\label{classMainWindow_aaec3095696451b86ee94346f2613f5cc}} 
+\index{MainWindow@{MainWindow}!radiationDoseSeries@{radiationDoseSeries}}
+\index{radiationDoseSeries@{radiationDoseSeries}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{radiationDoseSeries}{radiationDoseSeries}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::radiation\+Dose\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_ab8ca484526c571403d029aeaa75e6427}\label{classMainWindow_ab8ca484526c571403d029aeaa75e6427}} 
+\index{MainWindow@{MainWindow}!radiationLabel@{radiationLabel}}
+\index{radiationLabel@{radiationLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{radiationLabel}{radiationLabel}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Main\+Window\+::radiation\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a4c211e23002dbc4c6a4cf5d40148fd2c}\label{classMainWindow_a4c211e23002dbc4c6a4cf5d40148fd2c}} 
+\index{MainWindow@{MainWindow}!radiationSeries@{radiationSeries}}
+\index{radiationSeries@{radiationSeries}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{radiationSeries}{radiationSeries}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::radiation\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a4cd27ff37e219f9728698e056da8afc6}\label{classMainWindow_a4cd27ff37e219f9728698e056da8afc6}} 
+\index{MainWindow@{MainWindow}!radiationStatusLabel@{radiationStatusLabel}}
+\index{radiationStatusLabel@{radiationStatusLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{radiationStatusLabel}{radiationStatusLabel}}
+{\footnotesize\ttfamily QLabel$\ast$ Main\+Window\+::radiation\+Status\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_a1f192e91c85da80a77d8d0d5f8c41802}\label{classMainWindow_a1f192e91c85da80a77d8d0d5f8c41802}} 
+\index{MainWindow@{MainWindow}!sensorDataFrame@{sensorDataFrame}}
+\index{sensorDataFrame@{sensorDataFrame}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sensorDataFrame}{sensorDataFrame}}
+{\footnotesize\ttfamily QFrame$\ast$ Main\+Window\+::sensor\+Data\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Kontenery interfejsu. 
+
+\mbox{\Hypertarget{classMainWindow_abd962b3c08fd77f6af8840c9fad9380c}\label{classMainWindow_abd962b3c08fd77f6af8840c9fad9380c}} 
+\index{MainWindow@{MainWindow}!sensorReader@{sensorReader}}
+\index{sensorReader@{sensorReader}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sensorReader}{sensorReader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSensorReader}{Sensor\+Reader}}$\ast$ Main\+Window\+::sensor\+Reader\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_aa03bb901ea7cbd58fb3cbfc6bc11cf55}\label{classMainWindow_aa03bb901ea7cbd58fb3cbfc6bc11cf55}} 
+\index{MainWindow@{MainWindow}!temperatureSeries@{temperatureSeries}}
+\index{temperatureSeries@{temperatureSeries}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{temperatureSeries}{temperatureSeries}}
+{\footnotesize\ttfamily Qt\+Charts\+::\+QLine\+Series$\ast$ Main\+Window\+::temperature\+Series\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainWindow_ae2d3f55c0d919823be32d5b5a1279304}\label{classMainWindow_ae2d3f55c0d919823be32d5b5a1279304}} 
+\index{MainWindow@{MainWindow}!timeMachineGroup@{timeMachineGroup}}
+\index{timeMachineGroup@{timeMachineGroup}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{timeMachineGroup}{timeMachineGroup}}
+{\footnotesize\ttfamily QButton\+Group$\ast$ Main\+Window\+::time\+Machine\+Group\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Kontrolki wyboru zakresu czasu. 
+
+\mbox{\Hypertarget{classMainWindow_a916799760788361dfc8c072b1b551bea}\label{classMainWindow_a916799760788361dfc8c072b1b551bea}} 
+\index{MainWindow@{MainWindow}!timeMachineHours@{timeMachineHours}}
+\index{timeMachineHours@{timeMachineHours}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{timeMachineHours}{timeMachineHours}}
+{\footnotesize\ttfamily int Main\+Window\+::time\+Machine\+Hours\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Aktualny zakres czasu w godzinach. 
+
+\mbox{\Hypertarget{classMainWindow_a356578805ed1248a7f2807434cb0e5ee}\label{classMainWindow_a356578805ed1248a7f2807434cb0e5ee}} 
+\index{MainWindow@{MainWindow}!timer@{timer}}
+\index{timer@{timer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily QTimer$\ast$ Main\+Window\+::timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Podstawowe komponenty. 
+
+\mbox{\Hypertarget{classMainWindow_a8e829b3590ccdeeada42625415afc6f3}\label{classMainWindow_a8e829b3590ccdeeada42625415afc6f3}} 
+\index{MainWindow@{MainWindow}!translator@{translator}}
+\index{translator@{translator}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{translator}{translator}}
+{\footnotesize\ttfamily QTranslator Main\+Window\+::translator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MainWindow_8h}{Main\+Window.\+h}}\item 
+\mbox{\hyperlink{MainWindow_8cpp}{Main\+Window.\+cpp}}\end{DoxyCompactItemize}

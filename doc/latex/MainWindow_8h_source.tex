@@ -1,0 +1,97 @@
+\hypertarget{MainWindow_8h_source}{}\doxysection{Main\+Window.\+h}
+\mbox{\hyperlink{MainWindow_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QLineEdit>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QComboBox>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QtCharts/QChartView>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <QtCharts/QLineSeries>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <QtCharts/QValueAxis>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <QtCharts/QDateTimeAxis>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <QButtonGroup>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <QRadioButton>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <QTranslator>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{SensorReader_8h}{SensorReader.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{SensorDataLogger_8h}{SensorDataLogger.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{classMainWindow}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33     Q\_OBJECT}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41     \textcolor{keyword}{explicit} \mbox{\hyperlink{classMainWindow_a87a1f1b12250799459255fda63778052}{MainWindow}}(\mbox{\hyperlink{classSensorReader}{SensorReader}}* reader, QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{42     \mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMainWindow_a2e5dc7b198af26e0ecd559fb5ca6cc5d}{updateSensorData}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMainWindow_aaf30da4e1a1a3b097f20cdfaa532eff4}{loadHistoricalData}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMainWindow_a392e2293bb3029e841ef8cc11a16b059}{onTimeMachineChanged}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{private}:}
+\DoxyCodeLine{63     QComboBox* \mbox{\hyperlink{classMainWindow_a1f374fc687c402c67330728334069e1b}{chartSelector}};}
+\DoxyCodeLine{64     QtCharts::QChart* \mbox{\hyperlink{classMainWindow_a6743baa254d0125c329c4f2bef3bb866}{chart}};}
+\DoxyCodeLine{65     QtCharts::QChartView* \mbox{\hyperlink{classMainWindow_aa8cf119eb52ae432d2bd2f5b55750de1}{chartView}};}
+\DoxyCodeLine{66     QtCharts::QDateTimeAxis* \mbox{\hyperlink{classMainWindow_a39e350c55fc0ec85cff76342161d86be}{axisX}};}
+\DoxyCodeLine{67     QtCharts::QValueAxis* \mbox{\hyperlink{classMainWindow_aa53ae2baadd07e2bbe0cbcfd0cf27dbf}{axisY}};}
+\DoxyCodeLine{68     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_a3f441ed01f4b3420cdb556046c3923be}{co2Series}};}
+\DoxyCodeLine{69     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_a349c3b57faa5e3111599e20b57203359}{pm1Series}};}
+\DoxyCodeLine{70     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_ac2286fb5d9a0e8e4b1bc23a26dc3bd3f}{pm25Series}};}
+\DoxyCodeLine{71     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_aec3705d6726026aa720dfd05d414f97a}{pm10Series}};}
+\DoxyCodeLine{72     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_a4c211e23002dbc4c6a4cf5d40148fd2c}{radiationSeries}};}
+\DoxyCodeLine{73     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_aa03bb901ea7cbd58fb3cbfc6bc11cf55}{temperatureSeries}};}
+\DoxyCodeLine{74     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_a723588cef6ebd394a253bb05b2c0087b}{humiditySeries}};}
+\DoxyCodeLine{75     QtCharts::QLineSeries* \mbox{\hyperlink{classMainWindow_aaec3095696451b86ee94346f2613f5cc}{radiationDoseSeries}};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     QTimer* \mbox{\hyperlink{classMainWindow_a356578805ed1248a7f2807434cb0e5ee}{timer}};}
+\DoxyCodeLine{79     \mbox{\hyperlink{classSensorReader}{SensorReader}}* \mbox{\hyperlink{classMainWindow_abd962b3c08fd77f6af8840c9fad9380c}{sensorReader}};}
+\DoxyCodeLine{80     \mbox{\hyperlink{classSensorDataLogger}{SensorDataLogger}} \mbox{\hyperlink{classMainWindow_a153dde7daa20117fae0014b0f320b0b1}{logger}};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83     QLineEdit* \mbox{\hyperlink{classMainWindow_a43e1877abcc5674c6abeaa06f51f0e9b}{co2Label}};}
+\DoxyCodeLine{84     QLineEdit* \mbox{\hyperlink{classMainWindow_a1381d00c3189554fc80656f5a22c82f2}{co2TempLabel}};}
+\DoxyCodeLine{85     QLineEdit* \mbox{\hyperlink{classMainWindow_a721d5be1566c8200ece55112bb3b597d}{co2HumLabel}};}
+\DoxyCodeLine{86     QLineEdit* \mbox{\hyperlink{classMainWindow_adef797293372990958193ee7899ac93f}{pm1Label}};}
+\DoxyCodeLine{87     QLineEdit* \mbox{\hyperlink{classMainWindow_a1ab2d3578fe1cb1a975f1e5a8ec415a0}{pm25Label}};}
+\DoxyCodeLine{88     QLineEdit* \mbox{\hyperlink{classMainWindow_ab30f8af70bc84a4e56fe1dc450f4dd2b}{pm10Label}};}
+\DoxyCodeLine{89     QLineEdit* \mbox{\hyperlink{classMainWindow_ab8ca484526c571403d029aeaa75e6427}{radiationLabel}};}
+\DoxyCodeLine{90     QLineEdit* \mbox{\hyperlink{classMainWindow_a686e05093351bd0c45fa60cda8070b13}{radiationDoseLabel}};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93     QLabel* \mbox{\hyperlink{classMainWindow_aa0d573a8981cf69c771704a600c1d343}{co2StatusLabel}};}
+\DoxyCodeLine{94     QLabel* \mbox{\hyperlink{classMainWindow_aba1e70577afe7cc912ede6387722056d}{pmStatusLabel}};}
+\DoxyCodeLine{95     QLabel* \mbox{\hyperlink{classMainWindow_a4cd27ff37e219f9728698e056da8afc6}{radiationStatusLabel}};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98     QFrame* \mbox{\hyperlink{classMainWindow_a1f192e91c85da80a77d8d0d5f8c41802}{sensorDataFrame}};}
+\DoxyCodeLine{99     QFrame* \mbox{\hyperlink{classMainWindow_a2bd04a297fbb80636c9b3d6755768c77}{interpretationFrame}};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{102     QButtonGroup* \mbox{\hyperlink{classMainWindow_ae2d3f55c0d919823be32d5b5a1279304}{timeMachineGroup}};}
+\DoxyCodeLine{103     QRadioButton* \mbox{\hyperlink{classMainWindow_a363f285fcb8edec45045d3d5db2b70fc}{hour1Button}};}
+\DoxyCodeLine{104     QRadioButton* \mbox{\hyperlink{classMainWindow_a5cb65a3ca4cc579fac51a5aeca519ea3}{hour2Button}};}
+\DoxyCodeLine{105     QRadioButton* \mbox{\hyperlink{classMainWindow_ae8df70663932062796d898c505363b6e}{hour4Button}};}
+\DoxyCodeLine{106     QRadioButton* \mbox{\hyperlink{classMainWindow_ac97197f1799225348fa932db904c9444}{hour8Button}};}
+\DoxyCodeLine{107     QRadioButton* \mbox{\hyperlink{classMainWindow_ad44060ffcf94bf06215b3b9011b16072}{hour12Button}};}
+\DoxyCodeLine{108     QRadioButton* \mbox{\hyperlink{classMainWindow_aad7e108c26dde97af0bd7e1407f713bb}{hour24Button}};}
+\DoxyCodeLine{109     QRadioButton* \mbox{\hyperlink{classMainWindow_a7e6dc054ea78fbf4cef69db5e7d77b55}{hour48Button}};}
+\DoxyCodeLine{110     QRadioButton* \mbox{\hyperlink{classMainWindow_a7b0194d3c364ba33815ebc31dd563bd6}{hour78Button}};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{int} \mbox{\hyperlink{classMainWindow_a916799760788361dfc8c072b1b551bea}{timeMachineHours}};      }
+\DoxyCodeLine{113     QDateTime \mbox{\hyperlink{classMainWindow_af5c0498df5769d4ec484223f437b5dad}{chartStartTime}};   }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{116     QComboBox* \mbox{\hyperlink{classMainWindow_aa9a1674cdd8f52bb30b208f4cbf3f2df}{languageSelector}};}
+\DoxyCodeLine{117     QTranslator \mbox{\hyperlink{classMainWindow_a8e829b3590ccdeeada42625415afc6f3}{translator}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMainWindow_a6c022bdf4b08d56f3ba53484c0a4cbb2}{updateInterfaceTexts}}();}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{127     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMainWindow_accc74af8b6dbd54ee872a789986ba72f}{updateChartTitles}}();}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{133     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMainWindow_a9e0dd54aecbe2e3af6306c3a005d43d2}{changeLanguage}}(\textcolor{keyword}{const} QString \&language);}
+\DoxyCodeLine{134 \};}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

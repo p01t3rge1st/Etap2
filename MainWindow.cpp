@@ -52,7 +52,18 @@ const int MAX_RADIATION = 100;     ///< Maksymalna wartość promieniowania na w
 MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     : QMainWindow(parent), sensorReader(reader), logger("dane_czujnikow.csv"), timeMachineHours(1)
 {
-    // Tworzenie pól tekstowych zamiast etykiet
+    chartSelector = new QComboBox(this);
+    chart = new QtCharts::QChart();
+    chartView = new QtCharts::QChartView(chart, this);
+    hour1Button = new QRadioButton(this);
+    hour2Button = new QRadioButton(this);
+    hour4Button = new QRadioButton(this);
+    hour8Button = new QRadioButton(this);
+    hour12Button = new QRadioButton(this);
+    hour24Button = new QRadioButton(this);
+    hour48Button = new QRadioButton(this);
+    hour78Button = new QRadioButton(this);
+
     co2Label = new QLineEdit("--", this);
     co2TempLabel = new QLineEdit("--", this);
     co2HumLabel = new QLineEdit("--", this);
@@ -62,20 +73,8 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     radiationLabel = new QLineEdit("--", this);
     radiationDoseLabel = new QLineEdit("--", this);
 
-    // Styl dla wszystkich pól
-    QString lineEditStyle = "QLineEdit { "
-                          "background-color: white; "
-                          "border: 1px solid gray; "
-                          "padding: 2px; "
-                          "min-width: 60px; "
-                          "max-width: 80px; "
-                          "}";
-
-    // Zastosuj styl i właściwości do wszystkich pól
-    QList<QLineEdit*> allFields = {co2Label, co2TempLabel, co2HumLabel, 
-                                  pm1Label, pm25Label, pm10Label,
-                                  radiationLabel, radiationDoseLabel};
-    
+    QString lineEditStyle = "QLineEdit { background-color: white; border: 1px solid gray; padding: 2px; min-width: 60px; max-width: 80px; }";
+    QList<QLineEdit*> allFields = {co2Label, co2TempLabel, co2HumLabel, pm1Label, pm25Label, pm10Label, radiationLabel, radiationDoseLabel};
     for (auto field : allFields) {
         field->setStyleSheet(lineEditStyle);
         field->setReadOnly(true);
@@ -86,58 +85,100 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     pmStatusLabel = new QLabel(tr("--"), this);
     radiationStatusLabel = new QLabel(tr("--"), this);
 
-    QGridLayout* sensorDataLayout = new QGridLayout();
+    QHBoxLayout* statusLayout = new QHBoxLayout();
 
-    // Dodaj pola tekstowe (białe prostokąty)
-    sensorDataLayout->addWidget(co2Label, 0, 1);
-    sensorDataLayout->addWidget(co2TempLabel, 1, 1);
-    sensorDataLayout->addWidget(co2HumLabel, 2, 1);
-    sensorDataLayout->addWidget(pm1Label, 3, 1);
-    sensorDataLayout->addWidget(pm25Label, 4, 1);
-    sensorDataLayout->addWidget(pm10Label, 5, 1);
-    sensorDataLayout->addWidget(radiationLabel, 6, 1);
-    sensorDataLayout->addWidget(radiationDoseLabel, 7, 1);
+   
+    QVBoxLayout* co2Col = new QVBoxLayout();
+    co2Col->addWidget(new QLabel(tr("CO2"), this), 0, Qt::AlignHCenter);
+    co2Col->addWidget(co2StatusLabel, 0, Qt::AlignHCenter);
 
-    // Dodaj etykiety z opisami po lewej
-    sensorDataLayout->addWidget(new QLabel(tr("CO2:"), this), 0, 0, Qt::AlignRight);
-    sensorDataLayout->addWidget(new QLabel(tr("Temperatura:"), this), 1, 0, Qt::AlignRight);
-    sensorDataLayout->addWidget(new QLabel(tr("Wilgotność:"), this), 2, 0, Qt::AlignRight);
-    sensorDataLayout->addWidget(new QLabel(tr("PM1.0:"), this), 3, 0, Qt::AlignRight);
-    sensorDataLayout->addWidget(new QLabel(tr("PM2.5:"), this), 4, 0, Qt::AlignRight);
-    sensorDataLayout->addWidget(new QLabel(tr("PM10:"), this), 5, 0, Qt::AlignRight);
-    sensorDataLayout->addWidget(new QLabel(tr("Promieniowanie:"), this), 6, 0, Qt::AlignRight);
-    sensorDataLayout->addWidget(new QLabel(tr("Dawka:"), this), 7, 0, Qt::AlignRight);
+    QVBoxLayout* pmCol = new QVBoxLayout();
+    pmCol->addWidget(new QLabel(tr("Pyły"), this), 0, Qt::AlignHCenter);
+    pmCol->addWidget(pmStatusLabel, 0, Qt::AlignHCenter);
 
-    // Dodaj jednostki po prawej
-    sensorDataLayout->addWidget(new QLabel("ppm", this), 0, 2, Qt::AlignLeft);
-    sensorDataLayout->addWidget(new QLabel("°C", this), 1, 2, Qt::AlignLeft);
-    sensorDataLayout->addWidget(new QLabel("%", this), 2, 2, Qt::AlignLeft);
-    sensorDataLayout->addWidget(new QLabel("µg/m³", this), 3, 2, Qt::AlignLeft);
-    sensorDataLayout->addWidget(new QLabel("µg/m³", this), 4, 2, Qt::AlignLeft);
-    sensorDataLayout->addWidget(new QLabel("µg/m³", this), 5, 2, Qt::AlignLeft);
-    sensorDataLayout->addWidget(new QLabel("imp/min", this), 6, 2, Qt::AlignLeft);
-    sensorDataLayout->addWidget(new QLabel("µSv/h", this), 7, 2, Qt::AlignLeft);
+    QVBoxLayout* radCol = new QVBoxLayout();
+    radCol->addWidget(new QLabel(tr("Promieniowanie"), this), 0, Qt::AlignHCenter);
+    radCol->addWidget(radiationStatusLabel, 0, Qt::AlignHCenter);
 
-    QFrame* sensorDataFrame = new QFrame(this);
-    sensorDataFrame->setLayout(sensorDataLayout);
-    sensorDataFrame->setFrameStyle(QFrame::Box | QFrame::Raised);
-    sensorDataFrame->setLineWidth(2);
+    statusLayout->addLayout(co2Col);
+    statusLayout->addLayout(pmCol);
+    statusLayout->addLayout(radCol);
 
-    QGridLayout* interpretationLayout = new QGridLayout();
-    interpretationLayout->addWidget(new QLabel(tr("CO2 Status:"), this), 0, 0, Qt::AlignRight);
-    interpretationLayout->addWidget(co2StatusLabel, 0, 1, Qt::AlignLeft);
-    interpretationLayout->addWidget(new QLabel(tr("PM Status:"), this), 1, 0, Qt::AlignRight);
-    interpretationLayout->addWidget(pmStatusLabel, 1, 1, Qt::AlignLeft);
-    interpretationLayout->addWidget(new QLabel(tr("Prom. Status:"), this), 2, 0, Qt::AlignRight);
-    interpretationLayout->addWidget(radiationStatusLabel, 2, 1, Qt::AlignLeft);
+    QFrame* statusFrame = new QFrame(this);
+    statusFrame->setLayout(statusLayout);
+    statusFrame->setFrameStyle(QFrame::Box | QFrame::Sunken);
+    statusFrame->setLineWidth(2);
 
-    QFrame* interpretationFrame = new QFrame(this);
-    interpretationFrame->setLayout(interpretationLayout);
-    interpretationFrame->setFrameStyle(QFrame::Box | QFrame::Sunken);
-    interpretationFrame->setLineWidth(2);
+    
+    QGridLayout* tempHumLayout = new QGridLayout();
+    tempHumLayout->addWidget(new QLabel(tr("Temperatura:"), this), 0, 0, Qt::AlignRight);
+    tempHumLayout->addWidget(co2TempLabel, 0, 1);
+    tempHumLayout->addWidget(new QLabel("°C", this), 0, 2, Qt::AlignLeft);
+    tempHumLayout->addWidget(new QLabel(tr("Wilgotność:"), this), 1, 0, Qt::AlignRight);
+    tempHumLayout->addWidget(co2HumLabel, 1, 1);
+    tempHumLayout->addWidget(new QLabel("%", this), 1, 2, Qt::AlignLeft);
+    QFrame* tempHumFrame = new QFrame(this);
+    tempHumFrame->setLayout(tempHumLayout);
+    tempHumFrame->setFrameStyle(QFrame::Box | QFrame::Raised);
+    tempHumFrame->setLineWidth(2);
 
-    // --- WYKRESY ---
-    // Serie
+   
+    QGridLayout* co2PmLayout = new QGridLayout();
+    co2PmLayout->addWidget(new QLabel(tr("CO2:"), this), 0, 0, Qt::AlignRight);
+    co2PmLayout->addWidget(co2Label, 0, 1);
+    co2PmLayout->addWidget(new QLabel("ppm", this), 0, 2, Qt::AlignLeft);
+    co2PmLayout->addWidget(new QLabel(tr("PM1.0:"), this), 1, 0, Qt::AlignRight);
+    co2PmLayout->addWidget(pm1Label, 1, 1);
+    co2PmLayout->addWidget(new QLabel("µg/m³", this), 1, 2, Qt::AlignLeft);
+    co2PmLayout->addWidget(new QLabel(tr("PM2.5:"), this), 2, 0, Qt::AlignRight);
+    co2PmLayout->addWidget(pm25Label, 2, 1);
+    co2PmLayout->addWidget(new QLabel("µg/m³", this), 2, 2, Qt::AlignLeft);
+    co2PmLayout->addWidget(new QLabel(tr("PM10:"), this), 3, 0, Qt::AlignRight);
+    co2PmLayout->addWidget(pm10Label, 3, 1);
+    co2PmLayout->addWidget(new QLabel("µg/m³", this), 3, 2, Qt::AlignLeft);
+    QFrame* co2PmFrame = new QFrame(this);
+    co2PmFrame->setLayout(co2PmLayout);
+    co2PmFrame->setFrameStyle(QFrame::Box | QFrame::Raised);
+    co2PmFrame->setLineWidth(2);
+
+    
+    QGridLayout* radLayout = new QGridLayout();
+    radLayout->addWidget(new QLabel(tr("Promieniowanie:"), this), 0, 0, Qt::AlignRight);
+    radLayout->addWidget(radiationLabel, 0, 1);
+    radLayout->addWidget(new QLabel("imp/min", this), 0, 2, Qt::AlignLeft);
+    radLayout->addWidget(new QLabel(tr("Dawka:"), this), 1, 0, Qt::AlignRight);
+    radLayout->addWidget(radiationDoseLabel, 1, 1);
+    radLayout->addWidget(new QLabel("µSv/h", this), 1, 2, Qt::AlignLeft);
+    QFrame* radFrame = new QFrame(this);
+    radFrame->setLayout(radLayout);
+    radFrame->setFrameStyle(QFrame::Box | QFrame::Raised);
+    radFrame->setLineWidth(2);
+
+    QHBoxLayout* sensorsPanelLayout = new QHBoxLayout();
+    sensorsPanelLayout->addWidget(tempHumFrame);
+    sensorsPanelLayout->addSpacing(20);
+    sensorsPanelLayout->addWidget(co2PmFrame);
+    sensorsPanelLayout->addSpacing(20);
+    sensorsPanelLayout->addWidget(radFrame);
+
+    QHBoxLayout* topLayout = new QHBoxLayout;
+    QLabel* interpretationLabel = new QLabel(tr("Interpretacja danych:"), this);
+    topLayout->addWidget(interpretationLabel);
+    topLayout->addStretch();
+    languageSelector = new QComboBox(this);
+    languageSelector->setFixedWidth(60); 
+    languageSelector->addItem("PL");
+    languageSelector->addItem("EN");
+    topLayout->addWidget(languageSelector);
+
+    QVBoxLayout* mainLayout = new QVBoxLayout;
+    mainLayout->addLayout(topLayout); 
+    mainLayout->addWidget(statusFrame);
+    mainLayout->addWidget(new QLabel(tr("Dane z czujników:"), this));
+    mainLayout->addLayout(sensorsPanelLayout);
+    mainLayout->addWidget(new QLabel(tr("Analiza historyczna:"), this));
+    
+    
     co2Series = new QtCharts::QLineSeries();
     pm1Series = new QtCharts::QLineSeries();
     pm25Series = new QtCharts::QLineSeries();
@@ -175,24 +216,18 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     chartSelector->addItem(tr("Wilgotność"));
     chartSelector->addItem(tr("Dawka promieniowania"));
 
-    // Po utworzeniu serii i przed timerem
-    loadHistoricalData();  // Wczytaj dane historyczne
     
-    // Ustaw początkowy zakres osi X
-    axisX->setRange(chartStartTime, QDateTime::currentDateTime());
-
-    // --- Panel Analizy Historycznej ---
     QFrame* historyFrame = new QFrame(this);
     historyFrame->setFrameStyle(QFrame::Box | QFrame::Raised);
     historyFrame->setLineWidth(2);
 
     QVBoxLayout* historyMainLayout = new QVBoxLayout();
+
     
-    // Zakres czasu
     QHBoxLayout* timeRangeLayout = new QHBoxLayout();
     QLabel* timeRangeLabel = new QLabel(tr("Zakres:"), this);
     timeRangeLayout->addWidget(timeRangeLabel);
-    
+
     hour1Button = new QRadioButton(tr("1H"), this);
     hour2Button = new QRadioButton(tr("2H"), this);
     hour4Button = new QRadioButton(tr("4H"), this);
@@ -202,7 +237,7 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     hour48Button = new QRadioButton(tr("48H"), this);
     hour78Button = new QRadioButton(tr("78H"), this);
 
-    hour1Button->setChecked(true);  // Domyślnie 1H
+    hour1Button->setChecked(true);
 
     timeMachineGroup = new QButtonGroup(this);
     timeMachineGroup->addButton(hour1Button, 1);
@@ -224,43 +259,17 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     timeRangeLayout->addWidget(hour78Button);
     timeRangeLayout->addStretch();
 
-    // Wybór danych
+   
     QHBoxLayout* dataSelectionLayout = new QHBoxLayout();
     QLabel* dataSelectLabel = new QLabel(tr("Dane:"), this);
     dataSelectionLayout->addWidget(dataSelectLabel);
     dataSelectionLayout->addWidget(chartSelector);
     dataSelectionLayout->addStretch();
 
-    // Układanie elementów w panelu
     historyMainLayout->addLayout(timeRangeLayout);
     historyMainLayout->addLayout(dataSelectionLayout);
-    
     historyFrame->setLayout(historyMainLayout);
 
-    // --- Panel językowy ---
-    QHBoxLayout* topLayout = new QHBoxLayout;
-    
-    // Lewy element (Interpretacja danych)
-    QLabel* interpretationLabel = new QLabel(tr("Interpretacja danych:"), this);
-    topLayout->addWidget(interpretationLabel);
-    
-    // Elastyczny odstęp
-    topLayout->addStretch();
-    
-    // Prawy element (selektor języka)
-    languageSelector = new QComboBox(this);
-    languageSelector->setFixedWidth(60);  // Mały rozmiar
-    languageSelector->addItem("PL");
-    languageSelector->addItem("EN");
-    topLayout->addWidget(languageSelector);
-
-    // --- UKŁAD GŁÓWNY ---
-    QVBoxLayout* mainLayout = new QVBoxLayout;
-    mainLayout->addLayout(topLayout);  // Dodaj górny layout
-    mainLayout->addWidget(interpretationFrame);
-    mainLayout->addWidget(new QLabel(tr("Dane z czujników:"), this));
-    mainLayout->addWidget(sensorDataFrame);
-    mainLayout->addWidget(new QLabel(tr("Analiza historyczna:"), this));
     mainLayout->addWidget(historyFrame);
     mainLayout->addWidget(chartView);
 
@@ -268,7 +277,7 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
     centralWidget->setLayout(mainLayout);
     setCentralWidget(centralWidget);
 
-    // --- Przełączanie wykresów ---
+    
     connect(chartSelector, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]() {
         QList<QtCharts::QLineSeries*> allSeries = {
             co2Series, pm1Series, pm25Series, pm10Series, 
@@ -310,7 +319,7 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
         } else if (idx == 5) {
             chart->setTitle(tr("Temperatura (°C)"));
             axisY->setTitleText(tr("Temperatura [°C]"));
-            axisY->setRange(0, 50);  // Adjust range as needed
+            axisY->setRange(0, 50);
             currentSeries = temperatureSeries;
         } else if (idx == 6) {
             chart->setTitle(tr("Wilgotność (%)"));
@@ -320,7 +329,7 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
         } else if (idx == 7) {
             chart->setTitle(tr("Dawka promieniowania (µSv/h)"));
             axisY->setTitleText(tr("Dawka [µSv/h]"));
-            axisY->setRange(0, 10);  // Adjust range as needed
+            axisY->setRange(0, 10);
             currentSeries = radiationDoseSeries;
         }
         if (currentSeries) {
@@ -330,20 +339,21 @@ MainWindow::MainWindow(SensorReader* reader, QWidget *parent)
         }
     });
 
-    // Połącz sygnał zmiany zakresu czasu
     connect(timeMachineGroup, QOverload<int>::of(&QButtonGroup::idClicked),
             this, &MainWindow::onTimeMachineChanged);
 
-    // Dodaj połączenie dla selektora języka
     connect(languageSelector, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, [this](int index) {
                 changeLanguage(index == 0 ? "pl" : "en");
             });
 
-    // --- Timer do odświeżania danych ---
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateSensorData);
     timer->start(1000);
+
+    setMinimumSize(900, 600);
+    updateInterfaceTexts();
+    chartSelector->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow() {}
@@ -360,7 +370,7 @@ void MainWindow::updateSensorData()
     if (sensorReader->readData()) {
         SensorData data = sensorReader->getData();
         
-        // Add CRC check
+       
         if (!data.crcValid) {
             qDebug() << "CRC check failed, using last valid data";
             data = lastValidData;
@@ -382,12 +392,37 @@ void MainWindow::updateSensorData()
         radiationLabel->setText(QString::number(data.radiation));
         radiationDoseLabel->setText(QString::number(data.radiation * CPS_PER_USV));
 
-        // Interpretacja danych
+        
         co2StatusLabel->setText(data.co2 > HIGH_CO2 ? tr("Wysokie") : tr("Normalne"));
         pmStatusLabel->setText((data.pm1 > HIGH_PM1 || data.pm25 > HIGH_PM25 || data.pm10 > HIGH_PM10) ? tr("Wysokie") : tr("Normalne"));
         radiationStatusLabel->setText(data.radiation > HIGH_RADIATION ? tr("Wysokie") : tr("Normalne"));
 
-        // Dodawanie punktów do serii tylko jeśli dane są prawidłowe
+        
+        if (data.co2 > HIGH_CO2) {
+            co2StatusLabel->setText(tr("Wysokie"));
+            co2StatusLabel->setStyleSheet("color: red; font-weight: bold;");
+        } else {
+            co2StatusLabel->setText(tr("Normalne"));
+            co2StatusLabel->setStyleSheet("color: green; font-weight: bold;");
+        }
+
+        if (data.pm1 > HIGH_PM1 || data.pm25 > HIGH_PM25 || data.pm10 > HIGH_PM10) {
+            pmStatusLabel->setText(tr("Wysokie"));
+            pmStatusLabel->setStyleSheet("color: red; font-weight: bold;");
+        } else {
+            pmStatusLabel->setText(tr("Normalne"));
+            pmStatusLabel->setStyleSheet("color: green; font-weight: bold;");
+        }
+
+        if (data.radiation > HIGH_RADIATION) {
+            radiationStatusLabel->setText(tr("Wysokie"));
+            radiationStatusLabel->setStyleSheet("color: red; font-weight: bold;");
+        } else {
+            radiationStatusLabel->setText(tr("Normalne"));
+            radiationStatusLabel->setStyleSheet("color: green; font-weight: bold;");
+        }
+
+        
         if (data.co2 != -1 && data.pm1 != -1 && data.pm25 != -1 && 
             data.pm10 != -1 && data.radiation != -1) {
             qint64 now = QDateTime::currentDateTime().toMSecsSinceEpoch();
@@ -400,11 +435,11 @@ void MainWindow::updateSensorData()
             humiditySeries->append(now, data.co2_hum);
             radiationDoseSeries->append(now, data.radiation * CPS_PER_USV);
 
-            // Aktualizuj zakres wykresu
+            
             chartStartTime = QDateTime::currentDateTime().addSecs(-timeMachineHours * 3600);
             axisX->setRange(chartStartTime, QDateTime::currentDateTime());
             
-            // Zapisz do CSV tylko prawidłowe dane
+
             logger.log(data);
         }
     }
@@ -417,7 +452,7 @@ void MainWindow::updateSensorData()
  */
 void MainWindow::loadHistoricalData() 
 {
-    // Clear all series before loading
+    
     co2Series->clear();
     pm1Series->clear();
     pm25Series->clear();
@@ -436,14 +471,14 @@ void MainWindow::loadHistoricalData()
     QTextStream in(&file);
     chartStartTime = QDateTime::currentDateTime().addSecs(-timeMachineHours * 3600);
     
-    // Skip header
+    
     QString header = in.readLine();
     
     while (!in.atEnd()) {
         QString line = in.readLine();
         QStringList fields = line.split(',');
         
-        // Basic validation - need at least timestamp and one value
+        
         if (fields.size() < 2) continue;
 
         QDateTime timestamp = QDateTime::fromString(fields[0], Qt::ISODate);
@@ -452,18 +487,18 @@ void MainWindow::loadHistoricalData()
         qint64 msecsSinceEpoch = timestamp.toMSecsSinceEpoch();
         bool ok;
 
-        // Try to read each value, skip if invalid
+        
         if (fields.size() > 1) {
             double co2 = fields[1].toDouble(&ok);
             if (ok && co2 != -1) co2Series->append(msecsSinceEpoch, co2);
         }
 
-        if (fields.size() > 2) {  // Temperature field
+        if (fields.size() > 2) {  
             double temp = fields[2].toDouble(&ok);
             if (ok && temp != -1) temperatureSeries->append(msecsSinceEpoch, temp);
         }
 
-        if (fields.size() > 3) {  // Humidity field
+        if (fields.size() > 3) {  
             double hum = fields[3].toDouble(&ok);
             if (ok && hum != -1) humiditySeries->append(msecsSinceEpoch, hum);
         }
@@ -483,7 +518,7 @@ void MainWindow::loadHistoricalData()
             if (ok && pm10 != -1) pm10Series->append(msecsSinceEpoch, pm10);
         }
 
-        if (fields.size() > 7) {  // Radiation for dose calculation
+        if (fields.size() > 7) { 
             double radiation = fields[7].toDouble(&ok);
             if (ok && radiation != -1) {
                 radiationSeries->append(msecsSinceEpoch, radiation);
@@ -491,12 +526,12 @@ void MainWindow::loadHistoricalData()
             }
         }
 
-        if (fields.size() > 9) {  // Temperature column
+        if (fields.size() > 9) {  
             double temp = fields[9].toDouble(&ok);
             if (ok && temp != -1) temperatureSeries->append(msecsSinceEpoch, temp);
         }
 
-        if (fields.size() > 10) {  // Radiation uSv column
+        if (fields.size() > 10) { 
             double radiationUsv = fields[10].toDouble(&ok);
             if (ok && radiationUsv != -1) radiationDoseSeries->append(msecsSinceEpoch, radiationUsv);
         }
@@ -512,7 +547,7 @@ void MainWindow::loadHistoricalData()
 void MainWindow::onTimeMachineChanged(int id)
 {
     timeMachineHours = id;
-    loadHistoricalData();  // Przeładuj dane historyczne
+    loadHistoricalData();  
     chartStartTime = QDateTime::currentDateTime().addSecs(-timeMachineHours * 3600);
     axisX->setRange(chartStartTime, QDateTime::currentDateTime());
 }
@@ -527,10 +562,10 @@ void MainWindow::changeLanguage(const QString &language)
     if (translator.load(":/translations/wds_" + language)) {
         qApp->installTranslator(&translator);
         
-        // Wymuś odświeżenie wszystkich tekstów
+        
         this->setWindowTitle(this->windowTitle());
         
-        // Odśwież wszystkie etykiety
+        
         updateInterfaceTexts();
     }
 }
@@ -540,12 +575,12 @@ void MainWindow::changeLanguage(const QString &language)
  */
 void MainWindow::updateInterfaceTexts()
 {
-    // Aktualizacja etykiet statusu i pomiarów
+    
     co2StatusLabel->setText(tr("--"));
     pmStatusLabel->setText(tr("--"));
     radiationStatusLabel->setText(tr("--"));
 
-    // Aktualizacja etykiet opisowych
+    
     foreach(QLabel* label, findChildren<QLabel*>()) {
         if (label->text() == "CO2:") label->setText(tr("CO2:"));
         else if (label->text() == "Temperatura:") label->setText(tr("Temperatura:"));
@@ -565,7 +600,6 @@ void MainWindow::updateInterfaceTexts()
         else if (label->text() == "Dane:") label->setText(tr("Dane:"));
     }
 
-    // Aktualizacja przycisków zakresu czasu
     hour1Button->setText(tr("1H"));
     hour2Button->setText(tr("2H"));
     hour4Button->setText(tr("4H"));
@@ -575,7 +609,6 @@ void MainWindow::updateInterfaceTexts()
     hour48Button->setText(tr("48H"));
     hour78Button->setText(tr("78H"));
 
-    // Aktualizacja selektora wykresu
     chartSelector->setItemText(0, tr("CO2"));
     chartSelector->setItemText(1, tr("PM1.0"));
     chartSelector->setItemText(2, tr("PM2.5"));
@@ -585,16 +618,12 @@ void MainWindow::updateInterfaceTexts()
     chartSelector->setItemText(6, tr("Wilgotność"));
     chartSelector->setItemText(7, tr("Dawka promieniowania"));
     
-    // Aktualizacja tytułów wykresów
     updateChartTitles();
     
-    // Aktualizacja osi wykresu
     axisX->setTitleText(tr("Czas"));
     
-    // Wymuś odświeżenie danych
     updateSensorData();
 
-    // Wymuś przerysowanie całego widgetu
     update();
 }
 
@@ -630,3 +659,4 @@ void MainWindow::updateChartTitles()
         axisY->setTitleText(tr("Dawka [µSv/h]"));
     }
 }
+

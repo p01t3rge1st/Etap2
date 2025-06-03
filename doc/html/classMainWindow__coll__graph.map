@@ -1,0 +1,9 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="node1" title="Główne okno aplikacji wyświetlające dane z czujników i wykresy." alt="" coords="121,720,323,1047"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,514,121,591"/>
+<area shape="rect" id="node3" href="$classSensorReader.html" title="Klasa do obsługi czujników przez port szeregowy." alt="" coords="146,448,298,657"/>
+<area shape="rect" id="node4" title=" " alt="" coords="80,220,167,297"/>
+<area shape="rect" id="node5" title=" " alt="" coords="54,5,193,97"/>
+<area shape="rect" id="node6" href="$structSensorData.html" title="Struktura przechowująca dane odczytane z czujników." alt="" coords="191,147,389,371"/>
+<area shape="rect" id="node7" href="$classSensorDataLogger.html" title="Klasa umożliwiająca logowanie danych z czujników do pliku CSV." alt="" coords="323,477,503,628"/>
+</map>

@@ -1,0 +1,1437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>System Monitorowania Czujników: Dokumentacja klasy MainWindow</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">System Monitorowania Czujników
+   </div>
+   <div id="projectbrief">System monitorowania danych z czujników środowiskowych</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-slots">Sloty prywatne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy MainWindow</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Główne okno aplikacji wyświetlające dane z czujników i wykresy.  
+ <a href="classMainWindow.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="MainWindow_8h_source.html">MainWindow.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla MainWindow</div>
+<div class="dyncontent">
+<div class="center"><img src="classMainWindow__inherit__graph.png" border="0" usemap="#aMainWindow_inherit__map" alt="Inheritance graph"/></div>
+<map name="aMainWindow_inherit__map" id="aMainWindow_inherit__map">
+<area shape="rect" title="Główne okno aplikacji wyświetlające dane z czujników i wykresy." alt="" coords="5,131,208,457"/>
+<area shape="rect" title=" " alt="" coords="49,5,165,83"/>
+</map>
+</div>
+<div class="dynheader">
+Diagram współpracy dla MainWindow:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMainWindow__coll__graph.png" border="0" usemap="#aMainWindow_coll__map" alt="Collaboration graph"/></div>
+<map name="aMainWindow_coll__map" id="aMainWindow_coll__map">
+<area shape="rect" title="Główne okno aplikacji wyświetlające dane z czujników i wykresy." alt="" coords="121,720,323,1047"/>
+<area shape="rect" title=" " alt="" coords="5,514,121,591"/>
+<area shape="rect" href="classSensorReader.html" title="Klasa do obsługi czujników przez port szeregowy." alt="" coords="146,448,298,657"/>
+<area shape="rect" title=" " alt="" coords="80,220,167,297"/>
+<area shape="rect" title=" " alt="" coords="54,5,193,97"/>
+<area shape="rect" href="structSensorData.html" title="Struktura przechowująca dane odczytane z czujników." alt="" coords="191,147,389,371"/>
+<area shape="rect" href="classSensorDataLogger.html" title="Klasa umożliwiająca logowanie danych z czujników do pliku CSV." alt="" coords="323,477,503,628"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a87a1f1b12250799459255fda63778052"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a87a1f1b12250799459255fda63778052">MainWindow</a> (<a class="el" href="classSensorReader.html">SensorReader</a> *reader, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a87a1f1b12250799459255fda63778052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor głównego okna.  <a href="classMainWindow.html#a87a1f1b12250799459255fda63778052">Więcej...</a><br /></td></tr>
+<tr class="separator:a87a1f1b12250799459255fda63778052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Sloty prywatne</h2></td></tr>
+<tr class="memitem:a2e5dc7b198af26e0ecd559fb5ca6cc5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a2e5dc7b198af26e0ecd559fb5ca6cc5d">updateSensorData</a> ()</td></tr>
+<tr class="memdesc:a2e5dc7b198af26e0ecd559fb5ca6cc5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje interfejs danymi z czujników.  <a href="classMainWindow.html#a2e5dc7b198af26e0ecd559fb5ca6cc5d">Więcej...</a><br /></td></tr>
+<tr class="separator:a2e5dc7b198af26e0ecd559fb5ca6cc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf30da4e1a1a3b097f20cdfaa532eff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aaf30da4e1a1a3b097f20cdfaa532eff4">loadHistoricalData</a> ()</td></tr>
+<tr class="memdesc:aaf30da4e1a1a3b097f20cdfaa532eff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje i wyświetla dane historyczne.  <a href="classMainWindow.html#aaf30da4e1a1a3b097f20cdfaa532eff4">Więcej...</a><br /></td></tr>
+<tr class="separator:aaf30da4e1a1a3b097f20cdfaa532eff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392e2293bb3029e841ef8cc11a16b059"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a392e2293bb3029e841ef8cc11a16b059">onTimeMachineChanged</a> (int id)</td></tr>
+<tr class="memdesc:a392e2293bb3029e841ef8cc11a16b059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zmianę zakresu czasu na wykresie.  <a href="classMainWindow.html#a392e2293bb3029e841ef8cc11a16b059">Więcej...</a><br /></td></tr>
+<tr class="separator:a392e2293bb3029e841ef8cc11a16b059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:a6c022bdf4b08d56f3ba53484c0a4cbb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6c022bdf4b08d56f3ba53484c0a4cbb2">updateInterfaceTexts</a> ()</td></tr>
+<tr class="memdesc:a6c022bdf4b08d56f3ba53484c0a4cbb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje teksty interfejsu po zmianie języka.  <a href="classMainWindow.html#a6c022bdf4b08d56f3ba53484c0a4cbb2">Więcej...</a><br /></td></tr>
+<tr class="separator:a6c022bdf4b08d56f3ba53484c0a4cbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc74af8b6dbd54ee872a789986ba72f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#accc74af8b6dbd54ee872a789986ba72f">updateChartTitles</a> ()</td></tr>
+<tr class="memdesc:accc74af8b6dbd54ee872a789986ba72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje tytuły wykresów.  <a href="classMainWindow.html#accc74af8b6dbd54ee872a789986ba72f">Więcej...</a><br /></td></tr>
+<tr class="separator:accc74af8b6dbd54ee872a789986ba72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0dd54aecbe2e3af6306c3a005d43d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a9e0dd54aecbe2e3af6306c3a005d43d2">changeLanguage</a> (const QString &amp;language)</td></tr>
+<tr class="memdesc:a9e0dd54aecbe2e3af6306c3a005d43d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienia język interfejsu.  <a href="classMainWindow.html#a9e0dd54aecbe2e3af6306c3a005d43d2">Więcej...</a><br /></td></tr>
+<tr class="separator:a9e0dd54aecbe2e3af6306c3a005d43d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a1f374fc687c402c67330728334069e1b"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a1f374fc687c402c67330728334069e1b">chartSelector</a></td></tr>
+<tr class="memdesc:a1f374fc687c402c67330728334069e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Komponenty wykresu.  <a href="classMainWindow.html#a1f374fc687c402c67330728334069e1b">Więcej...</a><br /></td></tr>
+<tr class="separator:a1f374fc687c402c67330728334069e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6743baa254d0125c329c4f2bef3bb866"><td class="memItemLeft" align="right" valign="top">QtCharts::QChart *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a6743baa254d0125c329c4f2bef3bb866">chart</a></td></tr>
+<tr class="separator:a6743baa254d0125c329c4f2bef3bb866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cf119eb52ae432d2bd2f5b55750de1"><td class="memItemLeft" align="right" valign="top">QtCharts::QChartView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa8cf119eb52ae432d2bd2f5b55750de1">chartView</a></td></tr>
+<tr class="separator:aa8cf119eb52ae432d2bd2f5b55750de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e350c55fc0ec85cff76342161d86be"><td class="memItemLeft" align="right" valign="top">QtCharts::QDateTimeAxis *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a39e350c55fc0ec85cff76342161d86be">axisX</a></td></tr>
+<tr class="separator:a39e350c55fc0ec85cff76342161d86be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa53ae2baadd07e2bbe0cbcfd0cf27dbf"><td class="memItemLeft" align="right" valign="top">QtCharts::QValueAxis *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa53ae2baadd07e2bbe0cbcfd0cf27dbf">axisY</a></td></tr>
+<tr class="separator:aa53ae2baadd07e2bbe0cbcfd0cf27dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f441ed01f4b3420cdb556046c3923be"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a3f441ed01f4b3420cdb556046c3923be">co2Series</a></td></tr>
+<tr class="separator:a3f441ed01f4b3420cdb556046c3923be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349c3b57faa5e3111599e20b57203359"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a349c3b57faa5e3111599e20b57203359">pm1Series</a></td></tr>
+<tr class="separator:a349c3b57faa5e3111599e20b57203359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2286fb5d9a0e8e4b1bc23a26dc3bd3f"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ac2286fb5d9a0e8e4b1bc23a26dc3bd3f">pm25Series</a></td></tr>
+<tr class="separator:ac2286fb5d9a0e8e4b1bc23a26dc3bd3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3705d6726026aa720dfd05d414f97a"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aec3705d6726026aa720dfd05d414f97a">pm10Series</a></td></tr>
+<tr class="separator:aec3705d6726026aa720dfd05d414f97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c211e23002dbc4c6a4cf5d40148fd2c"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a4c211e23002dbc4c6a4cf5d40148fd2c">radiationSeries</a></td></tr>
+<tr class="separator:a4c211e23002dbc4c6a4cf5d40148fd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03bb901ea7cbd58fb3cbfc6bc11cf55"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa03bb901ea7cbd58fb3cbfc6bc11cf55">temperatureSeries</a></td></tr>
+<tr class="separator:aa03bb901ea7cbd58fb3cbfc6bc11cf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723588cef6ebd394a253bb05b2c0087b"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a723588cef6ebd394a253bb05b2c0087b">humiditySeries</a></td></tr>
+<tr class="separator:a723588cef6ebd394a253bb05b2c0087b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec3095696451b86ee94346f2613f5cc"><td class="memItemLeft" align="right" valign="top">QtCharts::QLineSeries *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aaec3095696451b86ee94346f2613f5cc">radiationDoseSeries</a></td></tr>
+<tr class="separator:aaec3095696451b86ee94346f2613f5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a356578805ed1248a7f2807434cb0e5ee"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a356578805ed1248a7f2807434cb0e5ee">timer</a></td></tr>
+<tr class="memdesc:a356578805ed1248a7f2807434cb0e5ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Podstawowe komponenty.  <a href="classMainWindow.html#a356578805ed1248a7f2807434cb0e5ee">Więcej...</a><br /></td></tr>
+<tr class="separator:a356578805ed1248a7f2807434cb0e5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd962b3c08fd77f6af8840c9fad9380c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSensorReader.html">SensorReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#abd962b3c08fd77f6af8840c9fad9380c">sensorReader</a></td></tr>
+<tr class="separator:abd962b3c08fd77f6af8840c9fad9380c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a153dde7daa20117fae0014b0f320b0b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSensorDataLogger.html">SensorDataLogger</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a153dde7daa20117fae0014b0f320b0b1">logger</a></td></tr>
+<tr class="separator:a153dde7daa20117fae0014b0f320b0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43e1877abcc5674c6abeaa06f51f0e9b"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a43e1877abcc5674c6abeaa06f51f0e9b">co2Label</a></td></tr>
+<tr class="memdesc:a43e1877abcc5674c6abeaa06f51f0e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pola wyświetlające pomiary.  <a href="classMainWindow.html#a43e1877abcc5674c6abeaa06f51f0e9b">Więcej...</a><br /></td></tr>
+<tr class="separator:a43e1877abcc5674c6abeaa06f51f0e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1381d00c3189554fc80656f5a22c82f2"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a1381d00c3189554fc80656f5a22c82f2">co2TempLabel</a></td></tr>
+<tr class="separator:a1381d00c3189554fc80656f5a22c82f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a721d5be1566c8200ece55112bb3b597d"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a721d5be1566c8200ece55112bb3b597d">co2HumLabel</a></td></tr>
+<tr class="separator:a721d5be1566c8200ece55112bb3b597d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef797293372990958193ee7899ac93f"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#adef797293372990958193ee7899ac93f">pm1Label</a></td></tr>
+<tr class="separator:adef797293372990958193ee7899ac93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab2d3578fe1cb1a975f1e5a8ec415a0"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a1ab2d3578fe1cb1a975f1e5a8ec415a0">pm25Label</a></td></tr>
+<tr class="separator:a1ab2d3578fe1cb1a975f1e5a8ec415a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30f8af70bc84a4e56fe1dc450f4dd2b"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ab30f8af70bc84a4e56fe1dc450f4dd2b">pm10Label</a></td></tr>
+<tr class="separator:ab30f8af70bc84a4e56fe1dc450f4dd2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ca484526c571403d029aeaa75e6427"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ab8ca484526c571403d029aeaa75e6427">radiationLabel</a></td></tr>
+<tr class="separator:ab8ca484526c571403d029aeaa75e6427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686e05093351bd0c45fa60cda8070b13"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a686e05093351bd0c45fa60cda8070b13">radiationDoseLabel</a></td></tr>
+<tr class="separator:a686e05093351bd0c45fa60cda8070b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d573a8981cf69c771704a600c1d343"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa0d573a8981cf69c771704a600c1d343">co2StatusLabel</a></td></tr>
+<tr class="memdesc:aa0d573a8981cf69c771704a600c1d343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etykiety statusu.  <a href="classMainWindow.html#aa0d573a8981cf69c771704a600c1d343">Więcej...</a><br /></td></tr>
+<tr class="separator:aa0d573a8981cf69c771704a600c1d343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba1e70577afe7cc912ede6387722056d"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aba1e70577afe7cc912ede6387722056d">pmStatusLabel</a></td></tr>
+<tr class="separator:aba1e70577afe7cc912ede6387722056d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd27ff37e219f9728698e056da8afc6"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a4cd27ff37e219f9728698e056da8afc6">radiationStatusLabel</a></td></tr>
+<tr class="separator:a4cd27ff37e219f9728698e056da8afc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f192e91c85da80a77d8d0d5f8c41802"><td class="memItemLeft" align="right" valign="top">QFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a1f192e91c85da80a77d8d0d5f8c41802">sensorDataFrame</a></td></tr>
+<tr class="memdesc:a1f192e91c85da80a77d8d0d5f8c41802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kontenery interfejsu.  <a href="classMainWindow.html#a1f192e91c85da80a77d8d0d5f8c41802">Więcej...</a><br /></td></tr>
+<tr class="separator:a1f192e91c85da80a77d8d0d5f8c41802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd04a297fbb80636c9b3d6755768c77"><td class="memItemLeft" align="right" valign="top">QFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a2bd04a297fbb80636c9b3d6755768c77">interpretationFrame</a></td></tr>
+<tr class="separator:a2bd04a297fbb80636c9b3d6755768c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d3f55c0d919823be32d5b5a1279304"><td class="memItemLeft" align="right" valign="top">QButtonGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae2d3f55c0d919823be32d5b5a1279304">timeMachineGroup</a></td></tr>
+<tr class="memdesc:ae2d3f55c0d919823be32d5b5a1279304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kontrolki wyboru zakresu czasu.  <a href="classMainWindow.html#ae2d3f55c0d919823be32d5b5a1279304">Więcej...</a><br /></td></tr>
+<tr class="separator:ae2d3f55c0d919823be32d5b5a1279304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363f285fcb8edec45045d3d5db2b70fc"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a363f285fcb8edec45045d3d5db2b70fc">hour1Button</a></td></tr>
+<tr class="separator:a363f285fcb8edec45045d3d5db2b70fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb65a3ca4cc579fac51a5aeca519ea3"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a5cb65a3ca4cc579fac51a5aeca519ea3">hour2Button</a></td></tr>
+<tr class="separator:a5cb65a3ca4cc579fac51a5aeca519ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8df70663932062796d898c505363b6e"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ae8df70663932062796d898c505363b6e">hour4Button</a></td></tr>
+<tr class="separator:ae8df70663932062796d898c505363b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97197f1799225348fa932db904c9444"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ac97197f1799225348fa932db904c9444">hour8Button</a></td></tr>
+<tr class="separator:ac97197f1799225348fa932db904c9444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad44060ffcf94bf06215b3b9011b16072"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#ad44060ffcf94bf06215b3b9011b16072">hour12Button</a></td></tr>
+<tr class="separator:ad44060ffcf94bf06215b3b9011b16072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7e108c26dde97af0bd7e1407f713bb"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aad7e108c26dde97af0bd7e1407f713bb">hour24Button</a></td></tr>
+<tr class="separator:aad7e108c26dde97af0bd7e1407f713bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6dc054ea78fbf4cef69db5e7d77b55"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a7e6dc054ea78fbf4cef69db5e7d77b55">hour48Button</a></td></tr>
+<tr class="separator:a7e6dc054ea78fbf4cef69db5e7d77b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0194d3c364ba33815ebc31dd563bd6"><td class="memItemLeft" align="right" valign="top">QRadioButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a7b0194d3c364ba33815ebc31dd563bd6">hour78Button</a></td></tr>
+<tr class="separator:a7b0194d3c364ba33815ebc31dd563bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a916799760788361dfc8c072b1b551bea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a916799760788361dfc8c072b1b551bea">timeMachineHours</a></td></tr>
+<tr class="memdesc:a916799760788361dfc8c072b1b551bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny zakres czasu w godzinach.  <a href="classMainWindow.html#a916799760788361dfc8c072b1b551bea">Więcej...</a><br /></td></tr>
+<tr class="separator:a916799760788361dfc8c072b1b551bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c0498df5769d4ec484223f437b5dad"><td class="memItemLeft" align="right" valign="top">QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#af5c0498df5769d4ec484223f437b5dad">chartStartTime</a></td></tr>
+<tr class="memdesc:af5c0498df5769d4ec484223f437b5dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Początek zakresu wykresu.  <a href="classMainWindow.html#af5c0498df5769d4ec484223f437b5dad">Więcej...</a><br /></td></tr>
+<tr class="separator:af5c0498df5769d4ec484223f437b5dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a1674cdd8f52bb30b208f4cbf3f2df"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#aa9a1674cdd8f52bb30b208f4cbf3f2df">languageSelector</a></td></tr>
+<tr class="memdesc:aa9a1674cdd8f52bb30b208f4cbf3f2df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Komponenty obsługi języków.  <a href="classMainWindow.html#aa9a1674cdd8f52bb30b208f4cbf3f2df">Więcej...</a><br /></td></tr>
+<tr class="separator:aa9a1674cdd8f52bb30b208f4cbf3f2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e829b3590ccdeeada42625415afc6f3"><td class="memItemLeft" align="right" valign="top">QTranslator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html#a8e829b3590ccdeeada42625415afc6f3">translator</a></td></tr>
+<tr class="separator:a8e829b3590ccdeeada42625415afc6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Główne okno aplikacji wyświetlające dane z czujników i wykresy. </p>
+<p >Klasa odpowiada za prezentację danych w czasie rzeczywistym oraz umożliwia przeglądanie historii pomiarów. </p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a87a1f1b12250799459255fda63778052" name="a87a1f1b12250799459255fda63778052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a1f1b12250799459255fda63778052">&#9670;&nbsp;</a></span>MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::MainWindow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSensorReader.html">SensorReader</a> *&#160;</td>
+          <td class="paramname"><em>reader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor głównego okna. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reader</td><td>Wskaźnik do czytnika danych z czujników </td></tr>
+    <tr><td class="paramname">parent</td><td>Wskaźnik do widgetu nadrzędnego</td></tr>
+    <tr><td class="paramname">reader</td><td>Wskaźnik do obiektu czytającego dane z czujników </td></tr>
+    <tr><td class="paramname">parent</td><td>Wskaźnik do widgetu nadrzędnego </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae98d00a93bc118200eeef9f9bba1dba7" name="ae98d00a93bc118200eeef9f9bba1dba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae98d00a93bc118200eeef9f9bba1dba7">&#9670;&nbsp;</a></span>~MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::~MainWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a9e0dd54aecbe2e3af6306c3a005d43d2" name="a9e0dd54aecbe2e3af6306c3a005d43d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0dd54aecbe2e3af6306c3a005d43d2">&#9670;&nbsp;</a></span>changeLanguage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::changeLanguage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>language</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienia język interfejsu. </p>
+<p >Zmienia język interfejsu aplikacji.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">language</td><td>Kod języka ("pl" lub "en") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf30da4e1a1a3b097f20cdfaa532eff4" name="aaf30da4e1a1a3b097f20cdfaa532eff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf30da4e1a1a3b097f20cdfaa532eff4">&#9670;&nbsp;</a></span>loadHistoricalData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::loadHistoricalData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wczytuje i wyświetla dane historyczne. </p>
+<p >Wczytuje dane historyczne z pliku CSV.</p>
+<p >Odczytuje zapisane dane z czujników i aktualizuje serie danych na wykresach </p>
+
+</div>
+</div>
+<a id="a392e2293bb3029e841ef8cc11a16b059" name="a392e2293bb3029e841ef8cc11a16b059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392e2293bb3029e841ef8cc11a16b059">&#9670;&nbsp;</a></span>onTimeMachineChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onTimeMachineChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zmianę zakresu czasu na wykresie. </p>
+<p >Obsługuje zmianę zakresu czasu w widoku historycznym.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Nowy zakres czasu w godzinach </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="accc74af8b6dbd54ee872a789986ba72f" name="accc74af8b6dbd54ee872a789986ba72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc74af8b6dbd54ee872a789986ba72f">&#9670;&nbsp;</a></span>updateChartTitles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateChartTitles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje tytuły wykresów. </p>
+<p >Aktualizuje tytuły wykresów na podstawie wybranej serii danych. </p>
+
+</div>
+</div>
+<a id="a6c022bdf4b08d56f3ba53484c0a4cbb2" name="a6c022bdf4b08d56f3ba53484c0a4cbb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c022bdf4b08d56f3ba53484c0a4cbb2">&#9670;&nbsp;</a></span>updateInterfaceTexts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateInterfaceTexts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje teksty interfejsu po zmianie języka. </p>
+<p >Aktualizuje wszystkie teksty w interfejsie po zmianie języka. </p>
+
+</div>
+</div>
+<a id="a2e5dc7b198af26e0ecd559fb5ca6cc5d" name="a2e5dc7b198af26e0ecd559fb5ca6cc5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e5dc7b198af26e0ecd559fb5ca6cc5d">&#9670;&nbsp;</a></span>updateSensorData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateSensorData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje interfejs danymi z czujników. </p>
+<p >Aktualizuje wyświetlane dane z czujników.</p>
+<p >Odczytuje nowe dane, waliduje je i aktualizuje interfejs użytkownika </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja pól</h2>
+<a id="a39e350c55fc0ec85cff76342161d86be" name="a39e350c55fc0ec85cff76342161d86be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39e350c55fc0ec85cff76342161d86be">&#9670;&nbsp;</a></span>axisX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QDateTimeAxis* MainWindow::axisX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa53ae2baadd07e2bbe0cbcfd0cf27dbf" name="aa53ae2baadd07e2bbe0cbcfd0cf27dbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa53ae2baadd07e2bbe0cbcfd0cf27dbf">&#9670;&nbsp;</a></span>axisY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QValueAxis* MainWindow::axisY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6743baa254d0125c329c4f2bef3bb866" name="a6743baa254d0125c329c4f2bef3bb866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6743baa254d0125c329c4f2bef3bb866">&#9670;&nbsp;</a></span>chart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QChart* MainWindow::chart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f374fc687c402c67330728334069e1b" name="a1f374fc687c402c67330728334069e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f374fc687c402c67330728334069e1b">&#9670;&nbsp;</a></span>chartSelector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* MainWindow::chartSelector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Komponenty wykresu. </p>
+
+</div>
+</div>
+<a id="af5c0498df5769d4ec484223f437b5dad" name="af5c0498df5769d4ec484223f437b5dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c0498df5769d4ec484223f437b5dad">&#9670;&nbsp;</a></span>chartStartTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDateTime MainWindow::chartStartTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Początek zakresu wykresu. </p>
+
+</div>
+</div>
+<a id="aa8cf119eb52ae432d2bd2f5b55750de1" name="aa8cf119eb52ae432d2bd2f5b55750de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cf119eb52ae432d2bd2f5b55750de1">&#9670;&nbsp;</a></span>chartView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QChartView* MainWindow::chartView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a721d5be1566c8200ece55112bb3b597d" name="a721d5be1566c8200ece55112bb3b597d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a721d5be1566c8200ece55112bb3b597d">&#9670;&nbsp;</a></span>co2HumLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::co2HumLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43e1877abcc5674c6abeaa06f51f0e9b" name="a43e1877abcc5674c6abeaa06f51f0e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43e1877abcc5674c6abeaa06f51f0e9b">&#9670;&nbsp;</a></span>co2Label</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::co2Label</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pola wyświetlające pomiary. </p>
+
+</div>
+</div>
+<a id="a3f441ed01f4b3420cdb556046c3923be" name="a3f441ed01f4b3420cdb556046c3923be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f441ed01f4b3420cdb556046c3923be">&#9670;&nbsp;</a></span>co2Series</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::co2Series</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0d573a8981cf69c771704a600c1d343" name="aa0d573a8981cf69c771704a600c1d343"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d573a8981cf69c771704a600c1d343">&#9670;&nbsp;</a></span>co2StatusLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* MainWindow::co2StatusLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Etykiety statusu. </p>
+
+</div>
+</div>
+<a id="a1381d00c3189554fc80656f5a22c82f2" name="a1381d00c3189554fc80656f5a22c82f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1381d00c3189554fc80656f5a22c82f2">&#9670;&nbsp;</a></span>co2TempLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::co2TempLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad44060ffcf94bf06215b3b9011b16072" name="ad44060ffcf94bf06215b3b9011b16072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44060ffcf94bf06215b3b9011b16072">&#9670;&nbsp;</a></span>hour12Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour12Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a363f285fcb8edec45045d3d5db2b70fc" name="a363f285fcb8edec45045d3d5db2b70fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a363f285fcb8edec45045d3d5db2b70fc">&#9670;&nbsp;</a></span>hour1Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour1Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad7e108c26dde97af0bd7e1407f713bb" name="aad7e108c26dde97af0bd7e1407f713bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7e108c26dde97af0bd7e1407f713bb">&#9670;&nbsp;</a></span>hour24Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour24Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5cb65a3ca4cc579fac51a5aeca519ea3" name="a5cb65a3ca4cc579fac51a5aeca519ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb65a3ca4cc579fac51a5aeca519ea3">&#9670;&nbsp;</a></span>hour2Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour2Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e6dc054ea78fbf4cef69db5e7d77b55" name="a7e6dc054ea78fbf4cef69db5e7d77b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6dc054ea78fbf4cef69db5e7d77b55">&#9670;&nbsp;</a></span>hour48Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour48Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8df70663932062796d898c505363b6e" name="ae8df70663932062796d898c505363b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8df70663932062796d898c505363b6e">&#9670;&nbsp;</a></span>hour4Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour4Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b0194d3c364ba33815ebc31dd563bd6" name="a7b0194d3c364ba33815ebc31dd563bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0194d3c364ba33815ebc31dd563bd6">&#9670;&nbsp;</a></span>hour78Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour78Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac97197f1799225348fa932db904c9444" name="ac97197f1799225348fa932db904c9444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97197f1799225348fa932db904c9444">&#9670;&nbsp;</a></span>hour8Button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRadioButton* MainWindow::hour8Button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a723588cef6ebd394a253bb05b2c0087b" name="a723588cef6ebd394a253bb05b2c0087b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a723588cef6ebd394a253bb05b2c0087b">&#9670;&nbsp;</a></span>humiditySeries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::humiditySeries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bd04a297fbb80636c9b3d6755768c77" name="a2bd04a297fbb80636c9b3d6755768c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd04a297fbb80636c9b3d6755768c77">&#9670;&nbsp;</a></span>interpretationFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFrame* MainWindow::interpretationFrame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9a1674cdd8f52bb30b208f4cbf3f2df" name="aa9a1674cdd8f52bb30b208f4cbf3f2df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a1674cdd8f52bb30b208f4cbf3f2df">&#9670;&nbsp;</a></span>languageSelector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* MainWindow::languageSelector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Komponenty obsługi języków. </p>
+
+</div>
+</div>
+<a id="a153dde7daa20117fae0014b0f320b0b1" name="a153dde7daa20117fae0014b0f320b0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a153dde7daa20117fae0014b0f320b0b1">&#9670;&nbsp;</a></span>logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSensorDataLogger.html">SensorDataLogger</a> MainWindow::logger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab30f8af70bc84a4e56fe1dc450f4dd2b" name="ab30f8af70bc84a4e56fe1dc450f4dd2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30f8af70bc84a4e56fe1dc450f4dd2b">&#9670;&nbsp;</a></span>pm10Label</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::pm10Label</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec3705d6726026aa720dfd05d414f97a" name="aec3705d6726026aa720dfd05d414f97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec3705d6726026aa720dfd05d414f97a">&#9670;&nbsp;</a></span>pm10Series</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::pm10Series</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adef797293372990958193ee7899ac93f" name="adef797293372990958193ee7899ac93f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef797293372990958193ee7899ac93f">&#9670;&nbsp;</a></span>pm1Label</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::pm1Label</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a349c3b57faa5e3111599e20b57203359" name="a349c3b57faa5e3111599e20b57203359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349c3b57faa5e3111599e20b57203359">&#9670;&nbsp;</a></span>pm1Series</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::pm1Series</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ab2d3578fe1cb1a975f1e5a8ec415a0" name="a1ab2d3578fe1cb1a975f1e5a8ec415a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab2d3578fe1cb1a975f1e5a8ec415a0">&#9670;&nbsp;</a></span>pm25Label</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::pm25Label</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2286fb5d9a0e8e4b1bc23a26dc3bd3f" name="ac2286fb5d9a0e8e4b1bc23a26dc3bd3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2286fb5d9a0e8e4b1bc23a26dc3bd3f">&#9670;&nbsp;</a></span>pm25Series</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::pm25Series</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba1e70577afe7cc912ede6387722056d" name="aba1e70577afe7cc912ede6387722056d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba1e70577afe7cc912ede6387722056d">&#9670;&nbsp;</a></span>pmStatusLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* MainWindow::pmStatusLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a686e05093351bd0c45fa60cda8070b13" name="a686e05093351bd0c45fa60cda8070b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686e05093351bd0c45fa60cda8070b13">&#9670;&nbsp;</a></span>radiationDoseLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::radiationDoseLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaec3095696451b86ee94346f2613f5cc" name="aaec3095696451b86ee94346f2613f5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec3095696451b86ee94346f2613f5cc">&#9670;&nbsp;</a></span>radiationDoseSeries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::radiationDoseSeries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8ca484526c571403d029aeaa75e6427" name="ab8ca484526c571403d029aeaa75e6427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ca484526c571403d029aeaa75e6427">&#9670;&nbsp;</a></span>radiationLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* MainWindow::radiationLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c211e23002dbc4c6a4cf5d40148fd2c" name="a4c211e23002dbc4c6a4cf5d40148fd2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c211e23002dbc4c6a4cf5d40148fd2c">&#9670;&nbsp;</a></span>radiationSeries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::radiationSeries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cd27ff37e219f9728698e056da8afc6" name="a4cd27ff37e219f9728698e056da8afc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd27ff37e219f9728698e056da8afc6">&#9670;&nbsp;</a></span>radiationStatusLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* MainWindow::radiationStatusLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f192e91c85da80a77d8d0d5f8c41802" name="a1f192e91c85da80a77d8d0d5f8c41802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f192e91c85da80a77d8d0d5f8c41802">&#9670;&nbsp;</a></span>sensorDataFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFrame* MainWindow::sensorDataFrame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kontenery interfejsu. </p>
+
+</div>
+</div>
+<a id="abd962b3c08fd77f6af8840c9fad9380c" name="abd962b3c08fd77f6af8840c9fad9380c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd962b3c08fd77f6af8840c9fad9380c">&#9670;&nbsp;</a></span>sensorReader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSensorReader.html">SensorReader</a>* MainWindow::sensorReader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa03bb901ea7cbd58fb3cbfc6bc11cf55" name="aa03bb901ea7cbd58fb3cbfc6bc11cf55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03bb901ea7cbd58fb3cbfc6bc11cf55">&#9670;&nbsp;</a></span>temperatureSeries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtCharts::QLineSeries* MainWindow::temperatureSeries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2d3f55c0d919823be32d5b5a1279304" name="ae2d3f55c0d919823be32d5b5a1279304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d3f55c0d919823be32d5b5a1279304">&#9670;&nbsp;</a></span>timeMachineGroup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QButtonGroup* MainWindow::timeMachineGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kontrolki wyboru zakresu czasu. </p>
+
+</div>
+</div>
+<a id="a916799760788361dfc8c072b1b551bea" name="a916799760788361dfc8c072b1b551bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a916799760788361dfc8c072b1b551bea">&#9670;&nbsp;</a></span>timeMachineHours</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MainWindow::timeMachineHours</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualny zakres czasu w godzinach. </p>
+
+</div>
+</div>
+<a id="a356578805ed1248a7f2807434cb0e5ee" name="a356578805ed1248a7f2807434cb0e5ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a356578805ed1248a7f2807434cb0e5ee">&#9670;&nbsp;</a></span>timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* MainWindow::timer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Podstawowe komponenty. </p>
+
+</div>
+</div>
+<a id="a8e829b3590ccdeeada42625415afc6f3" name="a8e829b3590ccdeeada42625415afc6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e829b3590ccdeeada42625415afc6f3">&#9670;&nbsp;</a></span>translator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTranslator MainWindow::translator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="MainWindow_8h_source.html">MainWindow.h</a></li>
+<li><a class="el" href="MainWindow_8cpp.html">MainWindow.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

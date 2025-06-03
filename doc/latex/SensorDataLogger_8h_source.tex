@@ -1,0 +1,32 @@
+\hypertarget{SensorDataLogger_8h_source}{}\doxysection{Sensor\+Data\+Logger.\+h}
+\mbox{\hyperlink{SensorDataLogger_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef SENSORDATALOGGER\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define SENSORDATALOGGER\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <QString>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <QFile>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <QTextStream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <QDateTime>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{SensorReader_8h}{SensorReader.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classSensorDataLogger}{SensorDataLogger}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keyword}{explicit} \mbox{\hyperlink{classSensorDataLogger_aac2b933522c481e3a3679688b61d54b8}{SensorDataLogger}}(\textcolor{keyword}{const} QString\& filename);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31     \mbox{\hyperlink{classSensorDataLogger_a61b56262969451aee9bb8d26245274f8}{\string~SensorDataLogger}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSensorDataLogger_a22ec6b9a47578f9be3b2771d3fa269c1}{log}}(\textcolor{keyword}{const} \mbox{\hyperlink{structSensorData}{SensorData}}\& data);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{40     QFile \mbox{\hyperlink{classSensorDataLogger_ac5c443a08178e42b720875037b02747c}{file}}; }
+\DoxyCodeLine{41     QTextStream \mbox{\hyperlink{classSensorDataLogger_a7c270a31078cf7de8e4850ebbb0859b5}{stream}}; }
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSensorDataLogger_a244d85c217254d90b2842111e790430c}{writeHeaderIfNeeded}}(); }
+\DoxyCodeLine{43     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSensorDataLogger_af3d52ccd12a7fec8870577ec5e4201df}{headerWritten}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
